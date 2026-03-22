@@ -1,0 +1,151 @@
+import { useEffect, useRef, useState } from 'react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { getSequentialColor, COUNTRY_COLORS } from '../utils/colors';
+
+interface CountryValue {
+  code: string;
+  name: string;
+  value: number; // 0-1 proportion
+  n: number;
+}
+
+interface CompareMapProps {
+  countryValues: CountryValue[];
+  selectedResponse: string | null;
+  height?: number;
+}
+
+export function CompareMap({ countryValues, selectedResponse, height = 340 }: CompareMapProps) {
+  const mapRef = useRef<L.Map | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const layersRef = useRef<L.GeoJSON | null>(null);
+  const [geoData, setGeoData] = useState<GeoJSON.FeatureCollection | null>(null);
+
+  // Load GeoJSON once
+  useEffect(() => {
+    fetch('/data/countries.geojson')
+      .then(r => r.json())
+      .then(setGeoData)
+      .catch(err => console.error('Failed to load countries.geojson:', err));
+  }, []);
+
+  // Initialize map
+  useEffect(() => {
+    if (!containerRef.current || mapRef.current) return;
+
+    const map = L.map(containerRef.current, {
+      zoomControl: false,
+      attributionControl: false,
+      dragging: true,
+      scrollWheelZoom: false,
+    }).setView([-30, -59], 4);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19,
+    }).addTo(map);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19,
+      pane: 'overlayPane',
+    }).addTo(map);
+
+    mapRef.current = map;
+
+    return () => {
+      map.remove();
+      mapRef.current = null;
+    };
+  }, []);
+
+  // Update choropleth
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !geoData) return;
+
+    // Remove previous layer
+    if (layersRef.current) {
+      layersRef.current.remove();
+      layersRef.current = null;
+    }
+
+    if (!selectedResponse || countryValues.length === 0) return;
+
+    const valueMap: Record<string, CountryValue> = {};
+    for (const cv of countryValues) valueMap[cv.code] = cv;
+
+    const values = countryValues.map(cv => cv.value);
+    const min = Math.min(...values);
+    const max = Math.max(...values);
+
+    const layer = L.geoJSON(geoData, {
+      style: (feature) => {
+        const code = feature?.properties?.code;
+        const cv = valueMap[code];
+        if (!cv) {
+          return { fillColor: '#e8dcc4', fillOpacity: 0.3, color: '#d8cbb0', weight: 1 };
+        }
+        return {
+          fillColor: getSequentialColor(cv.value, min, max),
+          fillOpacity: 0.75,
+          color: COUNTRY_COLORS[code] || '#333',
+          weight: 2,
+        };
+      },
+      onEachFeature: (feature, layer) => {
+        const code = feature.properties?.code;
+        const cv = valueMap[code];
+        if (cv) {
+          layer.bindTooltip(
+            `<strong>${cv.name}</strong><br/>` +
+            `${selectedResponse}: ${(cv.value * 100).toFixed(1)}%<br/>` +
+            `<small>n=${cv.n}</small>`,
+            { direction: 'center', className: 'country-tooltip' }
+          );
+        }
+      },
+    }).addTo(map);
+
+    layersRef.current = layer;
+
+    // Fit map to visible countries
+    const bounds = layer.getBounds();
+    if (bounds.isValid()) {
+      map.fitBounds(bounds, { padding: [20, 20] });
+    }
+  }, [geoData, countryValues, selectedResponse]);
+
+  if (countryValues.length === 0 || !selectedResponse) {
+    return null;
+  }
+
+  // Legend values
+  const values = countryValues.map(cv => cv.value);
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+
+  return (
+    <div style={{ position: 'relative' }}>
+      <div
+        ref={containerRef}
+        style={{ width: '100%', height, borderRadius: 8 }}
+      />
+      {/* Legend */}
+      <div style={{
+        position: 'absolute', bottom: 10, right: 10, background: 'rgba(255,253,248,0.92)',
+        borderRadius: 6, padding: '6px 10px', fontSize: 11, border: '1px solid #d8cbb0',
+        zIndex: 1000,
+      }}>
+        <div style={{ fontWeight: 600, marginBottom: 4 }}>"{selectedResponse}"</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+          <span>{(min * 100).toFixed(0)}%</span>
+          <div style={{
+            width: 80, height: 12, borderRadius: 3,
+            background: `linear-gradient(to right, ${getSequentialColor(min, min, max)}, ${getSequentialColor((min + max) / 2, min, max)}, ${getSequentialColor(max, min, max)})`,
+          }} />
+          <span>{(max * 100).toFixed(0)}%</span>
+        </div>
+      </div>
+    </div>
+  );
+}
