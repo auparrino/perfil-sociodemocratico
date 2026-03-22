@@ -27,7 +27,7 @@ export function CountryMap({
   country,
   variable,
   selectedResponse,
-  regions,
+  regions: _regions,
   onRegionClick,
   selectedRegion,
 }: CountryMapProps) {

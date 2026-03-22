@@ -1,5 +1,5 @@
 import {
-  LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend,
+  LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer,
 } from 'recharts';
 import { COUNTRY_COLORS } from '../utils/colors';
 import type { SocioeconomicData } from '../hooks/useSocioeconomic';
@@ -229,7 +229,8 @@ function SparklineSection({
                   tickFormatter={v => ind.format === 'percent' ? `${v}%` : (v >= 1000 ? `${(v/1000).toFixed(0)}k` : String(v))}
                 />
                 <Tooltip
-                  formatter={(v: unknown) => formatValue(Number(v), ind.format, ind.decimals, ind.unit)}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  formatter={(v: any) => formatValue(Number(v), ind.format, ind.decimals, ind.unit)}
                   labelStyle={{ fontSize: 11 }}
                   contentStyle={{ fontSize: 11, padding: '4px 8px' }}
                 />

@@ -76,8 +76,10 @@ export function TimeSeriesChart({
         <XAxis dataKey="year" fontSize={12} />
         <YAxis domain={[0, 'auto']} tickFormatter={v => `${v}%`} fontSize={11} />
         <Tooltip
-          formatter={(v: unknown) => `${Number(v).toFixed(1)}%`}
-          labelFormatter={(label: unknown) => `${label}`}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          formatter={(v: any) => `${Number(v).toFixed(1)}%`}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          labelFormatter={(label: any) => `${label}`}
         />
         <Legend />
         {countries.map(c => (

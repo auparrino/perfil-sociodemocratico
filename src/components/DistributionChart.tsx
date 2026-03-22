@@ -1,5 +1,5 @@
 import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, Legend,
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
   PieChart, Pie,
 } from 'recharts';
 import { getResponseColor } from '../utils/colors';
@@ -42,7 +42,16 @@ export function DistributionChart({
   }
 
   const truncate = (s: string, max: number) =>
-    s.length > max ? s.slice(0, max - 1) + '…' : s;
+    s.length > max ? s.slice(0, max - 1) + '\u2026' : s;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const fmtValue = (v: any) => `${v}%`;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const fmtLabel = (label: any) => {
+    const s = String(label);
+    const e = entries.find(x => x.short === s);
+    return e ? e.short : s;
+  };
 
   if (type === 'pie') {
     return (
@@ -57,7 +66,8 @@ export function DistributionChart({
               cx="50%"
               cy="50%"
               outerRadius={height / 3}
-              label={({ short, value }: { short: string; value: number }) => `${truncate(short, 20)} ${value}%`}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              label={(props: any) => `${truncate(String(props.short ?? ''), 20)} ${props.value}%`}
               labelLine={false}
               style={{ fontSize: 11 }}
             >
@@ -71,13 +81,7 @@ export function DistributionChart({
                 />
               ))}
             </Pie>
-            <Tooltip
-              formatter={(v: number) => `${v}%`}
-              labelFormatter={(label: string) => {
-                const e = entries.find(x => x.short === label);
-                return e ? e.short : label;
-              }}
-            />
+            <Tooltip formatter={fmtValue} labelFormatter={fmtLabel} />
           </PieChart>
         </ResponsiveContainer>
       </div>
@@ -97,15 +101,7 @@ export function DistributionChart({
             fontSize={11}
             tickFormatter={v => truncate(v, 35)}
           />
-          <Tooltip
-            formatter={(v: unknown) => `${v}%`}
-            labelFormatter={(label: unknown) => {
-              const s = String(label);
-              const e = entries.find(x => x.short === s);
-              return e ? e.short : s;
-            }}
-            labelStyle={{ fontWeight: 600 }}
-          />
+          <Tooltip formatter={fmtValue} labelFormatter={fmtLabel} labelStyle={{ fontWeight: 600 }} />
           <Bar dataKey="value" radius={[0, 4, 4, 0]}>
             {entries.map((entry, i) => (
               <Cell
@@ -129,13 +125,16 @@ interface CompareBarProps {
   height?: number;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const fmtCompare = (v: any) => `${Number(v).toFixed(1)}%`;
+
 export function CompareBar({ data, height = 200 }: CompareBarProps) {
   return (
     <ResponsiveContainer width="100%" height={height}>
       <BarChart data={data} margin={{ left: 5, right: 20 }}>
         <XAxis dataKey="label" fontSize={11} />
         <YAxis domain={[0, 100]} tickFormatter={v => `${v}%`} fontSize={11} />
-        <Tooltip formatter={(v: unknown) => `${Number(v).toFixed(1)}%`} />
+        <Tooltip formatter={fmtCompare} />
         <Bar dataKey="value" radius={[4, 4, 0, 0]}>
           {data.map((d, i) => (
             <Cell key={i} fill={d.color} />
