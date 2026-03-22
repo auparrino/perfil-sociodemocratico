@@ -42,7 +42,7 @@ export function CountryMap({
       setGeoData(geoCache[country]);
       return;
     }
-    fetch(`/data/regions_${country}.geojson`)
+    fetch(`${import.meta.env.BASE_URL}data/regions_${country}.geojson`)
       .then(r => r.json())
       .then((data: GeoJSON.FeatureCollection) => {
         geoCache[country] = data;

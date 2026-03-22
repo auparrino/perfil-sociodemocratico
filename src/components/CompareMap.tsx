@@ -24,7 +24,7 @@ export function CompareMap({ countryValues, selectedResponse, height = 340 }: Co
 
   // Load GeoJSON once
   useEffect(() => {
-    fetch('/data/countries.geojson')
+    fetch(`${import.meta.env.BASE_URL}data/countries.geojson`)
       .then(r => r.json())
       .then(setGeoData)
       .catch(err => console.error('Failed to load countries.geojson:', err));

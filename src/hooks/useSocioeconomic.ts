@@ -18,7 +18,7 @@ export function useSocioeconomic(): SocioeconomicData | null {
   const [data, setData] = useState<SocioeconomicData | null>(null);
 
   useEffect(() => {
-    fetch('/data/socioeconomic.json')
+    fetch(`${import.meta.env.BASE_URL}data/socioeconomic.json`)
       .then(r => r.json())
       .then(setData)
       .catch(err => console.error('Failed to load socioeconomic data:', err));

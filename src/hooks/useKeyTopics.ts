@@ -10,7 +10,7 @@ export function useKeyTopics() {
   const [topics, setTopics] = useState<KeyTopic[]>([]);
 
   useEffect(() => {
-    fetch('/data/key_topics.json')
+    fetch(`${import.meta.env.BASE_URL}data/key_topics.json`)
       .then(r => r.json())
       .then(setTopics)
       .catch(err => console.error('Failed to load key_topics.json:', err));

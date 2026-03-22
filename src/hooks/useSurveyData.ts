@@ -61,9 +61,9 @@ export function useSurveyData() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/data/key_data.json').then(r => r.json()),
-      fetch('/data/variables_slim.json').then(r => r.json()),
-      fetch('/data/regions.json').then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/key_data.json`).then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/variables_slim.json`).then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/regions.json`).then(r => r.json()),
     ])
       .then(([keyData, variables, regions]) => {
         setState({ keyData, variables, regions, fullData: {}, loading: false, error: null });
@@ -76,7 +76,7 @@ export function useSurveyData() {
   const loadFullCountry = useCallback(async (country: string) => {
     if (state.fullData[country]) return;
     try {
-      const data = await fetch(`/data/by_country/${country}.json`).then(r => r.json());
+      const data = await fetch(`${import.meta.env.BASE_URL}data/by_country/${country}.json`).then(r => r.json());
       setState(s => ({
         ...s,
         fullData: { ...s.fullData, [country]: data },
