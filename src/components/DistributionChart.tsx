@@ -98,10 +98,11 @@ export function DistributionChart({
             tickFormatter={v => truncate(v, 35)}
           />
           <Tooltip
-            formatter={(v: number) => `${v}%`}
-            labelFormatter={(label: string) => {
-              const e = entries.find(x => x.short === label);
-              return e ? e.short : label;
+            formatter={(v: unknown) => `${v}%`}
+            labelFormatter={(label: unknown) => {
+              const s = String(label);
+              const e = entries.find(x => x.short === s);
+              return e ? e.short : s;
             }}
             labelStyle={{ fontWeight: 600 }}
           />
@@ -134,7 +135,7 @@ export function CompareBar({ data, height = 200 }: CompareBarProps) {
       <BarChart data={data} margin={{ left: 5, right: 20 }}>
         <XAxis dataKey="label" fontSize={11} />
         <YAxis domain={[0, 100]} tickFormatter={v => `${v}%`} fontSize={11} />
-        <Tooltip formatter={(v: number) => `${v.toFixed(1)}%`} />
+        <Tooltip formatter={(v: unknown) => `${Number(v).toFixed(1)}%`} />
         <Bar dataKey="value" radius={[4, 4, 0, 0]}>
           {data.map((d, i) => (
             <Cell key={i} fill={d.color} />

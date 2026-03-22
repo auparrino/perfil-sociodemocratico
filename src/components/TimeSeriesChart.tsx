@@ -3,7 +3,6 @@ import {
 } from 'recharts';
 import type { KeyData } from '../hooks/useSurveyData';
 import { COUNTRY_COLORS } from '../utils/colors';
-import { shortLabel } from '../utils/responses';
 
 interface TimeSeriesProps {
   keyData: KeyData;
@@ -77,8 +76,8 @@ export function TimeSeriesChart({
         <XAxis dataKey="year" fontSize={12} />
         <YAxis domain={[0, 'auto']} tickFormatter={v => `${v}%`} fontSize={11} />
         <Tooltip
-          formatter={(v: number) => `${v.toFixed(1)}%`}
-          labelFormatter={(label: string) => `${label}`}
+          formatter={(v: unknown) => `${Number(v).toFixed(1)}%`}
+          labelFormatter={(label: unknown) => `${label}`}
         />
         <Legend />
         {countries.map(c => (
