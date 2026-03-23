@@ -79,15 +79,24 @@ export function shortLabel(s: string): string {
   return s;
 }
 
-// ─── NS/NC detection ─────────────────────────────────────────────────────────
+// ─── NS/NC and residual response detection ──────────────────────────────────
 const NS_NC_PATTERNS = [
   'No sabe', 'No contesta', 'No responde', 'NS/NR', 'No sabe/No contesta',
   'No sabe / No contesta', 'No answer', 'No aplicable', 'Refused',
 ];
 
+const RESIDUAL_PATTERNS = [
+  'Otras respuestas', 'Ninguno', 'Ninguna de las anteriores',
+];
+
 export function isNsNc(key: string): boolean {
   const norm = key.replace(/\s*\{[^}]*\}\s*$/, '').trim();
   return NS_NC_PATTERNS.some(p => norm === p || norm.includes(p));
+}
+
+export function isResidual(key: string): boolean {
+  const norm = key.replace(/\s*\{[^}]*\}\s*$/, '').trim();
+  return RESIDUAL_PATTERNS.some(p => norm === p || norm.includes(p));
 }
 
 // ─── Ordinal scale definitions ───────────────────────────────────────────────
@@ -147,15 +156,25 @@ function normalize(s: string): string {
  * Try to detect an ordinal scale from a set of response keys.
  * Returns ordered keys (substantive first, then NS/NC) or null if no scale detected.
  */
+/** Parse leading number from response key like "5" or "10 Derecha" */
+const parseLeadingNum = (s: string) => { const m = s.match(/^(\d+)/); return m ? parseInt(m[1]) : NaN; };
+
+/** Check if a set of keys represents a numeric scale (1-10, 0-10, etc.) */
+export function isNumericScale(keys: string[]): boolean {
+  const substantive = keys.filter(k => !isNsNc(k) && !isResidual(k));
+  const numericKeys = substantive.filter(k => !isNaN(parseLeadingNum(k)));
+  return numericKeys.length > substantive.length / 2;
+}
+
 export function detectOrdinalOrder(keys: string[]): string[] | null {
-  // Separate NS/NC from substantive keys
-  const substantive = keys.filter(k => !isNsNc(k));
+  // Separate NS/NC and residual responses from substantive keys
+  const substantive = keys.filter(k => !isNsNc(k) && !isResidual(k));
+  const residual = keys.filter(k => isResidual(k));
   const nsNc = keys.filter(k => isNsNc(k));
 
   if (substantive.length < 2) return null;
 
   // Check numeric scale first (1-10 etc.) - handles "1", "2", ... "10" and "1 No es democrático"
-  const parseLeadingNum = (s: string) => { const m = s.match(/^(\d+)/); return m ? parseInt(m[1]) : NaN; };
   const numericKeys = substantive.filter(k => !isNaN(parseLeadingNum(k)));
   if (numericKeys.length > substantive.length / 2) {
     const sorted = [...substantive].sort((a, b) => {
@@ -165,14 +184,14 @@ export function detectOrdinalOrder(keys: string[]): string[] | null {
       if (!isNaN(nb)) return 1;
       return a.localeCompare(b);
     });
-    return [...sorted, ...nsNc];
+    return [...sorted, ...residual, ...nsNc];
   }
 
   // Try each ordinal scale
   for (const scale of ORDINAL_SCALES) {
     const matched = tryMatchScale(substantive, scale.keywords);
     if (matched) {
-      return [...matched, ...nsNc];
+      return [...matched, ...residual, ...nsNc];
     }
   }
 
@@ -240,13 +259,14 @@ export function orderResponseKeys(
   const ordinal = detectOrdinalOrder(keys);
   if (ordinal) return ordinal;
 
-  // Fallback: sort substantive by value desc, NS/NC at end
-  const substantive = keys.filter(k => !isNsNc(k));
+  // Fallback: sort substantive by value desc, residual + NS/NC at end
+  const substantive = keys.filter(k => !isNsNc(k) && !isResidual(k));
+  const residual = keys.filter(k => isResidual(k));
   const nsNc = keys.filter(k => isNsNc(k));
 
   if (getAvgValue) {
     substantive.sort((a, b) => getAvgValue(b) - getAvgValue(a));
   }
 
-  return [...substantive, ...nsNc];
+  return [...substantive, ...residual, ...nsNc];
 }

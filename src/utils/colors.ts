@@ -31,6 +31,28 @@ export const CHART_COLORS = [
   '#0a4060', '#e05a5a', '#4a8db0', '#a03030', '#b0c8dc',
 ];
 
+// Numeric scale gradient for bar charts (0-10 scales)
+// Uses a diverging palette: dark red → cream → navy
+export function getNumericScaleColor(index: number, total: number): string {
+  if (total <= 1) return PALETTE.navy;
+  const t = index / (total - 1); // 0 to 1
+  if (t <= 0.5) {
+    // dark red → cream (0 → 0.5)
+    const s = t * 2;
+    const r = Math.round(120 + s * 133);
+    const g = Math.round(0 + s * 240);
+    const b = Math.round(0 + s * 213);
+    return `rgb(${r},${g},${b})`;
+  } else {
+    // cream → navy (0.5 → 1)
+    const s = (t - 0.5) * 2;
+    const r = Math.round(253 - s * 253);
+    const g = Math.round(240 - s * 192);
+    const b = Math.round(213 - s * 140);
+    return `rgb(${r},${g},${b})`;
+  }
+}
+
 // Sequential color scale for choropleth (cream → navy)
 export function getSequentialColor(value: number, min: number, max: number): string {
   const t = max === min ? 0.5 : (value - min) / (max - min);

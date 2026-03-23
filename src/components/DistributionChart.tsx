@@ -2,8 +2,8 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
   PieChart, Pie,
 } from 'recharts';
-import { getResponseColor } from '../utils/colors';
-import { shortLabel, orderResponseKeys } from '../utils/responses';
+import { getResponseColor, getNumericScaleColor, PALETTE } from '../utils/colors';
+import { shortLabel, orderResponseKeys, isNumericScale, isNsNc, isResidual } from '../utils/responses';
 import type { Distribution } from '../hooks/useSurveyData';
 
 interface DistributionChartProps {
@@ -41,6 +41,19 @@ export function DistributionChart({
     return <div style={{ color: '#7a9aad', padding: 20, textAlign: 'center' }}>Sin datos</div>;
   }
 
+  // Detect if this is a numeric scale for gradient coloring
+  const allKeys = orderedKeys || Object.keys(distribution);
+  const numeric = isNumericScale(allKeys);
+  const numericCount = numeric ? entries.filter(e => !isNsNc(e.name) && !isResidual(e.name)).length : 0;
+
+  function getEntryColor(entry: { name: string }, index: number): string {
+    if (numeric) {
+      if (isNsNc(entry.name) || isResidual(entry.name)) return PALETTE.border;
+      return getNumericScaleColor(index, numericCount);
+    }
+    return getResponseColor(entry.name, index);
+  }
+
   const truncate = (s: string, max: number) =>
     s.length > max ? s.slice(0, max - 1) + '\u2026' : s;
 
@@ -74,7 +87,7 @@ export function DistributionChart({
               {entries.map((entry, i) => (
                 <Cell
                   key={entry.name}
-                  fill={getResponseColor(entry.name, i)}
+                  fill={getEntryColor(entry, i)}
                   opacity={selectedResponse && selectedResponse !== entry.name ? 0.3 : 1}
                   cursor="pointer"
                   onClick={() => onSelectResponse?.(entry.name)}
@@ -106,7 +119,7 @@ export function DistributionChart({
             {entries.map((entry, i) => (
               <Cell
                 key={entry.name}
-                fill={getResponseColor(entry.name, i)}
+                fill={getEntryColor(entry, i)}
                 opacity={selectedResponse && selectedResponse !== entry.name ? 0.3 : 1}
                 cursor="pointer"
                 onClick={() => onSelectResponse?.(entry.name)}
