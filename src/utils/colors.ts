@@ -139,10 +139,19 @@ export const SENTIMENT_COLORS: Record<string, string> = {
 };
 
 export function getResponseColor(response: string, index: number): string {
+  // Exact match first
+  if (SENTIMENT_COLORS[response]) return SENTIMENT_COLORS[response];
+
+  // Then find the longest matching pattern to avoid "Justa" matching "Injusta"
+  let bestMatch = '';
+  let bestColor = '';
   for (const [pattern, color] of Object.entries(SENTIMENT_COLORS)) {
-    if (response.includes(pattern) || response === pattern) {
-      return color;
+    if (response.includes(pattern) && pattern.length > bestMatch.length) {
+      bestMatch = pattern;
+      bestColor = color;
     }
   }
+  if (bestColor) return bestColor;
+
   return getCategoryColor(index);
 }

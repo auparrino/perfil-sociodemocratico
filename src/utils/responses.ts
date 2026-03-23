@@ -179,18 +179,40 @@ export function detectOrdinalOrder(keys: string[]): string[] | null {
   return null;
 }
 
+function normalizeKey(k: string): string {
+  return normalize(k.replace(/\s*\{[^}]*\}\s*$/, ''));
+}
+
 function tryMatchScale(keys: string[], scaleKeywords: string[]): string[] | null {
-  // For each scale keyword, find the matching response key
+  // For each scale keyword, find the best matching response key.
+  // Priority: exact match > startsWith > includes (shortest key wins).
+  // This prevents "Muy satisfecho" from greedily matching "No muy satisfecho".
   const orderedMatches: string[] = [];
   const usedKeys = new Set<string>();
 
   for (const keyword of scaleKeywords) {
     const normKw = normalize(keyword);
-    const match = keys.find(k => {
-      if (usedKeys.has(k)) return false;
-      const normK = normalize(k.replace(/\s*\{[^}]*\}\s*$/, ''));
-      return normK === normKw || normK.startsWith(normKw) || normK.includes(normKw);
-    });
+    const available = keys.filter(k => !usedKeys.has(k));
+
+    // Priority 1: exact match
+    let match = available.find(k => normalizeKey(k) === normKw);
+
+    // Priority 2: key starts with keyword
+    if (!match) {
+      match = available.find(k => normalizeKey(k).startsWith(normKw));
+    }
+
+    // Priority 3: key includes keyword — pick the shortest match to avoid
+    // greedy collisions (e.g. "Justa" should match "Justa" not "Injusta")
+    if (!match) {
+      const candidates = available.filter(k => normalizeKey(k).includes(normKw));
+      if (candidates.length > 0) {
+        // Prefer shortest key to avoid "Muy satisfecho" matching "No muy satisfecho"
+        candidates.sort((a, b) => a.length - b.length);
+        match = candidates[0];
+      }
+    }
+
     if (match) {
       orderedMatches.push(match);
       usedKeys.add(match);
