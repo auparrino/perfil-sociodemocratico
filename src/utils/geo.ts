@@ -209,3 +209,47 @@ export function aggregateToGeoRegions(
       n: g.totalN,
     }));
 }
+
+/**
+ * Aggregate the weighted mean of a numeric scale (e.g. 0-10) by GeoJSON region.
+ * Computes mean from distribution keys that start with a number.
+ */
+export function aggregateMeanToGeoRegions(
+  country: string,
+  regionsData: Record<string, { d: Record<string, number>; n: number; m?: number }>,
+): AggregatedRegion[] {
+  const groups: Record<string, { totalN: number; weightedSum: number }> = {};
+
+  for (const [surveyRegion, stats] of Object.entries(regionsData)) {
+    const geoRegion = matchSurveyRegionToGeo(country, surveyRegion);
+    if (!geoRegion) continue;
+
+    // Compute mean from distribution: sum(numericValue * proportion)
+    let mean = 0;
+    if (stats.m !== undefined) {
+      mean = stats.m;
+    } else {
+      for (const [key, proportion] of Object.entries(stats.d)) {
+        const num = parseFloat(key);
+        if (!isNaN(num)) {
+          mean += num * proportion;
+        }
+      }
+    }
+
+    const n = stats.n;
+    if (!groups[geoRegion]) {
+      groups[geoRegion] = { totalN: 0, weightedSum: 0 };
+    }
+    groups[geoRegion].totalN += n;
+    groups[geoRegion].weightedSum += mean * n;
+  }
+
+  return Object.entries(groups)
+    .filter(([, g]) => g.totalN > 0)
+    .map(([geoRegion, g]) => ({
+      geoRegion,
+      value: g.weightedSum / g.totalN,
+      n: g.totalN,
+    }));
+}

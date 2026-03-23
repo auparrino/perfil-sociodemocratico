@@ -2,13 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { CompactStats } from '../hooks/useSurveyData';
-import { aggregateToGeoRegions } from '../utils/geo';
+import { aggregateToGeoRegions, aggregateMeanToGeoRegions } from '../utils/geo';
 import { getSequentialColor, COUNTRY_COLORS } from '../utils/colors';
 
 interface CountryMapProps {
   country: string;
   variable: CompactStats | null;
   selectedResponse: string | null;
+  numericMean?: boolean; // use mean for numeric scales instead of single response %
   regions: string[];
   onRegionClick?: (region: string) => void;
   selectedRegion?: string | null;
@@ -27,6 +28,7 @@ export function CountryMap({
   country,
   variable,
   selectedResponse,
+  numericMean,
   regions: _regions,
   onRegionClick,
   selectedRegion,
@@ -100,7 +102,10 @@ export function CountryMap({
     if (!variable || !selectedResponse) return;
 
     // Aggregate survey regions to GeoJSON regions
-    const aggregated = aggregateToGeoRegions(country, variable.regions, selectedResponse);
+    const useMean = !!numericMean;
+    const aggregated = useMean
+      ? aggregateMeanToGeoRegions(country, variable.regions)
+      : aggregateToGeoRegions(country, variable.regions, selectedResponse);
     if (aggregated.length === 0) return;
 
     const valueMap: Record<string, { value: number; n: number }> = {};
@@ -129,9 +134,12 @@ export function CountryMap({
         const region = feature.properties?.region;
         const data = valueMap[region];
         if (data) {
+          const label = useMean
+            ? `Promedio: ${data.value.toFixed(1)}`
+            : `${selectedResponse}: ${(data.value * 100).toFixed(1)}%`;
           featureLayer.bindTooltip(
             `<strong>${region}</strong><br/>` +
-            `${selectedResponse}: ${(data.value * 100).toFixed(1)}%<br/>` +
+            `${label}<br/>` +
             `<small>n=${data.n}</small>`,
             { direction: 'center', className: 'country-tooltip' }
           );
@@ -141,16 +149,19 @@ export function CountryMap({
     }).addTo(map);
 
     layerRef.current = layer;
-  }, [geoData, country, variable, selectedResponse, selectedRegion, onRegionClick]);
+  }, [geoData, country, variable, selectedResponse, numericMean, selectedRegion, onRegionClick]);
 
   // Legend
-  const aggregated = variable && selectedResponse
-    ? aggregateToGeoRegions(country, variable.regions, selectedResponse)
+  const legendAggregated = variable && selectedResponse
+    ? (numericMean
+        ? aggregateMeanToGeoRegions(country, variable.regions)
+        : aggregateToGeoRegions(country, variable.regions, selectedResponse))
     : [];
-  const hasData = aggregated.length > 0;
-  const values = aggregated.map(a => a.value);
-  const min = hasData ? Math.min(...values) : 0;
-  const max = hasData ? Math.max(...values) : 1;
+  const hasData = legendAggregated.length > 0;
+  const legendValues = legendAggregated.map(a => a.value);
+  const min = hasData ? Math.min(...legendValues) : 0;
+  const max = hasData ? Math.max(...legendValues) : 1;
+  const isMeanMode = !!numericMean;
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
@@ -165,12 +176,12 @@ export function CountryMap({
           zIndex: 1000,
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-            <span>{(min * 100).toFixed(0)}%</span>
+            <span>{isMeanMode ? min.toFixed(1) : `${(min * 100).toFixed(0)}%`}</span>
             <div style={{
               width: 80, height: 12, borderRadius: 3,
               background: `linear-gradient(to right, ${getSequentialColor(min, min, max)}, ${getSequentialColor((min + max) / 2, min, max)}, ${getSequentialColor(max, min, max)})`,
             }} />
-            <span>{(max * 100).toFixed(0)}%</span>
+            <span>{isMeanMode ? max.toFixed(1) : `${(max * 100).toFixed(0)}%`}</span>
           </div>
         </div>
       )}

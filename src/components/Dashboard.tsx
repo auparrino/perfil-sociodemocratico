@@ -7,7 +7,7 @@ import { CountryMap } from './CountryMap';
 import { CompareMap } from './CompareMap';
 import { COUNTRY_COLORS } from '../utils/colors';
 import { useSocioeconomic } from '../hooks/useSocioeconomic';
-import { orderResponseKeys, shortLabel, isNsNc } from '../utils/responses';
+import { orderResponseKeys, shortLabel, isNsNc, isNumericScale } from '../utils/responses';
 import { CountryProfile } from './CountryProfile';
 
 const P = {
@@ -183,6 +183,7 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
   }, [countryVarData, activeVarCode, variables, topic, selectedCountries, varLabelsForYear]);
 
   const isMultiCountry = selectedCountries.length > 1;
+  const isNumeric = isNumericScale(unifiedOrder);
 
   // Region data helper
   function getRegionData(countryCode: string, regionName: string | null): { d: Record<string, number>; n: number } | null {
@@ -454,6 +455,7 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                         country={code}
                         variable={countryVarData[code] || null}
                         selectedResponse={topResponse}
+                        numericMean={isNumeric}
                         regions={regions[code] || []}
                         onRegionClick={(r) => setRegionForCountry(code, r)}
                         selectedRegion={selRegion}
@@ -461,7 +463,11 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                     </div>
                     {selRegion && regData && (
                       <div style={{ padding: '6px 12px', borderTop: `1px solid ${P.borderLight}`, fontSize: 11, background: P.cream, color: P.navy }}>
-                        <strong>{selRegion}</strong> | {shortLabel(topResponse!)}: {((regData.d[topResponse!] || 0) * 100).toFixed(1)}% | n={regData.n}
+                        <strong>{selRegion}</strong> | {isNumeric ? (() => {
+                          let mean = 0;
+                          for (const [k, v] of Object.entries(regData.d)) { const n = parseFloat(k); if (!isNaN(n)) mean += n * v; }
+                          return `Promedio: ${mean.toFixed(1)}`;
+                        })() : `${shortLabel(topResponse!)}: ${((regData.d[topResponse!] || 0) * 100).toFixed(1)}%`} | n={regData.n}
                       </div>
                     )}
                   </div>
