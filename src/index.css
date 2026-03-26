@@ -13,14 +13,23 @@ body {
 
 button {
   font-family: inherit;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, opacity 0.15s, box-shadow 0.15s;
 }
 
 select {
   font-family: inherit;
+  transition: border-color 0.15s;
 }
 
 input {
   font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #669BBC;
+  box-shadow: 0 0 0 2px rgba(102, 155, 188, 0.2);
 }
 
 ::-webkit-scrollbar {
@@ -44,4 +53,139 @@ input {
 /* Fix leaflet z-index issues */
 .leaflet-container {
   z-index: 1;
+}
+
+/* ─── Loading spinner ─────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e8dcc4;
+  border-top-color: #003049;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out both;
+}
+
+/* ─── Transitions for cards and interactive elements ─────── */
+.card-hover {
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card-hover:hover {
+  box-shadow: 0 4px 12px rgba(0, 48, 73, 0.08);
+  transform: translateY(-1px);
+}
+
+/* ─── Export button ───────────────────────────────────────── */
+.export-btn {
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  color: #7a9aad;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.export-btn:hover {
+  color: #003049;
+  background: rgba(0, 48, 73, 0.06);
+}
+
+.export-parent:hover .export-btn {
+  opacity: 1;
+}
+
+/* ─── Recharts animation override ─────────────────────────── */
+.recharts-bar-rectangle {
+  transition: opacity 0.3s;
+}
+
+/* ─── Responsive breakpoints ──────────────────────────────── */
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+  .responsive-grid-3 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .responsive-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .responsive-sidebar {
+    width: 260px !important;
+  }
+  .sparkline-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 768px) {
+  .responsive-grid-3,
+  .responsive-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .responsive-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .responsive-header {
+    height: auto !important;
+    padding: 8px 12px !important;
+    flex-wrap: wrap;
+    gap: 8px !important;
+  }
+  .responsive-header nav {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .responsive-controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .responsive-controls > * {
+    width: 100%;
+  }
+  .responsive-sidebar {
+    width: 100% !important;
+    max-height: 200px;
+  }
+  .responsive-explorer {
+    flex-direction: column !important;
+  }
+  .responsive-hide-mobile {
+    display: none !important;
+  }
+  .sparkline-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Small mobile: < 480px */
+@media (max-width: 480px) {
+  .responsive-grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .sparkline-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
 }

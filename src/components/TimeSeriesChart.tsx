@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend,
 } from 'recharts';
@@ -33,7 +34,7 @@ function findResponseValue(dist: Record<string, number>, target: string): number
   return undefined;
 }
 
-export function TimeSeriesChart({
+export const TimeSeriesChart = memo(function TimeSeriesChart({
   keyData, topicCodes, variableCode, responseValue, countries, region, height = 300,
 }: TimeSeriesProps) {
   // Gather all years from selected countries (union, not intersection)
@@ -84,9 +85,10 @@ export function TimeSeriesChart({
         <Legend />
         {countries.map(c => (
           <Line key={c} type="monotone" dataKey={c} name={COUNTRY_NAMES[c] || c}
-            stroke={COUNTRY_COLORS[c]} strokeWidth={2.5} dot={{ r: 4 }} connectNulls />
+            stroke={COUNTRY_COLORS[c]} strokeWidth={2.5} dot={{ r: 4 }} connectNulls
+            animationDuration={500} animationEasing="ease-out" />
         ))}
       </LineChart>
     </ResponsiveContainer>
   );
-}
+});

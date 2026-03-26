@@ -66,7 +66,7 @@ export function CountryProfile({ socioData, countries, year }: CountryProfilePro
             Ficha {COUNTRY_NAMES[cc]} — {year}
           </span>
         </div>
-        <div style={{
+        <div className="responsive-grid-4" style={{
           display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1,
           background: P.borderLight,
         }}>
@@ -201,7 +201,7 @@ function SparklineSection({
     .filter(y => Number(y) <= currentYear);
 
   return (
-    <div style={{
+    <div className="sparkline-grid" style={{
       borderTop: `1px solid ${P.borderLight}`,
       display: 'grid', gridTemplateColumns: `repeat(${sparkKeys.length}, 1fr)`, gap: 1,
       background: P.borderLight,

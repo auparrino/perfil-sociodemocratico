@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
   PieChart, Pie,
@@ -16,7 +17,7 @@ interface DistributionChartProps {
   orderedKeys?: string[]; // unified order for cross-chart consistency
 }
 
-export function DistributionChart({
+export const DistributionChart = memo(function DistributionChart({
   distribution,
   title,
   type = 'bar',
@@ -115,7 +116,7 @@ export function DistributionChart({
             tickFormatter={v => truncate(v, 35)}
           />
           <Tooltip formatter={fmtValue} labelFormatter={fmtLabel} labelStyle={{ fontWeight: 600 }} />
-          <Bar dataKey="value" radius={[0, 4, 4, 0]}>
+          <Bar dataKey="value" radius={[0, 4, 4, 0]} animationDuration={400} animationEasing="ease-out">
             {entries.map((entry, i) => (
               <Cell
                 key={entry.name}
@@ -130,7 +131,7 @@ export function DistributionChart({
       </ResponsiveContainer>
     </div>
   );
-}
+});
 
 // Small comparison chart for multiple countries/regions
 interface CompareBarProps {
@@ -141,14 +142,14 @@ interface CompareBarProps {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const fmtCompare = (v: any) => `${Number(v).toFixed(1)}%`;
 
-export function CompareBar({ data, height = 200 }: CompareBarProps) {
+export const CompareBar = memo(function CompareBar({ data, height = 200 }: CompareBarProps) {
   return (
     <ResponsiveContainer width="100%" height={height}>
       <BarChart data={data} margin={{ left: 5, right: 20 }}>
         <XAxis dataKey="label" fontSize={11} />
         <YAxis domain={[0, 100]} tickFormatter={v => `${v}%`} fontSize={11} />
         <Tooltip formatter={fmtCompare} />
-        <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+        <Bar dataKey="value" radius={[4, 4, 0, 0]} animationDuration={400} animationEasing="ease-out">
           {data.map((d, i) => (
             <Cell key={i} fill={d.color} />
           ))}
@@ -156,4 +157,4 @@ export function CompareBar({ data, height = 200 }: CompareBarProps) {
       </BarChart>
     </ResponsiveContainer>
   );
-}
+});

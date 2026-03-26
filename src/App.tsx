@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { useSurveyData } from './hooks/useSurveyData';
 import { useKeyTopics } from './hooks/useKeyTopics';
-import { Dashboard } from './components/Dashboard';
-import { VariableExplorer } from './components/VariableExplorer';
+import { readUrlState, useUrlState } from './hooks/useUrlState';
+
+const Dashboard = lazy(() => import('./components/Dashboard').then(m => ({ default: m.Dashboard })));
+const VariableExplorer = lazy(() => import('./components/VariableExplorer').then(m => ({ default: m.VariableExplorer })));
 
 const P = {
   navy: '#003049', steel: '#669BBC', cream: '#FDF0D5',
@@ -10,10 +12,14 @@ const P = {
 
 type AppView = 'dashboard' | 'explorer';
 
+const initialUrl = readUrlState();
+
 function App() {
   const { keyData, variables, regions, fullData, loading, error, loadFullCountry } = useSurveyData();
   const keyTopics = useKeyTopics();
-  const [view, setView] = useState<AppView>('dashboard');
+  const [view, setView] = useState<AppView>((initialUrl.view as AppView) || 'dashboard');
+
+  useUrlState({ view });
 
   if (loading) {
     return (
@@ -21,11 +27,12 @@ function App() {
         height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
         background: P.cream,
       }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: 28, marginBottom: 12, color: P.navy, fontWeight: 700 }}>
-            Cargando datos...
+        <div style={{ textAlign: 'center' }} className="fade-in">
+          <div className="loading-spinner" style={{ margin: '0 auto 16px' }} />
+          <div style={{ fontSize: 22, marginBottom: 8, color: P.navy, fontWeight: 700 }}>
+            Latinobarómetro
           </div>
-          <div style={{ color: '#4a6a7f' }}>Latinobarómetro — Argentina, Paraguay, Uruguay</div>
+          <div style={{ color: '#7a9aad', fontSize: 13 }}>Cargando datos de Argentina, Paraguay y Uruguay...</div>
         </div>
       </div>
     );
@@ -45,13 +52,19 @@ function App() {
     );
   }
 
+  const lazyFallback = (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+      <div className="loading-spinner" />
+    </div>
+  );
+
   return (
     <div style={{
       height: '100vh', display: 'flex', flexDirection: 'column',
       fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
       background: P.cream,
     }}>
-      <header style={{
+      <header className="responsive-header" style={{
         background: P.navy,
         color: '#fff',
         padding: '0 24px',
@@ -64,7 +77,7 @@ function App() {
         <div style={{ fontWeight: 700, fontSize: 17, letterSpacing: '-0.3px' }}>
           Latinobarómetro
         </div>
-        <div style={{ fontSize: 13, color: P.steel }}>
+        <div className="responsive-hide-mobile" style={{ fontSize: 13, color: P.steel }}>
           Argentina | Paraguay | Uruguay
         </div>
         <nav style={{ marginLeft: 'auto', display: 'flex', gap: 4 }}>
@@ -83,21 +96,23 @@ function App() {
       </header>
 
       <main style={{ flex: 1, padding: 16, overflow: 'hidden', minHeight: 0 }}>
-        {view === 'dashboard' ? (
-          <Dashboard
-            keyData={keyData}
-            variables={variables}
-            regions={regions}
-            keyTopics={keyTopics}
-          />
-        ) : (
-          <VariableExplorer
-            keyData={keyData}
-            variables={variables}
-            fullData={fullData}
-            loadFullCountry={loadFullCountry}
-          />
-        )}
+        <Suspense fallback={lazyFallback}>
+          {view === 'dashboard' ? (
+            <Dashboard
+              keyData={keyData}
+              variables={variables}
+              regions={regions}
+              keyTopics={keyTopics}
+            />
+          ) : (
+            <VariableExplorer
+              keyData={keyData}
+              variables={variables}
+              fullData={fullData}
+              loadFullCountry={loadFullCountry}
+            />
+          )}
+        </Suspense>
       </main>
     </div>
   );

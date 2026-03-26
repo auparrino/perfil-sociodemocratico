@@ -1,9 +1,11 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import type { KeyData, VariablesSlim, CompactStats, CountryFullData } from '../hooks/useSurveyData';
 import { DistributionChart, CompareBar } from './DistributionChart';
 import { TimeSeriesChart } from './TimeSeriesChart';
 import { COUNTRY_COLORS } from '../utils/colors';
-import { isNsNc, orderResponseKeys } from '../utils/responses';
+import { isNsNc, orderResponseKeys, shortLabel } from '../utils/responses';
+import { ExportButton } from './ExportButton';
+import { readUrlState, useUrlState } from '../hooks/useUrlState';
 
 const P = {
   navy: '#003049', steel: '#669BBC', cream: '#FDF0D5', red: '#C1121F',
@@ -37,14 +39,18 @@ function findResponseValue(dist: Record<string, number>, target: string): number
   return 0;
 }
 
+const initialUrl = readUrlState();
+
 export function VariableExplorer({ keyData, variables, fullData, loadFullCountry }: VariableExplorerProps) {
-  const [selectedYear, setSelectedYear] = useState<string | null>(null);
+  const [selectedYear, setSelectedYear] = useState<string | null>(initialUrl.year || null);
   const [search, setSearch] = useState('');
-  const [selectedVar, setSelectedVar] = useState<string | null>(null);
+  const [selectedVar, setSelectedVar] = useState<string | null>(initialUrl.variable || null);
   const [selectedResponse, setSelectedResponse] = useState<string | null>(null);
   const [showAllVars, setShowAllVars] = useState(false);
 
-  // Load all countries' full data when showAllVars is toggled
+  const distributionRef = useRef<HTMLDivElement>(null);
+  const timeSeriesRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (showAllVars) {
       COUNTRIES.forEach(c => {
@@ -53,7 +59,6 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
     }
   }, [showAllVars, fullData, loadFullCountry]);
 
-  // Union of all years across all countries
   const years = useMemo(() => {
     const yearSet = new Set<string>();
     for (const c of COUNTRIES) {
@@ -66,7 +71,13 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
 
   const year = selectedYear || years[years.length - 1] || '';
 
-  // Clear selected variable when year changes and it's no longer available
+  // URL state sync
+  useUrlState({
+    view: 'explorer',
+    year: selectedYear || undefined,
+    variable: selectedVar || undefined,
+  });
+
   useEffect(() => {
     if (selectedVar) {
       const exists = COUNTRIES.some(c => {
@@ -77,7 +88,6 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
     }
   }, [year, selectedVar, keyData, fullData, showAllVars]);
 
-  // Available variables: union across all countries for selected year
   const availableVars = useMemo(() => {
     const codeSet = new Set<string>();
     for (const c of COUNTRIES) {
@@ -100,7 +110,6 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
     });
   }, [availableVars, search, variables]);
 
-  // Get CompactStats for each country
   const countryVarData = useMemo<Record<string, CompactStats | null>>(() => {
     if (!selectedVar || !year) return {};
     const result: Record<string, CompactStats | null> = {};
@@ -121,7 +130,6 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
     return result;
   }, [keyData, fullData, year, selectedVar]);
 
-  // Auto-select top response from any country that has data
   const topResponse = useMemo(() => {
     if (selectedResponse) return selectedResponse;
     const anyData = COUNTRIES.map(c => countryVarData[c.code]).find(v => v);
@@ -132,7 +140,6 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
     return entries.sort((a, b) => b[1] - a[1])[0]?.[0] || null;
   }, [countryVarData, selectedResponse]);
 
-  // CompareBar data
   const compareData = useMemo(() => {
     if (!topResponse) return [];
     return COUNTRIES.map(c => {
@@ -147,7 +154,6 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
     return anyData?.label || variables[selectedVar || '']?.label || selectedVar || '';
   }, [countryVarData, selectedVar, variables]);
 
-  // Unified response order for cross-country consistency
   const unifiedOrder = useMemo(() => {
     const allKeys = new Set<string>();
     for (const c of COUNTRIES) {
@@ -170,10 +176,24 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
   const isKeyVar = selectedVar ? variables[selectedVar]?.isKey : false;
   const allFullLoaded = COUNTRIES.every(c => fullData[c.code]);
 
+  // CSV export data
+  const csvData = useMemo(() => {
+    if (!selectedVar || !topResponse) return undefined;
+    const headers = ['País', ...unifiedOrder.map(k => shortLabel(k))];
+    const rows = COUNTRIES.map(c => {
+      const vd = countryVarData[c.code];
+      return [c.name, ...unifiedOrder.map(k => {
+        const val = vd?.national?.d ? findResponseValue(vd.national.d, k) : 0;
+        return Math.round(val * 1000) / 10;
+      })];
+    });
+    return { headers, rows };
+  }, [selectedVar, topResponse, unifiedOrder, countryVarData]);
+
   return (
-    <div style={{ display: 'flex', gap: 14, height: '100%' }}>
+    <div className="responsive-explorer" style={{ display: 'flex', gap: 14, height: '100%' }}>
       {/* Left panel: variable browser */}
-      <div style={{
+      <div className="responsive-sidebar" style={{
         width: 320, flexShrink: 0, display: 'flex', flexDirection: 'column',
         background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, overflow: 'hidden',
       }}>
@@ -212,6 +232,7 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
                   padding: '8px 12px', borderBottom: `1px solid ${P.borderLight}`, cursor: 'pointer',
                   background: selectedVar === code ? P.navy + '0a' : undefined,
                   borderLeft: selectedVar === code ? `3px solid ${P.navy}` : '3px solid transparent',
+                  transition: 'background 0.15s, border-color 0.15s',
                 }}>
                 <div style={{ fontSize: 11, fontFamily: 'monospace', color: P.textSec, display: 'flex', alignItems: 'center', gap: 4 }}>
                   {code}
@@ -230,7 +251,7 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
         </div>
       </div>
 
-      {/* Right panel: cross-country comparison */}
+      {/* Right panel */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 14, minWidth: 0, overflow: 'auto' }}>
         {!selectedVar ? (
           <div style={{
@@ -242,9 +263,9 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
         ) : (
           <>
             {/* Header */}
-            <div style={{
+            <div className="fade-in" style={{
               background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
-              padding: '10px 16px', display: 'flex', alignItems: 'baseline', gap: 8,
+              padding: '10px 16px', display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap',
             }}>
               <span style={{ fontWeight: 600, fontSize: 15, color: P.navy }}>{varLabel}</span>
               <span style={{ fontFamily: 'monospace', fontSize: 12, color: P.textMuted }}>{selectedVar}</span>
@@ -252,11 +273,11 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
             </div>
 
             {/* 3-column distribution comparison */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
+            <div ref={distributionRef} className="export-parent responsive-grid-3 fade-in" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, position: 'relative' }}>
               {COUNTRIES.map(c => {
                 const vd = countryVarData[c.code];
                 return (
-                  <div key={c.code} style={{
+                  <div key={c.code} className="card-hover" style={{
                     background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
                     overflow: 'hidden', display: 'flex', flexDirection: 'column',
                   }}>
@@ -268,7 +289,7 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
                       <span style={{ fontWeight: 600, fontSize: 13, color: P.navy }}>{c.name}</span>
                       {vd && (
                         <span style={{ fontSize: 11, color: P.textMuted, marginLeft: 'auto' }}>
-                          n={vd.national.n}
+                          n={vd.national.n.toLocaleString()}
                         </span>
                       )}
                     </div>
@@ -290,11 +311,16 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
                   </div>
                 );
               })}
+              {csvData && (
+                <div style={{ position: 'absolute', top: 4, right: 4 }}>
+                  <ExportButton targetRef={distributionRef} filename={`explorer-${selectedVar}-${year}`} csvData={csvData} />
+                </div>
+              )}
             </div>
 
             {/* CompareBar */}
             {topResponse && compareData.length > 0 && (
-              <div style={{ background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, padding: 16 }}>
+              <div className="fade-in" style={{ background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, padding: 16 }}>
                 <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4, color: P.navy }}>
                   Comparación entre países — {year}
                 </div>
@@ -307,8 +333,11 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
 
             {/* Time Series */}
             {topResponse && isKeyVar ? (
-              <div style={{ background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, padding: 16 }}>
-                <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4, color: P.navy }}>Serie temporal</div>
+              <div ref={timeSeriesRef} className="export-parent fade-in" style={{ background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, padding: 16 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                  <span style={{ fontWeight: 600, fontSize: 14, color: P.navy }}>Serie temporal</span>
+                  <ExportButton targetRef={timeSeriesRef} filename={`serie-${selectedVar}`} />
+                </div>
                 <div style={{ fontSize: 12, color: P.textSec, marginBottom: 8 }}>
                   "{topResponse}" — AR, PY, UY
                 </div>
