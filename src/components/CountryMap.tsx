@@ -121,7 +121,7 @@ export function CountryMap({
         const data = valueMap[region];
         const isSelected = selectedRegion === region;
         if (!data) {
-          return { fillColor: '#e8dcc4', fillOpacity: 0.3, color: '#d8cbb0', weight: 1 };
+          return { fillColor: 'rgba(0,48,73,0.06)', fillOpacity: 0.3, color: 'rgba(0,48,73,0.12)', weight: 1 };
         }
         return {
           fillColor: getSequentialColor(data.value, min, max),
@@ -135,7 +135,7 @@ export function CountryMap({
         const data = valueMap[region];
         if (data) {
           const label = useMean
-            ? `Promedio: ${data.value.toFixed(1)}`
+            ? `Mean: ${data.value.toFixed(1)}`
             : `${selectedResponse}: ${(data.value * 100).toFixed(1)}%`;
           featureLayer.bindTooltip(
             `<strong>${region}</strong><br/>` +
@@ -171,8 +171,8 @@ export function CountryMap({
       />
       {hasData && (
         <div style={{
-          position: 'absolute', bottom: 10, right: 10, background: 'rgba(255,253,248,0.92)',
-          borderRadius: 6, padding: '6px 10px', fontSize: 11, border: '1px solid #d8cbb0',
+          position: 'absolute', bottom: 10, right: 10, background: 'rgba(253,240,213,0.92)',
+          borderRadius: 4, padding: '5px 8px', fontSize: 10, border: '1px solid rgba(0,48,73,0.12)',
           zIndex: 1000,
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>

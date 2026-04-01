@@ -5,16 +5,17 @@ import { COUNTRY_COLORS } from '../utils/colors';
 import type { SocioeconomicData } from '../hooks/useSocioeconomic';
 
 const P = {
-  navy: '#003049', cream: '#FDF0D5', cardBg: '#fffdf8', border: '#d8cbb0',
-  borderLight: '#e8dcc4', textSec: '#4a6a7f', textMuted: '#7a9aad',
+  navy: '#003049', cream: '#FDF0D5',
+  cardBg: 'rgba(0,48,73,0.04)', border: 'rgba(0,48,73,0.12)', borderLight: 'rgba(0,48,73,0.08)',
+  textMuted: 'rgba(0,48,73,0.50)',
 };
 
 const COUNTRY_NAMES: Record<string, string> = {
   AR: 'Argentina', PY: 'Paraguay', UY: 'Uruguay',
 };
-const COUNTRY_FLAGS: Record<string, string> = {
-  AR: '\u{1F1E6}\u{1F1F7}', PY: '\u{1F1F5}\u{1F1FE}', UY: '\u{1F1FA}\u{1F1FE}',
-};
+function Flag({ code, size = 16 }: { code: string; size?: number }) {
+  return <img src={`https://flagcdn.com/w40/${code.toLowerCase()}.png`} alt={code} style={{ width: size, height: size * 0.7, objectFit: 'cover', borderRadius: 2, verticalAlign: 'middle' }} />;
+}
 
 // Indicator display order
 const INDICATOR_ORDER = [
@@ -55,20 +56,20 @@ export function CountryProfile({ socioData, countries, year }: CountryProfilePro
     const cc = countries[0];
     return (
       <div style={{
-        background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
+        background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`,
       }}>
         <div style={{
-          padding: '8px 12px', borderBottom: `2px solid ${COUNTRY_COLORS[cc]}`,
+          padding: '6px 10px', borderBottom: `2px solid ${COUNTRY_COLORS[cc]}`,
           display: 'flex', alignItems: 'center', gap: 6,
         }}>
-          <span style={{ fontSize: 16 }}>{COUNTRY_FLAGS[cc]}</span>
-          <span style={{ fontWeight: 600, fontSize: 14, color: P.navy }}>
-            Ficha {COUNTRY_NAMES[cc]} — {year}
+          <Flag code={cc} size={14} />
+          <span style={{ fontWeight: 700, fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase' as const, color: P.navy }}>
+            Profile {COUNTRY_NAMES[cc]} — {year}
           </span>
         </div>
         <div className="responsive-grid-4" style={{
           display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 1,
-          background: P.borderLight,
+          background: P.border,
         }}>
           {orderedKeys.map(key => {
             const ind = indicators[key];
@@ -77,11 +78,11 @@ export function CountryProfile({ socioData, countries, year }: CountryProfilePro
             const arrow = trend(val, pval);
             return (
               <div key={key} style={{
-                background: P.cardBg, padding: '10px 12px',
-                display: 'flex', flexDirection: 'column', gap: 2,
+                background: P.cream, padding: '8px 10px',
+                display: 'flex', flexDirection: 'column', gap: 1,
               }}>
-                <div style={{ fontSize: 11, color: P.textSec, lineHeight: 1.2 }}>{ind.label}</div>
-                <div style={{ fontSize: 18, fontWeight: 700, color: P.navy }}>
+                <div style={{ fontSize: 10, color: P.textMuted, lineHeight: 1.2, textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>{ind.label}</div>
+                <div style={{ fontSize: 16, fontFamily: 'monospace', fontWeight: 700, color: P.navy }}>
                   {val !== undefined ? formatValue(val, ind.format, ind.decimals, ind.unit) : '—'}
                   {arrow && (
                     <span style={{
@@ -104,31 +105,30 @@ export function CountryProfile({ socioData, countries, year }: CountryProfilePro
   // Multi-country: comparison table + sparklines
   return (
     <div style={{
-      background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
+      background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`,
     }}>
       <div style={{
-        padding: '8px 12px', borderBottom: `1px solid ${P.borderLight}`,
-        fontWeight: 600, fontSize: 14, color: P.navy,
+        padding: '6px 10px', borderBottom: `1px solid ${P.border}`,
+        fontWeight: 700, fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase' as const, color: P.navy,
       }}>
-        Fichas comparativas — {year}
+        Comparative Profiles — {year}
       </div>
 
       {/* Table header */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: `180px repeat(${countries.length}, 1fr)`,
-        borderBottom: `1px solid ${P.borderLight}`,
-        background: '#faf6ee',
+        gridTemplateColumns: `160px repeat(${countries.length}, 1fr)`,
+        borderBottom: `1px solid ${P.border}`,
       }}>
-        <div style={{ padding: '6px 12px', fontSize: 11, color: P.textMuted, fontWeight: 600 }}>
-          Indicador
+        <div style={{ padding: '5px 10px', fontSize: 10, color: P.textMuted, fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
+          Indicator
         </div>
         {countries.map(cc => (
           <div key={cc} style={{
-            padding: '6px 8px', fontSize: 12, fontWeight: 600, color: P.navy,
+            padding: '5px 8px', fontSize: 12, fontWeight: 700, color: P.navy,
             textAlign: 'center', borderLeft: `1px solid ${P.borderLight}`,
           }}>
-            {COUNTRY_FLAGS[cc]} {COUNTRY_NAMES[cc]}
+            <Flag code={cc} size={14} /> {COUNTRY_NAMES[cc]}
           </div>
         ))}
       </div>
@@ -139,12 +139,11 @@ export function CountryProfile({ socioData, countries, year }: CountryProfilePro
         return (
           <div key={key} style={{
             display: 'grid',
-            gridTemplateColumns: `180px repeat(${countries.length}, 1fr)`,
+            gridTemplateColumns: `160px repeat(${countries.length}, 1fr)`,
             borderBottom: ri < orderedKeys.length - 1 ? `1px solid ${P.borderLight}` : 'none',
-            background: ri % 2 === 0 ? P.cardBg : '#fdfaf2',
           }}>
             <div style={{
-              padding: '8px 12px', fontSize: 11, color: P.textSec, display: 'flex', alignItems: 'center',
+              padding: '5px 10px', fontSize: 11, color: P.textMuted, display: 'flex', alignItems: 'center',
             }}>
               {ind.label}
             </div>
@@ -154,10 +153,10 @@ export function CountryProfile({ socioData, countries, year }: CountryProfilePro
               const arrow = trend(val, pval);
               return (
                 <div key={cc} style={{
-                  padding: '8px', textAlign: 'center',
+                  padding: '5px 8px', textAlign: 'center',
                   borderLeft: `1px solid ${P.borderLight}`,
                 }}>
-                  <span style={{ fontSize: 15, fontWeight: 700, color: P.navy }}>
+                  <span style={{ fontSize: 13, fontFamily: 'monospace', fontWeight: 700, color: P.navy }}>
                     {val !== undefined ? formatValue(val, ind.format, ind.decimals, ind.unit) : '—'}
                   </span>
                   {arrow && (
@@ -202,7 +201,7 @@ function SparklineSection({
 
   return (
     <div className="sparkline-grid" style={{
-      borderTop: `1px solid ${P.borderLight}`,
+      borderTop: `1px solid ${P.border}`,
       display: 'grid', gridTemplateColumns: `repeat(${sparkKeys.length}, 1fr)`, gap: 1,
       background: P.borderLight,
     }}>
@@ -218,8 +217,8 @@ function SparklineSection({
         });
 
         return (
-          <div key={key} style={{ background: P.cardBg, padding: '8px 4px 4px' }}>
-            <div style={{ fontSize: 10, color: P.textMuted, textAlign: 'center', marginBottom: 2 }}>
+          <div key={key} style={{ background: P.cream, padding: '6px 4px 4px' }}>
+            <div style={{ fontSize: 9, color: P.textMuted, textAlign: 'center', marginBottom: 2, textTransform: 'uppercase' as const, letterSpacing: '0.5px', fontWeight: 600 }}>
               {ind.label}
             </div>
             <ResponsiveContainer width="100%" height={100}>

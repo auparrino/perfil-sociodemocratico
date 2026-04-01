@@ -7,7 +7,8 @@ const Dashboard = lazy(() => import('./components/Dashboard').then(m => ({ defau
 const VariableExplorer = lazy(() => import('./components/VariableExplorer').then(m => ({ default: m.VariableExplorer })));
 
 const P = {
-  navy: '#003049', steel: '#669BBC', cream: '#FDF0D5',
+  navy: '#003049', cream: '#FDF0D5', gold: '#d4a800',
+  border: 'rgba(0,48,73,0.12)', textMuted: 'rgba(0,48,73,0.50)',
 };
 
 type AppView = 'dashboard' | 'explorer';
@@ -28,11 +29,11 @@ function App() {
         background: P.cream,
       }}>
         <div style={{ textAlign: 'center' }} className="fade-in">
-          <div className="loading-spinner" style={{ margin: '0 auto 16px' }} />
-          <div style={{ fontSize: 22, marginBottom: 8, color: P.navy, fontWeight: 700 }}>
-            Latinobarómetro
+          <div className="loading-spinner-lg" style={{ margin: '0 auto 12px' }} />
+          <div style={{ fontSize: 15, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase' as const, color: P.navy, marginBottom: 4 }}>
+            Sociodemocratic Profile
           </div>
-          <div style={{ color: '#7a9aad', fontSize: 13 }}>Cargando datos de Argentina, Paraguay y Uruguay...</div>
+          <div style={{ color: P.textMuted, fontSize: 12 }}>Loading data for Argentina, Paraguay and Uruguay...</div>
         </div>
       </div>
     );
@@ -44,9 +45,13 @@ function App() {
         height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
         background: P.cream,
       }}>
-        <div style={{ textAlign: 'center', color: '#C1121F' }}>
-          <div style={{ fontSize: 24, marginBottom: 8 }}>Error al cargar datos</div>
-          <div>{error}</div>
+        <div style={{
+          textAlign: 'center', color: 'rgba(193,18,31,0.80)',
+          background: 'rgba(193,18,31,0.05)', border: '1px solid rgba(193,18,31,0.15)',
+          borderRadius: 6, padding: '16px 24px',
+        }}>
+          <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>Error loading data</div>
+          <div style={{ fontSize: 12 }}>{error}</div>
         </div>
       </div>
     );
@@ -61,33 +66,37 @@ function App() {
   return (
     <div style={{
       height: '100vh', display: 'flex', flexDirection: 'column',
-      fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
+      fontFamily: "system-ui, -apple-system, sans-serif",
       background: P.cream,
     }}>
       <header className="responsive-header" style={{
-        background: P.navy,
-        color: '#fff',
-        padding: '0 24px',
+        background: P.cream,
+        color: P.navy,
+        padding: '0 20px',
         display: 'flex',
         alignItems: 'center',
-        height: 54,
+        height: 56,
         flexShrink: 0,
-        gap: 20,
+        gap: 16,
+        borderBottom: `1px solid ${P.border}`,
       }}>
-        <div style={{ fontWeight: 700, fontSize: 17, letterSpacing: '-0.3px' }}>
-          Latinobarómetro
+        <div>
+          <div style={{ fontWeight: 700, fontSize: 17, letterSpacing: '-0.3px', lineHeight: 1.1 }}>
+            Sociodemocratic Profile
+          </div>
+          <div className="responsive-hide-mobile" style={{ fontSize: 10, color: P.textMuted, letterSpacing: '0.5px' }}>
+            Latinobarómetro — Argentina | Paraguay | Uruguay
+          </div>
         </div>
-        <div className="responsive-hide-mobile" style={{ fontSize: 13, color: P.steel }}>
-          Argentina | Paraguay | Uruguay
-        </div>
-        <nav style={{ marginLeft: 'auto', display: 'flex', gap: 4 }}>
-          {([['dashboard', 'Temas clave'], ['explorer', 'Explorador']] as [AppView, string][]).map(([v, label]) => (
+        <nav style={{ marginLeft: 'auto', display: 'flex', gap: 3 }}>
+          {([['dashboard', 'Key Topics'], ['explorer', 'Explorer']] as [AppView, string][]).map(([v, label]) => (
             <button key={v} onClick={() => setView(v)}
               style={{
-                padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer',
-                fontSize: 13, fontWeight: view === v ? 700 : 400,
-                background: view === v ? 'rgba(255,255,255,0.15)' : 'transparent',
-                color: view === v ? '#fff' : P.steel,
+                padding: '5px 16px', borderRadius: 100, cursor: 'pointer',
+                fontSize: 13, fontWeight: 500,
+                border: view === v ? 'none' : `1px solid ${P.border}`,
+                background: view === v ? P.navy : 'transparent',
+                color: view === v ? P.cream : P.navy,
               }}>
               {label}
             </button>
@@ -95,7 +104,7 @@ function App() {
         </nav>
       </header>
 
-      <main style={{ flex: 1, padding: 16, overflow: 'hidden', minHeight: 0 }}>
+      <main style={{ flex: 1, padding: 12, overflow: 'hidden', minHeight: 0 }}>
         <Suspense fallback={lazyFallback}>
           {view === 'dashboard' ? (
             <Dashboard

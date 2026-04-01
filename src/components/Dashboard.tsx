@@ -14,9 +14,9 @@ import { readUrlState, useUrlState } from '../hooks/useUrlState';
 const CountryMap = lazy(() => import('./CountryMap').then(m => ({ default: m.CountryMap })));
 
 const P = {
-  navy: '#003049', steel: '#669BBC', cream: '#FDF0D5', red: '#C1121F', darkRed: '#780000',
-  cardBg: '#fffdf8', border: '#d8cbb0', borderLight: '#e8dcc4',
-  textSec: '#4a6a7f', textMuted: '#7a9aad',
+  navy: '#003049', cream: '#FDF0D5', red: '#C1121F', darkRed: '#780000',
+  cardBg: 'rgba(0,48,73,0.04)', border: 'rgba(0,48,73,0.12)', borderLight: 'rgba(0,48,73,0.08)',
+  textMuted: 'rgba(0,48,73,0.50)', hover: 'rgba(0,48,73,0.06)',
 };
 
 type ViewMode = 'pais' | 'region';
@@ -29,10 +29,14 @@ interface DashboardProps {
 }
 
 const COUNTRIES = [
-  { code: 'AR', name: 'Argentina', flag: '\u{1F1E6}\u{1F1F7}' },
-  { code: 'PY', name: 'Paraguay', flag: '\u{1F1F5}\u{1F1FE}' },
-  { code: 'UY', name: 'Uruguay', flag: '\u{1F1FA}\u{1F1FE}' },
+  { code: 'AR', name: 'Argentina' },
+  { code: 'PY', name: 'Paraguay' },
+  { code: 'UY', name: 'Uruguay' },
 ];
+
+function Flag({ code, size = 16 }: { code: string; size?: number }) {
+  return <img src={`https://flagcdn.com/w40/${code.toLowerCase()}.png`} alt={code} style={{ width: size, height: size * 0.7, objectFit: 'cover', borderRadius: 2, verticalAlign: 'middle' }} />;
+}
 
 function normalizeResponse(s: string): string {
   return s.replace(/\s*\{[^}]*\}\s*$/, '').trim();
@@ -256,7 +260,7 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
   // CSV export data for distribution
   const csvData = useMemo(() => {
     if (!activeVarCode || !topResponse) return undefined;
-    const headers = ['País', ...unifiedOrder.map(k => shortLabel(k))];
+    const headers = ['Country', ...unifiedOrder.map(k => shortLabel(k))];
     const rows = selectedCountries.map(code => {
       const c = COUNTRIES.find(x => x.code === code)!;
       const vd = countryVarData[code];
@@ -272,7 +276,7 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
     return (
       <div style={{ color: P.textMuted, padding: 20, textAlign: 'center' }}>
         <div className="loading-spinner" style={{ margin: '0 auto 12px' }} />
-        Cargando temas...
+        Loading topics...
       </div>
     );
   }
@@ -284,10 +288,10 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
   );
 
   const timeSeriesCard = topResponse && topic ? (
-    <div ref={timeSeriesRef} className="export-parent fade-in" style={{ background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, padding: 16 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8, flexWrap: 'wrap' }}>
-        <span style={{ fontWeight: 600, fontSize: 14, color: P.navy }}>Serie temporal</span>
-        <span style={{ fontSize: 12, color: P.textSec }}>
+    <div ref={timeSeriesRef} className="export-parent fade-in" style={{ background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`, padding: '10px 12px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6, flexWrap: 'wrap' }}>
+        <span style={{ fontWeight: 700, fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase' as const, color: P.navy }}>Time Series</span>
+        <span style={{ fontSize: 11, color: P.textMuted }}>
           {selectedCountries.map(c => COUNTRIES.find(x => x.code === c)?.name).join(', ')}
         </span>
         <ExportButton targetRef={timeSeriesRef} filename={`serie-temporal-${topicId}-${year}`} />
@@ -295,9 +299,9 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
           value={topResponse}
           onChange={e => setSelectedResponse(e.target.value)}
           style={{
-            marginLeft: 'auto', padding: '4px 8px', borderRadius: 6,
+            marginLeft: 'auto', padding: '4px 8px', borderRadius: 100,
             border: `1px solid ${P.border}`, fontSize: 12,
-            background: P.cardBg, color: P.navy, maxWidth: 300,
+            background: 'transparent', color: P.navy, maxWidth: 300,
           }}
         >
           {responseOptions.map(key => (
@@ -320,49 +324,49 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 14, minWidth: 0, overflow: 'auto' }}>
         {/* Controls */}
         <div className="responsive-controls" style={{
-          display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center',
-          padding: '10px 16px', background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
+          display: 'flex', flexWrap: 'wrap', gap: 6, alignItems: 'center',
+          padding: '8px 12px', borderBottom: `1px solid ${P.border}`,
         }}>
-          <div style={{ display: 'flex', borderRadius: 6, overflow: 'hidden', border: `1px solid ${P.border}` }}>
+          <div style={{ display: 'flex', gap: 3 }}>
             {(['pais', 'region'] as ViewMode[]).map(m => (
               <button key={m}
                 onClick={() => { setViewMode(m); setSelectedRegions({}); setSelectedResponse(null); }}
                 style={{
-                  padding: '5px 12px', border: 'none', cursor: 'pointer', fontSize: 12,
-                  background: viewMode === m ? P.navy : P.cardBg,
-                  color: viewMode === m ? '#fff' : P.navy,
-                  fontWeight: viewMode === m ? 600 : 400,
+                  padding: '4px 16px', borderRadius: 100, cursor: 'pointer', fontSize: 13, fontWeight: 500,
+                  border: viewMode === m ? 'none' : `1px solid ${P.border}`,
+                  background: viewMode === m ? P.navy : 'transparent',
+                  color: viewMode === m ? P.cream : P.navy,
                 }}>
-                {m === 'pais' ? 'País' : 'Región'}
+                {m === 'pais' ? 'Country' : 'Region'}
               </button>
             ))}
           </div>
 
-          <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
             {COUNTRIES.map(c => {
               const sel = selectedCountries.includes(c.code);
               return (
                 <button key={c.code}
                   onClick={() => toggleCountry(c.code)}
                   style={{
-                    padding: '5px 12px', borderRadius: 6, cursor: 'pointer', fontSize: 12, color: P.navy,
-                    border: sel ? `2px solid ${COUNTRY_COLORS[c.code]}` : `1px solid ${P.border}`,
-                    background: sel ? COUNTRY_COLORS[c.code] + '18' : P.cardBg,
-                    fontWeight: sel ? 700 : 400,
+                    padding: '4px 16px', borderRadius: 100, cursor: 'pointer', fontSize: 13, fontWeight: 500,
+                    color: sel ? P.cream : P.navy,
+                    border: sel ? 'none' : `1px solid ${P.border}`,
+                    background: sel ? P.navy : 'transparent',
                   }}>
-                  {c.flag} {c.name}
+                  <Flag code={c.code} size={14} /> {c.name}
                 </button>
               );
             })}
           </div>
 
           <select value={year} onChange={e => { setSelectedYear(e.target.value); setSelectedResponse(null); }}
-            style={{ padding: '5px 8px', borderRadius: 6, border: `1px solid ${P.border}`, fontSize: 12, background: P.cardBg, color: P.navy }}>
+            style={{ padding: '4px 8px', borderRadius: 100, border: `1px solid ${P.border}`, fontSize: 12, background: 'transparent', color: P.navy }}>
             {years.map(y => <option key={y} value={y}>{y}</option>)}
           </select>
 
           <select value={topicId} onChange={e => { setSelectedTopicId(e.target.value); setSelectedResponse(null); }}
-            style={{ padding: '5px 8px', borderRadius: 6, border: `1px solid ${P.border}`, fontSize: 12, maxWidth: 300, background: P.cardBg, color: P.navy }}>
+            style={{ padding: '4px 8px', borderRadius: 100, border: `1px solid ${P.border}`, fontSize: 12, maxWidth: 300, background: 'transparent', color: P.navy }}>
             {availableTopics.map(t => <option key={t.id} value={t.id}>{t.label}</option>)}
           </select>
         </div>
@@ -370,12 +374,12 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
         {/* Header */}
         {activeVarCode && (
           <div className="fade-in" style={{
-            background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
-            padding: '8px 16px', display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap',
+            padding: '6px 0', display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap',
+            borderBottom: `1px solid ${P.border}`,
           }}>
-            <span style={{ fontWeight: 600, fontSize: 15, color: P.navy }}>{varLabel}</span>
+            <span style={{ fontWeight: 700, fontSize: 15, color: P.navy }}>{varLabel}</span>
             <span style={{ fontFamily: 'monospace', fontSize: 11, color: P.textMuted }}>{activeVarCode}</span>
-            <span style={{ fontSize: 12, color: P.textSec, marginLeft: 'auto' }}>{year}</span>
+            <span style={{ fontSize: 12, color: P.textMuted, marginLeft: 'auto' }}>{year}</span>
           </div>
         )}
 
@@ -398,23 +402,23 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                 const c = COUNTRIES.find(x => x.code === code)!;
                 const vd = countryVarData[code];
                 return (
-                  <div key={code} className="card-hover" style={{
-                    background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
+                  <div key={code} style={{
+                    background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`,
                     overflow: 'hidden', display: 'flex', flexDirection: 'column',
                   }}>
                     <div style={{
-                      padding: '8px 12px', borderBottom: `2px solid ${COUNTRY_COLORS[code]}`,
+                      padding: '6px 10px', borderBottom: `2px solid ${COUNTRY_COLORS[code]}`,
                       display: 'flex', alignItems: 'center', gap: 6,
                     }}>
-                      <span style={{ fontSize: 14 }}>{c.flag}</span>
-                      <span style={{ fontWeight: 600, fontSize: 13, color: P.navy }}>{c.name}</span>
+                      <Flag code={c.code} size={14} />
+                      <span style={{ fontWeight: 700, fontSize: 13, color: P.navy }}>{c.name}</span>
                       {vd && (
-                        <span style={{ fontSize: 11, color: P.textMuted, marginLeft: 'auto' }}>
+                        <span style={{ fontSize: 10, fontFamily: 'monospace', fontWeight: 700, color: P.textMuted, marginLeft: 'auto' }}>
                           n={vd.national.n.toLocaleString()}
                         </span>
                       )}
                     </div>
-                    <div style={{ padding: '8px 4px', flex: 1 }}>
+                    <div style={{ padding: '6px 4px', flex: 1 }}>
                       {vd ? (
                         <DistributionChart
                           distribution={vd.national.d}
@@ -424,8 +428,8 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                           height={isMultiCountry ? 220 : 280}
                         />
                       ) : (
-                        <div style={{ color: P.textMuted, padding: 20, textAlign: 'center', fontSize: 12 }}>
-                          Sin datos para {year}
+                        <div style={{ color: P.textMuted, padding: 16, textAlign: 'center', fontSize: 12 }}>
+                          No data for {year}
                         </div>
                       )}
                     </div>
@@ -441,9 +445,9 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
             </div>
 
             {isMultiCountry && topResponse && mapValues.length > 0 && (
-              <div className="fade-in" style={{ background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, overflow: 'hidden' }}>
-                <div style={{ padding: '8px 12px', borderBottom: `1px solid ${P.borderLight}`, fontWeight: 600, fontSize: 13, color: P.navy }}>
-                  Mapa comparativo — {year} — "{shortLabel(topResponse)}"
+              <div className="fade-in" style={{ background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`, overflow: 'hidden' }}>
+                <div style={{ padding: '6px 10px', borderBottom: `1px solid ${P.border}`, fontWeight: 700, fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase' as const, color: P.navy }}>
+                  Comparative Map — {year} — "{shortLabel(topResponse)}"
                 </div>
                 <CompareMap
                   countryValues={mapValues}
@@ -470,17 +474,17 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                 const selRegion = selectedRegions[code] || null;
                 const regData = regionDataByCountry[code];
                 return (
-                  <div key={code} className="card-hover" style={{
-                    background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
+                  <div key={code} style={{
+                    background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`,
                     overflow: 'hidden', display: 'flex', flexDirection: 'column',
                   }}>
                     <div style={{
-                      padding: '8px 12px', borderBottom: `2px solid ${COUNTRY_COLORS[code]}`,
+                      padding: '6px 10px', borderBottom: `2px solid ${COUNTRY_COLORS[code]}`,
                       fontSize: 13, fontWeight: 600, color: P.navy, display: 'flex', alignItems: 'center', gap: 6,
                     }}>
-                      <span>{c.flag}</span>
+                      <Flag code={c.code} size={14} />
                       <span>{c.name} — {year}</span>
-                      {topResponse && <span style={{ fontWeight: 400, color: P.textSec, fontSize: 11 }}> | {shortLabel(topResponse)}</span>}
+                      {topResponse && <span style={{ fontWeight: 400, color: P.textMuted, fontSize: 11 }}> | {shortLabel(topResponse)}</span>}
                     </div>
                     <div style={{ flex: 1, minHeight: 280 }}>
                       <Suspense fallback={mapFallback}>
@@ -496,11 +500,11 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                       </Suspense>
                     </div>
                     {selRegion && regData && (
-                      <div style={{ padding: '6px 12px', borderTop: `1px solid ${P.borderLight}`, fontSize: 11, background: P.cream, color: P.navy }}>
+                      <div style={{ padding: '4px 10px', borderTop: `1px solid ${P.border}`, fontSize: 11, fontFamily: 'monospace', fontWeight: 700, color: P.navy }}>
                         <strong>{selRegion}</strong> | {isNumeric ? (() => {
                           let mean = 0;
                           for (const [k, v] of Object.entries(regData.d)) { const n = parseFloat(k); if (!isNaN(n)) mean += n * v; }
-                          return `Promedio: ${mean.toFixed(1)}`;
+                          return `Mean: ${mean.toFixed(1)}`;
                         })() : `${shortLabel(topResponse!)}: ${((regData.d[topResponse!] || 0) * 100).toFixed(1)}%`} | n={regData.n}
                       </div>
                     )}
@@ -522,16 +526,16 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                 const dist = selRegion && regData ? regData.d : vd?.national?.d;
                 const n = selRegion && regData ? regData.n : vd?.national?.n || 0;
                 return (
-                  <div key={code} className="card-hover" style={{
-                    background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
+                  <div key={code} style={{
+                    background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`,
                     overflow: 'hidden', display: 'flex', flexDirection: 'column',
                   }}>
                     <div style={{
-                      padding: '8px 12px', borderBottom: `2px solid ${COUNTRY_COLORS[code]}`,
+                      padding: '6px 10px', borderBottom: `2px solid ${COUNTRY_COLORS[code]}`,
                       display: 'flex', alignItems: 'baseline', gap: 6, flexWrap: 'wrap',
                     }}>
-                      <span style={{ fontWeight: 600, fontSize: 13, color: P.navy }}>{c.flag} {c.name}</span>
-                      {selRegion && <span style={{ fontSize: 11, color: P.textSec }}>| {selRegion}</span>}
+                      <span style={{ fontWeight: 600, fontSize: 13, color: P.navy }}><Flag code={c.code} size={14} /> {c.name}</span>
+                      {selRegion && <span style={{ fontSize: 11, color: P.textMuted }}>| {selRegion}</span>}
                       <span style={{ fontSize: 11, color: P.textMuted, marginLeft: 'auto' }}>n={n}</span>
                     </div>
                     <div style={{ padding: '8px 4px', flex: 1 }}>
@@ -545,7 +549,7 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                         />
                       ) : (
                         <div style={{ color: P.textMuted, padding: 20, textAlign: 'center', fontSize: 12 }}>
-                          Sin datos para {year}
+                          No data for {year}
                         </div>
                       )}
                     </div>
@@ -571,12 +575,12 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
               if (regionCompareData.length < 2 || !topResponse) return null;
 
               return (
-                <div className="fade-in" style={{ background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, padding: 16 }}>
-                  <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4, color: P.navy }}>
-                    Comparación entre regiones — {year}
+                <div className="fade-in" style={{ background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`, padding: '10px 12px' }}>
+                  <div style={{ fontWeight: 700, fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase' as const, marginBottom: 4, color: P.navy }}>
+                    Region Comparison — {year}
                   </div>
-                  <div style={{ fontSize: 12, color: P.textSec, marginBottom: 8 }}>
-                    Respuesta: "{shortLabel(topResponse)}"
+                  <div style={{ fontSize: 11, color: P.textMuted, marginBottom: 6 }}>
+                    Response: "{shortLabel(topResponse)}"
                   </div>
                   <CompareBar data={regionCompareData} height={200} />
                 </div>
@@ -590,9 +594,9 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
         {!activeVarCode && (
           <div style={{
             flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
-            background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, color: P.textMuted, fontSize: 14,
+            color: P.textMuted, fontSize: 13,
           }}>
-            Sin datos para este tema en {year}
+            No data for this topic in {year}
           </div>
         )}
       </div>

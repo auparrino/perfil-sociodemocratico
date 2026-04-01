@@ -5,15 +5,16 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   background: #FDF0D5;
   color: #003049;
   -webkit-font-smoothing: antialiased;
+  font-size: 13px;
 }
 
 button {
   font-family: inherit;
-  transition: background 0.15s, color 0.15s, border-color 0.15s, opacity 0.15s, box-shadow 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, opacity 0.15s;
 }
 
 select {
@@ -23,18 +24,18 @@ select {
 
 input {
   font-family: inherit;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition: border-color 0.15s;
 }
 
 input:focus, select:focus {
   outline: none;
-  border-color: #669BBC;
-  box-shadow: 0 0 0 2px rgba(102, 155, 188, 0.2);
+  border-color: rgba(0,48,73,0.3);
 }
 
+/* ─── Thin scrollbar ─────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -42,12 +43,17 @@ input:focus, select:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d8cbb0;
+  background: rgba(0,48,73,0.15);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b0a080;
+  background: rgba(0,48,73,0.25);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,48,73,0.15) transparent;
 }
 
 /* Fix leaflet z-index issues */
@@ -55,13 +61,13 @@ input:focus, select:focus {
   z-index: 1;
 }
 
-/* ─── Loading spinner ─────────────────────────────────────── */
+/* ─── Animations ──────────────────────────────────────────── */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -71,26 +77,30 @@ input:focus, select:focus {
 }
 
 .loading-spinner {
-  width: 36px;
-  height: 36px;
-  border: 3px solid #e8dcc4;
-  border-top-color: #003049;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0,48,73,0.20);
+  border-top-color: rgba(0,48,73,0.60);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loading-spinner-lg {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(0,48,73,0.20);
+  border-top-color: rgba(0,48,73,0.60);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
 
 .fade-in {
-  animation: fadeIn 0.3s ease-out both;
+  animation: fadeIn 0.2s ease-out both;
 }
 
-/* ─── Transitions for cards and interactive elements ─────── */
+/* ─── No decorative card hovers ──────────────────────────── */
 .card-hover {
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-
-.card-hover:hover {
-  box-shadow: 0 4px 12px rgba(0, 48, 73, 0.08);
-  transform: translateY(-1px);
+  transition: none;
 }
 
 /* ─── Export button ───────────────────────────────────────── */
@@ -100,16 +110,16 @@ input:focus, select:focus {
   cursor: pointer;
   background: none;
   border: none;
-  padding: 4px;
-  border-radius: 4px;
-  color: #7a9aad;
-  font-size: 14px;
+  padding: 3px;
+  border-radius: 3px;
+  color: rgba(0,48,73,0.40);
+  font-size: 13px;
   line-height: 1;
 }
 
 .export-btn:hover {
   color: #003049;
-  background: rgba(0, 48, 73, 0.06);
+  background: rgba(0,48,73,0.06);
 }
 
 .export-parent:hover .export-btn {
@@ -119,6 +129,18 @@ input:focus, select:focus {
 /* ─── Recharts animation override ─────────────────────────── */
 .recharts-bar-rectangle {
   transition: opacity 0.3s;
+}
+
+/* ─── Section header pattern ──────────────────────────────── */
+.section-header {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #003049;
+  border-bottom: 1px solid rgba(0,48,73,0.12);
+  padding-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 /* ─── Responsive breakpoints ──────────────────────────────── */
@@ -152,7 +174,7 @@ input:focus, select:focus {
     height: auto !important;
     padding: 8px 12px !important;
     flex-wrap: wrap;
-    gap: 8px !important;
+    gap: 6px !important;
   }
   .responsive-header nav {
     width: 100%;

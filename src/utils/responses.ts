@@ -9,60 +9,100 @@
 // Known abbreviations for common long Latinobarómetro response labels.
 // Key: substring to match (case-insensitive). Value: short display name.
 const KNOWN_SHORT: [string, string][] = [
-  // Apoyo a la democracia
-  ['La democracia es preferible a cualquier otra forma de gobierno', 'Democracia preferible'],
-  ['un gobierno autoritario puede ser preferible', 'Gob. autoritario preferible'],
-  ['nos da lo mismo un régimen democrático', 'Da lo mismo'],
-  // Confianza interpersonal
-  ['Se puede confiar en la mayoría de las personas', 'Se puede confiar'],
-  ['Uno nunca es lo suficientemente cuidadoso', 'Nunca sufic. cuidadoso'],
-  // EEUU
-  ['EE.UU está tratando de dominar el mundo', 'Dominar el mundo'],
-  ['EE.UU juega un rol constructivo', 'Rol constructivo'],
-  // Democracia sin partidos / Congreso
-  ['Sin partidos políticos no puede haber democracia', 'No puede sin partidos'],
-  ['La democracia puede funcionar sin partidos', 'Puede sin partidos'],
-  ['Sin Congreso Nacional no puede haber democracia', 'No puede sin Congreso'],
-  ['La democracia puede funcionar sin Congreso', 'Puede sin Congreso'],
-  // Gob. militar
-  ['Apoyaría a un gobierno militar en reemplazo', 'Apoyaría gob. militar'],
-  ['En ninguna circunstancia apoyaría a un gobierno militar', 'No apoyaría gob. militar'],
-  // Bienestar
-  ['El gobierno debe asumir la responsabilidad del bienestar', 'Responsabilidad del gob.'],
-  ['Cada cual se debe hacer cargo de su propia bienestar', 'Responsabilidad individual'],
-  // Voto
-  ['La manera como uno vota puede hacer que las cosas sean', 'El voto hace diferencia'],
-  ['No importa como uno vote, no hará que las cosas sean mejor', 'El voto no importa'],
-  // Redes sociales
-  ['Las redes sociales permiten que uno participe en política', 'Redes: permiten participar'],
-  ['Las redes sociales crean la ilusión que uno está participando', 'Redes: ilusión'],
-  ['Las redes sociales  no sirven para participar', 'Redes: no sirven'],
-  // Libertad de expresión vs info falsa
-  ['Hay que controlar la publicación de información falsa', 'Controlar info falsa'],
-  ['Se debe garantizar la libertad de expresión sin importar', 'Garantizar lib. expresión'],
-  // Medio ambiente vs economía
-  ['A la lucha contra el cambio climático', 'Prioridad clima'],
-  ['Al crecimiento económico sin importar', 'Prioridad economía'],
-  // Integración
-  ['Todos los grupos y partidos tienen iguales posibilidades', 'Iguales posibilidades'],
-  ['Todos los grupos y partidos no tienen iguales posibilidades', 'Sin iguales posibilidades'],
-  // Credibilidad
-  ['La política ha perdido credibilidad y no la recuperara', 'Perdió credibilidad'],
-  ['Cada cual tiene la oportunidad de recuperar la credibilidad', 'Puede recuperar'],
-  // Política complicada
-  ['La política es tan complicada que no se entiende', 'No se entiende'],
-  ['La política no es tan complicada y se entiende', 'Se entiende'],
-  // Democracia indispensable
-  ['Democracia es indispensable para ser país desarrollado', 'Democracia indispensable'],
-  ['No es indispensable', 'No es indispensable'],
-  // Ley
-  ['El Estado logra que se cumplan todas las leyes', 'Se cumplen las leyes'],
-  ['El estado logra que se cumplan todas las leyes', 'Se cumplen las leyes'],
-  ['El Estado no logra que se cumpla ninguna ley', 'No se cumplen'],
-  ['El estado no logra que se cumpla ninguna ley', 'No se cumplen'],
-  // Sociedad ordenada vs libertades
-  ['Prefiero vivir en una sociedad donde se respeten todos los derechos', 'Derechos y libertades'],
-  ['Prefiero vivir en una sociedad ordenada aunque se limiten', 'Sociedad ordenada'],
+  // Democracy support (English)
+  ['Democracy is preferable to any other form of government', 'Democracy preferable'],
+  ['an authoritarian government may be preferable', 'Authoritarian pref.'],
+  ['it makes no difference whether we have a democratic', 'Indifferent'],
+  // Democracy support (Spanish fallback)
+  ['La democracia es preferible a cualquier otra forma de gobierno', 'Democracy preferable'],
+  ['un gobierno autoritario puede ser preferible', 'Authoritarian pref.'],
+  ['nos da lo mismo un régimen democrático', 'Indifferent'],
+  // Interpersonal trust
+  ['Se puede confiar en la mayoría de las personas', 'Can trust most people'],
+  ['Uno nunca es lo suficientemente cuidadoso', 'Never careful enough'],
+  // US
+  ['EE.UU está tratando de dominar el mundo', 'Dominate the world'],
+  ['EE.UU juega un rol constructivo', 'Constructive role'],
+  // Democracy without parties / Congress
+  ['Sin partidos políticos no puede haber democracia', 'Cannot without parties'],
+  ['La democracia puede funcionar sin partidos', 'Can without parties'],
+  ['Sin Congreso Nacional no puede haber democracia', 'Cannot without Congress'],
+  ['La democracia puede funcionar sin Congreso', 'Can without Congress'],
+  // Military gov
+  ['Apoyaría a un gobierno militar en reemplazo', 'Would support military gov.'],
+  ['En ninguna circunstancia apoyaría a un gobierno militar', 'Would not support military gov.'],
+  // Welfare
+  ['El gobierno debe asumir la responsabilidad del bienestar', 'Gov. responsibility'],
+  ['Cada cual se debe hacer cargo de su propia bienestar', 'Individual responsibility'],
+  // Vote
+  ['La manera como uno vota puede hacer que las cosas sean', 'Vote makes a difference'],
+  ['No importa como uno vote, no hará que las cosas sean mejor', 'Vote doesn\'t matter'],
+  // Social media
+  ['Las redes sociales permiten que uno participe en política', 'Social media: enables participation'],
+  ['Las redes sociales crean la ilusión que uno está participando', 'Social media: illusion'],
+  ['Las redes sociales  no sirven para participar', 'Social media: useless'],
+  // Freedom of expression vs fake news
+  ['Hay que controlar la publicación de información falsa', 'Control fake info'],
+  ['Se debe garantizar la libertad de expresión sin importar', 'Guarantee free speech'],
+  // Environment vs economy
+  ['A la lucha contra el cambio climático', 'Climate priority'],
+  ['Al crecimiento económico sin importar', 'Economy priority'],
+  // Integration
+  ['Todos los grupos y partidos tienen iguales posibilidades', 'Equal opportunities'],
+  ['Todos los grupos y partidos no tienen iguales posibilidades', 'Unequal opportunities'],
+  // Credibility
+  ['La política ha perdido credibilidad y no la recuperara', 'Lost credibility'],
+  ['Cada cual tiene la oportunidad de recuperar la credibilidad', 'Can recover'],
+  // Politics complicated
+  ['La política es tan complicada que no se entiende', 'Too complicated'],
+  ['La política no es tan complicada y se entiende', 'Understandable'],
+  // Democracy indispensable
+  ['Democracia es indispensable para ser país desarrollado', 'Democracy indispensable'],
+  ['No es indispensable', 'Not indispensable'],
+  // Law
+  ['El Estado logra que se cumplan todas las leyes', 'Laws enforced'],
+  ['El estado logra que se cumplan todas las leyes', 'Laws enforced'],
+  ['El Estado no logra que se cumpla ninguna ley', 'Laws not enforced'],
+  ['El estado no logra que se cumpla ninguna ley', 'Laws not enforced'],
+  // Ordered society vs freedoms
+  ['Prefiero vivir en una sociedad donde se respeten todos los derechos', 'Rights & freedoms'],
+  ['Prefiero vivir en una sociedad ordenada aunque se limiten', 'Ordered society'],
+  // English translated long responses
+  ['Most people can be trusted', 'Can trust most'],
+  ['One can never be too careful', 'Never careful enough'],
+  ['US is trying to dominate the world', 'Dominate world'],
+  ['US plays a constructive role', 'Constructive role'],
+  ['Without political parties there can be no democracy', 'Cannot without parties'],
+  ['Democracy can function without political parties', 'Can without parties'],
+  ['Democracy can function without parties', 'Can without parties'],
+  ['Without Congress there can be no democracy', 'Cannot without Congress'],
+  ['Democracy can function without Congress', 'Can without Congress'],
+  ['Would support military gov. if things get very difficult', 'Would support military'],
+  ['Would never support a military government', 'Would not support military'],
+  ['Government should be responsible for welfare', 'Gov. responsibility'],
+  ['Everyone should be responsible for their own welfare', 'Individual responsibility'],
+  ['Social media enables political participation', 'Enables participation'],
+  ['Social media creates an illusion of participation', 'Illusion of participation'],
+  ['Social media is useless for participation', 'Useless for participation'],
+  ['Fake info should be controlled even if it limits free speech', 'Control fake info'],
+  ['Free speech must be guaranteed regardless', 'Guarantee free speech'],
+  ['Fight climate change even if it hurts growth', 'Climate priority'],
+  ['Economic growth even if it hurts climate', 'Economy priority'],
+  ['All groups have equal opportunities', 'Equal opportunities'],
+  ['Groups do not have equal opportunities', 'Unequal opportunities'],
+  ['Politics lost credibility', 'Lost credibility'],
+  ['Everyone can recover credibility', 'Can recover'],
+  ['Politics is too complicated to understand', 'Too complicated'],
+  ['Politics is not too complicated', 'Understandable'],
+  ['Democracy is indispensable for development', 'Democracy indispensable'],
+  ['The State enforces all laws', 'Laws enforced'],
+  ['The State enforces no law', 'Laws not enforced'],
+  ['Prefer a society respecting all rights', 'Rights & freedoms'],
+  ['Prefer an ordered society even if limited', 'Ordered society'],
+  ['The way one votes can make things', 'Vote makes a difference'],
+  ["It doesn't matter how you vote", "Vote doesn't matter"],
+  ['Only protest, voting is useless', 'Protest only'],
+  ['Vote but also protest', 'Vote and protest'],
 ];
 
 export function shortLabel(s: string): string {
@@ -83,10 +123,12 @@ export function shortLabel(s: string): string {
 const NS_NC_PATTERNS = [
   'No sabe', 'No contesta', 'No responde', 'NS/NR', 'No sabe/No contesta',
   'No sabe / No contesta', 'No answer', 'No aplicable', 'Refused',
+  "Don't know", "Don't know/No answer",
 ];
 
 const RESIDUAL_PATTERNS = [
   'Otras respuestas', 'Ninguno', 'Ninguna de las anteriores',
+  'Other responses', 'None', 'None of the above',
 ];
 
 export function isNsNc(key: string): boolean {
@@ -110,42 +152,55 @@ interface OrdinalScale {
 }
 
 const ORDINAL_SCALES: OrdinalScale[] = [
-  // Confianza institucional (full form)
+  // Trust
+  { id: 'trust_en', keywords: ['A Lot of Trust', 'Some Trust', 'Little Trust', 'No Trust'] },
   { id: 'trust', keywords: ['Mucha confianza', 'Algo de confianza', 'Poca confianza', 'Ninguna confianza'] },
-  // Confianza (short form: Mucha/Algo/Poca/Ninguna)
   { id: 'trust_short', keywords: ['Mucha', 'Algo', 'Poca', 'Ninguna'] },
-  // Economía: Muy buena → Muy mala (5 niveles con Regular)
-  { id: 'economy_5', keywords: ['Muy buena', 'Buena', 'Regular', 'Mala', 'Muy mala'] },
-  // Economía: Buena/Mala (4 niveles sin Regular)
-  { id: 'economy_4', keywords: ['Muy buena', 'Buena', 'Mala', 'Muy mala'] },
-  // Satisfacción (variantes: Bastante/Más bien)
+  // Satisfaction
+  { id: 'satisfaction_en', keywords: ['Very Satisfied', 'Fairly Satisfied', 'Rather Satisfied', 'Not Very Satisfied', 'Not At All Satisfied', 'Not Satisfied At All'] },
   { id: 'satisfaction', keywords: ['Muy satisfecho', 'Bastante satisfecho', 'Más bien satisfecho', 'No muy satisfecho', 'Nada satisfecho', 'Para nada satisfecho'] },
-  // Cambio temporal: Mucho mejor → Mucho peor
-  { id: 'change', keywords: ['Mucho mejor', 'Un poco mejor', 'Igual', 'Casi igual', 'Un poco peor', 'Mucho peor'] },
-  // Acuerdo/Desacuerdo
+  // Economy
+  { id: 'economy_5_en', keywords: ['Very Good', 'Good', 'Average', 'Bad', 'Very Bad'] },
+  { id: 'economy_5', keywords: ['Muy buena', 'Buena', 'Regular', 'Mala', 'Muy mala'] },
+  { id: 'economy_4', keywords: ['Muy buena', 'Buena', 'Mala', 'Muy mala'] },
+  // Agreement
+  { id: 'agreement_en', keywords: ['Strongly agree', 'Agree', 'Disagree', 'Strongly disagree'] },
   { id: 'agreement', keywords: ['Muy de acuerdo', 'De acuerdo', 'En desacuerdo', 'Muy en desacuerdo'] },
-  // Progreso del país
+  // Progress
+  { id: 'progress_en', keywords: ['Is progressing', 'Is stagnant', 'Is in decline'] },
   { id: 'progress', keywords: ['Está progresando', 'Está estancado', 'Está en retroceso'] },
-  // Relaciones internacionales (Más bien buenas/malas)
-  { id: 'relations', keywords: ['Muy buenas', 'Más bien buenas', 'Más bien malas', 'Muy malas'] },
-  // Favorable/Desfavorable (opinión EEUU, China, UE)
+  // Favorable
+  { id: 'favorable_en', keywords: ['Very favorable', 'Somewhat favorable', 'Somewhat unfavorable', 'Very unfavorable'] },
   { id: 'favorable', keywords: ['Muy favorable', 'Algo favorable', 'Algo desfavorable', 'Muy desfavorable'] },
-  // Interés en la política
+  // Interest
+  { id: 'interested_en', keywords: ['Very interested', 'Somewhat interested', 'Not very interested', 'Not interested at all'] },
   { id: 'interested', keywords: ['Muy interesado', 'Algo interesado', 'Poco interesado', 'Nada Interesado', 'Nada interesado'] },
-  // Justicia distribución del ingreso
+  // Justice
+  { id: 'justice_en', keywords: ['Very fair', 'Fair', 'Unfair', 'Very unfair'] },
   { id: 'justice', keywords: ['Muy justa', 'Justa', 'Injusta', 'Muy injusta'] },
-  // Garantías (libertad de expresión etc.)
+  // Guarantees
+  { id: 'guarantees_en', keywords: ['Fully guaranteed', 'Somewhat guaranteed', 'Poorly guaranteed', 'Not guaranteed at all'] },
   { id: 'guarantees', keywords: ['Completamente garantizadas', 'Algo garantizadas', 'Poco garantizadas', 'Para nada garantizadas'] },
-  // A favor / en contra (integración LA)
+  // Favor
+  { id: 'favor_en', keywords: ['Strongly in favor', 'Somewhat in favor', 'Somewhat against', 'Strongly against'] },
   { id: 'favor', keywords: ['Muy a favor', 'Algo a favor', 'Algo en contra', 'Muy en contra', 'Muy en Contra'] },
-  // Intensidad: Mucho/Bastante/Poco/Nada (ciudadanos cumplen ley, corrupción, etc.)
-  { id: 'intensity', keywords: ['Mucho', 'Bastante', 'Algo', 'Poco', 'Nada'] },
-  // Variación corrupción
+  // Change
+  { id: 'change_en', keywords: ['Much better', 'A little better', 'Same', 'About the same', 'A little worse', 'Much worse'] },
+  { id: 'change', keywords: ['Mucho mejor', 'Un poco mejor', 'Igual', 'Casi igual', 'Un poco peor', 'Mucho peor'] },
+  // Variation
+  { id: 'variation_en', keywords: ['Increased a lot', 'Increased somewhat', 'Has remained the same', 'Decreased somewhat', 'Decreased a lot'] },
   { id: 'variation', keywords: ['Aumentó mucho', 'Aumentó algo', 'Se ha mantenido igual', 'Disminuyó algo', 'Disminuyó mucho'] },
-  // Más/Igual/Menos (democrático, corrupto, etc.)
-  { id: 'more_less', keywords: ['Más', 'Igual', 'Menos'] },
-  // Necesidad de mejora
+  // Intensity
+  { id: 'intensity_en', keywords: ['A lot', 'Quite a bit', 'Somewhat', 'Little', 'Nothing'] },
+  { id: 'intensity', keywords: ['Mucho', 'Bastante', 'Algo', 'Poco', 'Nada'] },
+  // Reform
+  { id: 'reform_en', keywords: ['Is fine as it is', 'Can be improved with small changes', 'Needs deep reforms', 'Must be radically changed'] },
   { id: 'reform', keywords: ['Está bien como está', 'Puede mejorarse con pequeños cambios', 'Necesita reformas profundas', 'Debe cambiarse radicalmente'] },
+  // More/Same/Less
+  { id: 'more_less_en', keywords: ['More', 'Same', 'Less'] },
+  { id: 'more_less', keywords: ['Más', 'Igual', 'Menos'] },
+  // Relations
+  { id: 'relations', keywords: ['Muy buenas', 'Más bien buenas', 'Más bien malas', 'Muy malas'] },
 ];
 
 function normalize(s: string): string {

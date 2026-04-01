@@ -83,7 +83,7 @@ export function CompareMap({ countryValues, selectedResponse, height = 340 }: Co
         const code = feature?.properties?.code;
         const cv = valueMap[code];
         if (!cv) {
-          return { fillColor: '#e8dcc4', fillOpacity: 0.3, color: '#d8cbb0', weight: 1 };
+          return { fillColor: 'rgba(0,48,73,0.06)', fillOpacity: 0.3, color: 'rgba(0,48,73,0.12)', weight: 1 };
         }
         return {
           fillColor: getSequentialColor(cv.value, min, max),
@@ -132,11 +132,11 @@ export function CompareMap({ countryValues, selectedResponse, height = 340 }: Co
       />
       {/* Legend */}
       <div style={{
-        position: 'absolute', bottom: 10, right: 10, background: 'rgba(255,253,248,0.92)',
-        borderRadius: 6, padding: '6px 10px', fontSize: 11, border: '1px solid #d8cbb0',
+        position: 'absolute', bottom: 10, right: 10, background: 'rgba(253,240,213,0.92)',
+        borderRadius: 4, padding: '5px 8px', fontSize: 10, border: '1px solid rgba(0,48,73,0.12)',
         zIndex: 1000,
       }}>
-        <div style={{ fontWeight: 600, marginBottom: 4 }}>"{selectedResponse}"</div>
+        <div style={{ fontWeight: 700, marginBottom: 3, fontSize: 10 }}>"{selectedResponse}"</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
           <span>{(min * 100).toFixed(0)}%</span>
           <div style={{

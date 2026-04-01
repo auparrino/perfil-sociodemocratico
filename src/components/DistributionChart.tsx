@@ -39,7 +39,7 @@ export const DistributionChart = memo(function DistributionChart({
       })();
 
   if (entries.length === 0) {
-    return <div style={{ color: '#7a9aad', padding: 20, textAlign: 'center' }}>Sin datos</div>;
+    return <div style={{ color: 'rgba(0,48,73,0.50)', padding: 16, textAlign: 'center', fontSize: 12 }}>No data</div>;
   }
 
   // Detect if this is a numeric scale for gradient coloring
@@ -49,7 +49,7 @@ export const DistributionChart = memo(function DistributionChart({
 
   function getEntryColor(entry: { name: string }, index: number): string {
     if (numeric) {
-      if (isNsNc(entry.name) || isResidual(entry.name)) return PALETTE.border;
+      if (isNsNc(entry.name) || isResidual(entry.name)) return 'rgba(0,48,73,0.15)';
       return getNumericScaleColor(index, numericCount);
     }
     return getResponseColor(entry.name, index);

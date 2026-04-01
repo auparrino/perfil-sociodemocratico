@@ -1,7 +1,7 @@
 [
   {
     "id": "A_001_001",
-    "label": "Apoyo a la democracia",
+    "label": "Support for Democracy",
     "codes": {
       "1995": "P20",
       "1996": "P19",
@@ -31,7 +31,7 @@
   },
   {
     "id": "A_003_031",
-    "label": "Satisfacci\u00f3n con la democracia",
+    "label": "Satisfaction with Democracy",
     "codes": {
       "1995": "P21",
       "1996": "P20",
@@ -61,7 +61,7 @@
   },
   {
     "id": "A_002_001",
-    "label": "Democracia mejor sistema (Churchill)",
+    "label": "Democracy Best System (Churchill)",
     "codes": {
       "2015": "P13ST.A",
       "2016": "P31STA",
@@ -74,7 +74,7 @@
   },
   {
     "id": "A_004_001",
-    "label": "No puede haber democracia sin partidos pol\u00edticos",
+    "label": "No Democracy Without Political Parties",
     "codes": {
       "2023": "P21ST",
       "2024": "P20ST"
@@ -82,7 +82,7 @@
   },
   {
     "id": "A_005_001",
-    "label": "Escala Dictadura-Democracia",
+    "label": "Dictatorship-Democracy Scale",
     "codes": {
       "2015": "P17STGBS",
       "2016": "P11STGBS",
@@ -92,7 +92,7 @@
   },
   {
     "id": "A_007_071",
-    "label": "Escala Izquierda-Derecha",
+    "label": "Left-Right Scale",
     "codes": {
       "1995": "P31",
       "1996": "P38",
@@ -122,7 +122,7 @@
   },
   {
     "id": "A_013_001",
-    "label": "Grado de satisfacci\u00f3n con la vida",
+    "label": "Life Satisfaction",
     "codes": {
       "1997": "NSP10",
       "2000": "P8ST",
@@ -148,7 +148,7 @@
   },
   {
     "id": "B_001_101",
-    "label": "Pa\u00eds para todos o para los poderosos",
+    "label": "Country for All or for the Powerful",
     "codes": {
       "2004": "P24WVS",
       "2005": "P22ST",
@@ -170,7 +170,7 @@
   },
   {
     "id": "B_006_061",
-    "label": "Aprobaci\u00f3n de la gesti\u00f3n del gobierno que encabeza el Presidente",
+    "label": "Presidential Government Approval",
     "codes": {
       "2002": "P18NO2",
       "2003": "P24ST",
@@ -194,7 +194,7 @@
   },
   {
     "id": "A_006_001",
-    "label": "Inter\u00e9s en la pol\u00edtica",
+    "label": "Interest in Politics",
     "codes": {
       "2020": "P46STGBS",
       "2023": "P40STGBS",
@@ -203,7 +203,7 @@
   },
   {
     "id": "A_006_002",
-    "label": "Libertad de expresi\u00f3n",
+    "label": "Freedom of Expression",
     "codes": {
       "2015": "P50ST.H",
       "2020": "P47ST.H",
@@ -212,7 +212,7 @@
   },
   {
     "id": "D_001_001",
-    "label": "Situaci\u00f3n econ\u00f3mica actual del pa\u00eds",
+    "label": "Country's Current Economic Situation",
     "codes": {
       "1995": "P1",
       "1996": "P1",
@@ -242,7 +242,7 @@
   },
   {
     "id": "D_001_003",
-    "label": "Situaci\u00f3n econ\u00f3mica futura del pa\u00eds",
+    "label": "Country's Future Economic Situation",
     "codes": {
       "2015": "P5STICC1",
       "2016": "P6STICC1",
@@ -253,7 +253,7 @@
   },
   {
     "id": "D_001_006",
-    "label": "Situaci\u00f3n econ\u00f3mica personal futura",
+    "label": "Personal Future Economic Situation",
     "codes": {
       "2015": "P8STGBS",
       "2016": "P7STGBS",
@@ -264,7 +264,7 @@
   },
   {
     "id": "D_002_001",
-    "label": "Satisfacci\u00f3n con el funcionamiento de la econom\u00eda en (pa\u00eds)",
+    "label": "Satisfaction with Economy Performance",
     "codes": {
       "2002": "P23ST",
       "2003": "P11ST",
@@ -288,7 +288,7 @@
   },
   {
     "id": "D_002_031",
-    "label": "Imagen de progreso del pa\u00eds",
+    "label": "Country Progress Perception",
     "codes": {
       "1995": "P12",
       "1996": "P10",
@@ -311,7 +311,7 @@
   },
   {
     "id": "C_006_003_011",
-    "label": "Es justa la distribuci\u00f3n del ingreso",
+    "label": "Income Distribution Fairness",
     "codes": {
       "1997": "NSP20",
       "2001": "P11ST",
@@ -332,7 +332,7 @@
   },
   {
     "id": "H_001_011",
-    "label": "Confianza Interpersonal",
+    "label": "Interpersonal Trust",
     "codes": {
       "1996": "P12",
       "1997": "SP21",
@@ -361,7 +361,7 @@
   },
   {
     "id": "H_002_011",
-    "label": "Confianza en el Congreso",
+    "label": "Trust in Congress",
     "codes": {
       "1995": "P27I",
       "1996": "P33I",
@@ -391,7 +391,7 @@
   },
   {
     "id": "H_002_031",
-    "label": "Confianza en el Gobierno",
+    "label": "Trust in Government",
     "codes": {
       "1995": "P27M",
       "1996": "P33M",
@@ -417,7 +417,7 @@
   },
   {
     "id": "H_002_041",
-    "label": "Confianza en el Poder Judicial",
+    "label": "Trust in Judiciary",
     "codes": {
       "1995": "P27D",
       "1996": "P33D",
@@ -447,7 +447,7 @@
   },
   {
     "id": "H_002_111",
-    "label": "Confianza en la Polic\u00eda",
+    "label": "Trust in Police",
     "codes": {
       "1995": "P27H",
       "1996": "P33H",
@@ -477,7 +477,7 @@
   },
   {
     "id": "H_002_161",
-    "label": "Confianza en las Fuerzas Armadas",
+    "label": "Trust in Armed Forces",
     "codes": {
       "1995": "P27B",
       "1996": "P33B",
@@ -507,7 +507,7 @@
   },
   {
     "id": "H_002_241",
-    "label": "Confianza en los Partidos Pol\u00edticos",
+    "label": "Trust in Political Parties",
     "codes": {
       "1995": "P27J",
       "1996": "P33J",
@@ -537,7 +537,7 @@
   },
   {
     "id": "H_002_051",
-    "label": "Confianza en la Iglesia",
+    "label": "Trust in the Church",
     "codes": {
       "2015": "P16ST.E",
       "2016": "P13STC",
@@ -550,7 +550,7 @@
   },
   {
     "id": "H_002_071",
-    "label": "Confianza en la Televisi\u00f3n",
+    "label": "Trust in Television",
     "codes": {
       "2015": "P16TGB.D",
       "2024": "P14ST.K"
@@ -558,7 +558,7 @@
   },
   {
     "id": "H_002_081",
-    "label": "Confianza en los Diarios",
+    "label": "Trust in Newspapers",
     "codes": {
       "2015": "P16TGB.C",
       "2024": "P14ST.M"
@@ -566,7 +566,7 @@
   },
   {
     "id": "H_002_091",
-    "label": "Confianza en la Radio",
+    "label": "Trust in Radio",
     "codes": {
       "2015": "P16ST.I",
       "2024": "P14ST.J"
@@ -574,7 +574,7 @@
   },
   {
     "id": "I_001_001",
-    "label": "Opini\u00f3n sobre Estados Unidos",
+    "label": "Opinion on the United States",
     "codes": {
       "2015": "P35ST.A",
       "2016": "P46STA",
@@ -587,7 +587,7 @@
   },
   {
     "id": "I_001_002",
-    "label": "Opini\u00f3n sobre China",
+    "label": "Opinion on China",
     "codes": {
       "2015": "P35ST.C",
       "2016": "P46STC",
@@ -600,7 +600,7 @@
   },
   {
     "id": "I_001_003",
-    "label": "Opini\u00f3n sobre Uni\u00f3n Europea",
+    "label": "Opinion on the European Union",
     "codes": {
       "2016": "P46STD",
       "2017": "P45ST.D",
@@ -612,7 +612,7 @@
   },
   {
     "id": "I_002_001",
-    "label": "Integraci\u00f3n Latinoamericana",
+    "label": "Latin American Integration",
     "codes": {
       "2016": "P45NA",
       "2017": "P43ST.A",
@@ -624,7 +624,7 @@
   },
   {
     "id": "F_001_001",
-    "label": "Progreso en reducir la corrupci\u00f3n",
+    "label": "Progress in Reducing Corruption",
     "codes": {
       "2015": "P67ST",
       "2017": "P38ST",
@@ -634,7 +634,7 @@
   },
   {
     "id": "M_001_001",
-    "label": "Redes sociales en la pol\u00edtica",
+    "label": "Social Media in Politics",
     "codes": {
       "2015": "P34NJ",
       "2016": "P26STG",

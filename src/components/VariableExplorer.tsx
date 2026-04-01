@@ -8,9 +8,9 @@ import { ExportButton } from './ExportButton';
 import { readUrlState, useUrlState } from '../hooks/useUrlState';
 
 const P = {
-  navy: '#003049', steel: '#669BBC', cream: '#FDF0D5', red: '#C1121F',
-  cardBg: '#fffdf8', border: '#d8cbb0', borderLight: '#e8dcc4',
-  textSec: '#4a6a7f', textMuted: '#7a9aad',
+  navy: '#003049', cream: '#FDF0D5',
+  cardBg: 'rgba(0,48,73,0.04)', border: 'rgba(0,48,73,0.12)', borderLight: 'rgba(0,48,73,0.08)',
+  textMuted: 'rgba(0,48,73,0.50)',
 };
 
 interface VariableExplorerProps {
@@ -21,10 +21,14 @@ interface VariableExplorerProps {
 }
 
 const COUNTRIES = [
-  { code: 'AR', name: 'Argentina', flag: '\u{1F1E6}\u{1F1F7}' },
-  { code: 'PY', name: 'Paraguay', flag: '\u{1F1F5}\u{1F1FE}' },
-  { code: 'UY', name: 'Uruguay', flag: '\u{1F1FA}\u{1F1FE}' },
+  { code: 'AR', name: 'Argentina' },
+  { code: 'PY', name: 'Paraguay' },
+  { code: 'UY', name: 'Uruguay' },
 ];
+
+function Flag({ code, size = 16 }: { code: string; size?: number }) {
+  return <img src={`https://flagcdn.com/w40/${code.toLowerCase()}.png`} alt={code} style={{ width: size, height: size * 0.7, objectFit: 'cover', borderRadius: 2, verticalAlign: 'middle' }} />;
+}
 
 function normalizeResponse(s: string): string {
   return s.replace(/\s*\{[^}]*\}\s*$/, '').trim();
@@ -179,7 +183,7 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
   // CSV export data
   const csvData = useMemo(() => {
     if (!selectedVar || !topResponse) return undefined;
-    const headers = ['País', ...unifiedOrder.map(k => shortLabel(k))];
+    const headers = ['Country', ...unifiedOrder.map(k => shortLabel(k))];
     const rows = COUNTRIES.map(c => {
       const vd = countryVarData[c.code];
       return [c.name, ...unifiedOrder.map(k => {
@@ -194,30 +198,30 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
     <div className="responsive-explorer" style={{ display: 'flex', gap: 14, height: '100%' }}>
       {/* Left panel: variable browser */}
       <div className="responsive-sidebar" style={{
-        width: 320, flexShrink: 0, display: 'flex', flexDirection: 'column',
-        background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, overflow: 'hidden',
+        width: 300, flexShrink: 0, display: 'flex', flexDirection: 'column',
+        borderRight: `1px solid ${P.border}`, overflow: 'hidden',
       }}>
-        <div style={{ padding: 12, borderBottom: `1px solid ${P.borderLight}` }}>
-          <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>
+        <div style={{ padding: '8px 10px', borderBottom: `1px solid ${P.border}` }}>
+          <div style={{ display: 'flex', gap: 6, marginBottom: 6 }}>
             <select value={year} onChange={e => setSelectedYear(e.target.value)}
-              style={{ padding: '4px 8px', borderRadius: 5, border: `1px solid ${P.border}`, fontSize: 12, background: P.cardBg, color: P.navy }}>
+              style={{ padding: '3px 8px', borderRadius: 100, border: `1px solid ${P.border}`, fontSize: 12, background: 'transparent', color: P.navy }}>
               {years.map(y => <option key={y} value={y}>{y}</option>)}
             </select>
-            <label style={{ fontSize: 12, display: 'flex', alignItems: 'center', gap: 4, color: P.navy }}>
+            <label style={{ fontSize: 11, display: 'flex', alignItems: 'center', gap: 4, color: P.navy }}>
               <input type="checkbox" checked={showAllVars}
                 onChange={e => { setShowAllVars(e.target.checked); setSelectedVar(null); setSelectedResponse(null); }} />
-              Todas
+              All
             </label>
           </div>
-          <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar variable..."
+          <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search variable..."
             style={{
-              width: '100%', padding: '6px 10px', borderRadius: 5,
+              width: '100%', padding: '5px 10px', borderRadius: 4,
               border: `1px solid ${P.border}`, fontSize: 12, boxSizing: 'border-box',
-              background: P.cardBg, color: P.navy,
+              background: 'transparent', color: P.navy,
             }} />
-          <div style={{ fontSize: 11, color: P.textMuted, marginTop: 4 }}>
+          <div style={{ fontSize: 10, color: P.textMuted, marginTop: 3, textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
             {filteredVars.length} variables
-            {showAllVars && !allFullLoaded && ' (cargando...)'}
+            {showAllVars && !allFullLoaded && ' (loading...)'}
           </div>
         </div>
 
@@ -229,20 +233,20 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
               <div key={code}
                 onClick={() => { setSelectedVar(code); setSelectedResponse(null); }}
                 style={{
-                  padding: '8px 12px', borderBottom: `1px solid ${P.borderLight}`, cursor: 'pointer',
-                  background: selectedVar === code ? P.navy + '0a' : undefined,
+                  padding: '5px 10px', borderBottom: `1px solid ${P.borderLight}`, cursor: 'pointer',
+                  background: selectedVar === code ? P.navy : undefined,
+                  color: selectedVar === code ? P.cream : P.navy,
                   borderLeft: selectedVar === code ? `3px solid ${P.navy}` : '3px solid transparent',
-                  transition: 'background 0.15s, border-color 0.15s',
                 }}>
-                <div style={{ fontSize: 11, fontFamily: 'monospace', color: P.textSec, display: 'flex', alignItems: 'center', gap: 4 }}>
+                <div style={{ fontSize: 10, fontFamily: 'monospace', color: selectedVar === code ? 'rgba(253,240,213,0.60)' : P.textMuted, display: 'flex', alignItems: 'center', gap: 4 }}>
                   {code}
                   {isKey && (
-                    <span style={{ background: P.steel + '30', color: P.navy, padding: '1px 5px', borderRadius: 3, fontSize: 9, fontWeight: 600 }}>
-                      CLAVE
+                    <span style={{ background: selectedVar === code ? 'rgba(253,240,213,0.20)' : 'rgba(0,48,73,0.08)', padding: '1px 5px', borderRadius: 3, fontSize: 9, fontWeight: 700, letterSpacing: '0.5px' }}>
+                      KEY
                     </span>
                   )}
                 </div>
-                <div style={{ fontSize: 12, marginTop: 2, lineHeight: 1.3, color: P.navy }}>
+                <div style={{ fontSize: 12, marginTop: 1, lineHeight: 1.3 }}>
                   {meta?.label || code}
                 </div>
               </div>
@@ -256,20 +260,20 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
         {!selectedVar ? (
           <div style={{
             flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
-            background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, color: P.textMuted, fontSize: 14,
+            color: P.textMuted, fontSize: 13,
           }}>
-            Selecciona una variable de la lista
+            Select a variable from the list
           </div>
         ) : (
           <>
             {/* Header */}
             <div className="fade-in" style={{
-              background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
-              padding: '10px 16px', display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap',
+              padding: '6px 0', display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap',
+              borderBottom: `1px solid ${P.border}`,
             }}>
-              <span style={{ fontWeight: 600, fontSize: 15, color: P.navy }}>{varLabel}</span>
-              <span style={{ fontFamily: 'monospace', fontSize: 12, color: P.textMuted }}>{selectedVar}</span>
-              <span style={{ fontSize: 12, color: P.textSec, marginLeft: 'auto' }}>{year}</span>
+              <span style={{ fontWeight: 700, fontSize: 15, color: P.navy }}>{varLabel}</span>
+              <span style={{ fontFamily: 'monospace', fontSize: 11, color: P.textMuted }}>{selectedVar}</span>
+              <span style={{ fontSize: 12, color: P.textMuted, marginLeft: 'auto' }}>{year}</span>
             </div>
 
             {/* 3-column distribution comparison */}
@@ -277,23 +281,23 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
               {COUNTRIES.map(c => {
                 const vd = countryVarData[c.code];
                 return (
-                  <div key={c.code} className="card-hover" style={{
-                    background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
+                  <div key={c.code} style={{
+                    background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`,
                     overflow: 'hidden', display: 'flex', flexDirection: 'column',
                   }}>
                     <div style={{
-                      padding: '8px 12px', borderBottom: `2px solid ${COUNTRY_COLORS[c.code]}`,
+                      padding: '6px 10px', borderBottom: `2px solid ${COUNTRY_COLORS[c.code]}`,
                       display: 'flex', alignItems: 'center', gap: 6,
                     }}>
-                      <span style={{ fontSize: 14 }}>{c.flag}</span>
-                      <span style={{ fontWeight: 600, fontSize: 13, color: P.navy }}>{c.name}</span>
+                      <Flag code={c.code} size={14} />
+                      <span style={{ fontWeight: 700, fontSize: 13, color: P.navy }}>{c.name}</span>
                       {vd && (
-                        <span style={{ fontSize: 11, color: P.textMuted, marginLeft: 'auto' }}>
+                        <span style={{ fontSize: 10, fontFamily: 'monospace', fontWeight: 700, color: P.textMuted, marginLeft: 'auto' }}>
                           n={vd.national.n.toLocaleString()}
                         </span>
                       )}
                     </div>
-                    <div style={{ padding: '8px 4px', flex: 1 }}>
+                    <div style={{ padding: '6px 4px', flex: 1 }}>
                       {vd ? (
                         <DistributionChart
                           distribution={vd.national.d}
@@ -303,8 +307,8 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
                           height={220}
                         />
                       ) : (
-                        <div style={{ color: P.textMuted, padding: 20, textAlign: 'center', fontSize: 12 }}>
-                          Sin datos para {year}
+                        <div style={{ color: P.textMuted, padding: 16, textAlign: 'center', fontSize: 12 }}>
+                          No data for {year}
                         </div>
                       )}
                     </div>
@@ -320,12 +324,12 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
 
             {/* CompareBar */}
             {topResponse && compareData.length > 0 && (
-              <div className="fade-in" style={{ background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, padding: 16 }}>
-                <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4, color: P.navy }}>
-                  Comparación entre países — {year}
+              <div className="fade-in" style={{ background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`, padding: '10px 12px' }}>
+                <div style={{ fontWeight: 700, fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase' as const, marginBottom: 4, color: P.navy }}>
+                  Country Comparison — {year}
                 </div>
-                <div style={{ fontSize: 12, color: P.textSec, marginBottom: 8 }}>
-                  Respuesta: "{topResponse}"
+                <div style={{ fontSize: 11, color: P.textMuted, marginBottom: 6 }}>
+                  Response: "{topResponse}"
                 </div>
                 <CompareBar data={compareData} height={160} />
               </div>
@@ -333,12 +337,12 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
 
             {/* Time Series */}
             {topResponse && isKeyVar ? (
-              <div ref={timeSeriesRef} className="export-parent fade-in" style={{ background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`, padding: 16 }}>
+              <div ref={timeSeriesRef} className="export-parent fade-in" style={{ background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`, padding: '10px 12px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                  <span style={{ fontWeight: 600, fontSize: 14, color: P.navy }}>Serie temporal</span>
+                  <span style={{ fontWeight: 700, fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase' as const, color: P.navy }}>Time Series</span>
                   <ExportButton targetRef={timeSeriesRef} filename={`serie-${selectedVar}`} />
                 </div>
-                <div style={{ fontSize: 12, color: P.textSec, marginBottom: 8 }}>
+                <div style={{ fontSize: 11, color: P.textMuted, marginBottom: 6 }}>
                   "{topResponse}" — AR, PY, UY
                 </div>
                 <TimeSeriesChart
@@ -351,10 +355,10 @@ export function VariableExplorer({ keyData, variables, fullData, loadFullCountry
               </div>
             ) : topResponse && !isKeyVar ? (
               <div style={{
-                background: P.cardBg, borderRadius: 10, border: `1px solid ${P.border}`,
-                padding: 16, color: P.textMuted, fontSize: 13, textAlign: 'center',
+                padding: '10px 12px', color: P.textMuted, fontSize: 12, textAlign: 'center',
+                borderTop: `1px solid ${P.border}`,
               }}>
-                Serie temporal disponible solo para variables clave
+                Time series available only for key variables
               </div>
             ) : null}
           </>

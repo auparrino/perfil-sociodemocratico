@@ -68,7 +68,7 @@ export const TimeSeriesChart = memo(function TimeSeriesChart({
   }).filter((p): p is Record<string, string | number> => p !== null);
 
   if (data.length === 0) {
-    return <div style={{ color: '#7a9aad', padding: 20, textAlign: 'center' }}>Sin datos para serie temporal</div>;
+    return <div style={{ color: 'rgba(0,48,73,0.50)', padding: 16, textAlign: 'center', fontSize: 12 }}>No data for time series</div>;
   }
 
   return (

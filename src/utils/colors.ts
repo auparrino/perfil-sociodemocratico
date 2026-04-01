@@ -1,23 +1,25 @@
-// ─── Fiery Ocean palette ─────────────────────────────────────────────────────
-// #780000 (dark red), #C1121F (red), #FDF0D5 (cream), #003049 (navy), #669BBC (steel blue)
+// ─── Design System palette ───────────────────────────────────────────────────
+// Data-dense political/economic dashboard aesthetic
 
 export const PALETTE = {
-  darkRed: '#780000',
-  red: '#C1121F',
+  // Core
   cream: '#FDF0D5',
   navy: '#003049',
   steel: '#669BBC',
-  // Derived
-  creamDark: '#f0e0b8',
-  navyLight: '#0a4060',
-  steelLight: '#8fb8d4',
-  steelPale: '#c5daea',
+  red: '#C1121F',
+  darkRed: '#780000',
+  // Political/category
+  purple: '#7d3c98',
+  teal: '#17a589',
+  gold: '#d4a800',
+  blue: '#1a6fa3',
+  // Derived (opacity-based)
   textPrimary: '#003049',
-  textSecondary: '#4a6a7f',
-  textMuted: '#7a9aad',
-  border: '#d8cbb0',
-  borderLight: '#e8dcc4',
-  cardBg: '#fffdf8',
+  textMuted: 'rgba(0,48,73,0.50)',
+  border: 'rgba(0,48,73,0.12)',
+  borderLight: 'rgba(0,48,73,0.08)',
+  cardBg: 'rgba(0,48,73,0.04)',
+  hover: 'rgba(0,48,73,0.06)',
 } as const;
 
 export const COUNTRY_COLORS: Record<string, string> = {
@@ -89,7 +91,29 @@ export function getCategoryColor(index: number): string {
 
 // Sentiment-based colors using palette
 export const SENTIMENT_COLORS: Record<string, string> = {
-  // Positive → steel blue tones
+  // Positive → steel blue tones (English + Spanish fallbacks)
+  'Very Satisfied': '#003049',
+  'Fairly Satisfied': '#669BBC',
+  'Rather Satisfied': '#669BBC',
+  'A Lot of Trust': '#003049',
+  'Some Trust': '#669BBC',
+  'Very Good': '#003049',
+  'Good': '#669BBC',
+  'Very Much': '#003049',
+  'Quite a bit': '#669BBC',
+  'Completely guaranteed': '#003049',
+  'Somewhat guaranteed': '#669BBC',
+  'Strongly Agree': '#003049',
+  'Agree': '#669BBC',
+  'Much better': '#003049',
+  'A little better': '#669BBC',
+  'Very favorable': '#003049',
+  'Somewhat favorable': '#669BBC',
+  'Very fair': '#003049',
+  'Fair': '#669BBC',
+  'Very much in favor': '#003049',
+  'Somewhat in favor': '#669BBC',
+  // Spanish originals kept for backward compat
   'Muy satisfecho': '#003049',
   'Bastante satisfecho': '#669BBC',
   'Más bien satisfecho': '#669BBC',
@@ -118,14 +142,34 @@ export const SENTIMENT_COLORS: Record<string, string> = {
   'Justa': '#669BBC',
 
   // Neutral → muted
+  'Average': '#8fb8d4',
   'Está estancado': '#8fb8d4',
+  'Not Very Satisfied': '#b07050',
   'No muy satisfecho': '#b07050',
   'Regular': '#8fb8d4',
   'Igual': '#8fb8d4',
   'Casi igual': '#8fb8d4',
   'Algo': '#8fb8d4',
+  'Somewhat': '#8fb8d4',
 
   // Negative → red tones
+  'Not At All Satisfied': '#780000',
+  'Not Satisfied At All': '#780000',
+  'Little Trust': '#C1121F',
+  'No Trust': '#780000',
+  'Very Bad': '#780000',
+  'Bad': '#C1121F',
+  'Disagree': '#C1121F',
+  'Strongly Disagree': '#780000',
+  'Much worse': '#780000',
+  'A little worse': '#C1121F',
+  'Very unfavorable': '#780000',
+  'Somewhat unfavorable': '#C1121F',
+  'Unfair': '#C1121F',
+  'Very unfair': '#780000',
+  'Somewhat against': '#C1121F',
+  'Strongly against': '#780000',
+  // Spanish fallbacks
   'Para nada satisfecho': '#780000',
   'Nada satisfecho': '#780000',
   'Está en retroceso': '#C1121F',
@@ -152,12 +196,15 @@ export const SENTIMENT_COLORS: Record<string, string> = {
   'Injusta': '#C1121F',
   'Muy injusta': '#780000',
 
-  // DK/NA → cream tones
-  'No sabe': '#d8cbb0',
-  'No contesta': '#e8dcc4',
-  'No sabe/No contesta': '#d8cbb0',
-  'No sabe / No contesta': '#d8cbb0',
-  'No responde': '#d8cbb0',
+  // DK/NA → muted
+  'No sabe': 'rgba(0,48,73,0.20)',
+  'No contesta': 'rgba(0,48,73,0.15)',
+  'No sabe/No contesta': 'rgba(0,48,73,0.20)',
+  'No sabe / No contesta': 'rgba(0,48,73,0.20)',
+  'No responde': 'rgba(0,48,73,0.20)',
+  "Don't know": 'rgba(0,48,73,0.20)',
+  'No answer': 'rgba(0,48,73,0.15)',
+  "Don't know/No answer": 'rgba(0,48,73,0.20)',
 };
 
 export function getResponseColor(response: string, index: number): string {

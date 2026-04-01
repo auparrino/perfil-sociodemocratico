@@ -27,8 +27,8 @@ export function ExportButton({ targetRef, filename, csvData }: ExportButtonProps
       <button
         className="export-btn"
         onClick={handlePng}
-        title="Exportar como PNG"
-        aria-label="Exportar como PNG"
+        title="Export as PNG"
+        aria-label="Export as PNG"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -40,8 +40,8 @@ export function ExportButton({ targetRef, filename, csvData }: ExportButtonProps
         <button
           className="export-btn"
           onClick={handleCsv}
-          title="Exportar como CSV"
-          aria-label="Exportar como CSV"
+          title="Export as CSV"
+          aria-label="Export as CSV"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
