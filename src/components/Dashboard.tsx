@@ -9,6 +9,7 @@ import { useSocioeconomic } from '../hooks/useSocioeconomic';
 import { orderResponseKeys, shortLabel, isNsNc, isNumericScale } from '../utils/responses';
 import { CountryProfile } from './CountryProfile';
 import { ExportButton } from './ExportButton';
+import { Dropdown } from './Dropdown';
 import { readUrlState, useUrlState } from '../hooks/useUrlState';
 
 const CountryMap = lazy(() => import('./CountryMap').then(m => ({ default: m.CountryMap })));
@@ -295,19 +296,14 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
           {selectedCountries.map(c => COUNTRIES.find(x => x.code === c)?.name).join(', ')}
         </span>
         <ExportButton targetRef={timeSeriesRef} filename={`serie-temporal-${topicId}-${year}`} />
-        <select
-          value={topResponse}
-          onChange={e => setSelectedResponse(e.target.value)}
-          style={{
-            marginLeft: 'auto', padding: '4px 8px', borderRadius: 100,
-            border: `1px solid ${P.border}`, fontSize: 12,
-            background: 'transparent', color: P.navy, maxWidth: 300,
-          }}
-        >
-          {responseOptions.map(key => (
-            <option key={key} value={key}>{shortLabel(key)}</option>
-          ))}
-        </select>
+        <div style={{ marginLeft: 'auto' }}>
+          <Dropdown
+            value={topResponse}
+            options={responseOptions.map(key => ({ value: key, label: shortLabel(key) }))}
+            onChange={v => setSelectedResponse(v)}
+            maxWidth={260}
+          />
+        </div>
       </div>
       <TimeSeriesChart
         keyData={keyData}
@@ -365,10 +361,12 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
             {years.map(y => <option key={y} value={y}>{y}</option>)}
           </select>
 
-          <select value={topicId} onChange={e => { setSelectedTopicId(e.target.value); setSelectedResponse(null); }}
-            style={{ padding: '4px 8px', borderRadius: 100, border: `1px solid ${P.border}`, fontSize: 12, maxWidth: 300, background: 'transparent', color: P.navy }}>
-            {availableTopics.map(t => <option key={t.id} value={t.id}>{t.label}</option>)}
-          </select>
+          <Dropdown
+            value={topicId}
+            options={availableTopics.map(t => ({ value: t.id, label: t.label }))}
+            onChange={v => { setSelectedTopicId(v); setSelectedResponse(null); }}
+            maxWidth={320}
+          />
         </div>
 
         {/* Header */}
