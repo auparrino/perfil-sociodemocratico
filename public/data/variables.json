@@ -55,7 +55,7 @@
       "Desocupación  / desempleo",
       "Unemployment",
       "Racial discrimination",
-      "Distribucion del ingreso, injusticia social",
+      "Income distribution, social injustice",
       "Distribución del ingreso, injusticia social",
       "Is fine as it is",
       "Is in decline",
@@ -63,11 +63,11 @@
       "Is progressing",
       "Extranjeros",
       "Lack of freedom of expression",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Lack of concern for the elderly",
       "Gas, combustible",
       "Same",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation / aumento de precios",
       "Inflation/aumento de precios",
       "Infraestructura",
@@ -90,27 +90,27 @@
       "No answer",
       "DK",
       "Otro",
-      "Otros",
+      "Others",
       "Poverty",
       "Problemas con paises vecinos",
       "Problemas con países vecinos",
       "Education problems",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Problemas de medio ambiente/contaminacion",
       "Problemas de salud",
       "Problemas de vivienda / habitación",
       "Problemas de vivienda/habitacion",
       "Housing problems",
-      "Problemas del medio ambiente",
-      "Problemas del medio ambiente/contaminación",
+      "Environmental problems",
+      "Environmental problems/contaminación",
       "Energy problems",
       "Can be improved with small changes",
       "Average",
       "Servicios basicos deficientes (agua, luz, etc)",
       "Poor basic services (water, electricity, etc.)",
       "Poor basic services (water, electricity, etc.)",
-      "Situacion/problemas de la politica",
+      "Political situation/problems",
       "Situación / problemas de la política",
       "Political situation/problems",
       "Terrorism/guerrilla",
@@ -248,14 +248,14 @@
       "Crime/ seguridad pública",
       "Desocupación /desempleo",
       "Falta de Oportunidades para la juventud",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Ha empeorado algo más",
       "Ha empeorado mucho más",
       "Ha mejorado algo más",
       "Ha mejorado mucho más",
       "Ha permanecido casi igual",
       "Same",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation /Aumento de precios",
       "Inflation /aumento de precios",
       "Much better",
@@ -266,14 +266,14 @@
       "NA",
       "No es posible nacer pobre y llegar a ser rico",
       "DK",
-      "Otros",
+      "Others",
       "Poverty",
       "Problemas de Housing/habitación",
       "Problemas de la Education",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Housing problems",
-      "Problemas del medio ambiente",
+      "Environmental problems",
       "Situación / problemas de la política",
       "Terrorism / Violence política/ guerrilla",
       "A little better",
@@ -507,7 +507,7 @@
       "Somewhat",
       "Quite a bit problemas",
       "El Estado no puede resolver ningún problema",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Unfair",
       "Fair",
       "La mayoría de los problemas",
@@ -524,7 +524,7 @@
       "No answer",
       "DK",
       "DK/NA",
-      "Para el bien de todo el pueblo",
+      "For the good of all the people",
       "Little",
       "Sólo algunos problemas",
       "Todos los problemas"
@@ -550,7 +550,7 @@
       "Democracia es más importante",
       "Desarrollo económico es más importante",
       "En algunas circunstancias, un gobierno autoritario puede ser preferible {Gobierno Autoritario}",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Unfair",
       "Fair",
       "Democracy is preferable to any other form of government {Democracia}",
@@ -570,7 +570,7 @@
       "DK/NA",
       "No tienen iguales oportunidades",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "PY: Asociación Nacional Republicana (ANR)",
       "PY: Movimiento Popular Tekojojá (MPT)",
       "PY: Partido Democrático Progresista (PDP)",
@@ -580,7 +580,7 @@
       "PY: Partido País Solidario (PPS)",
       "PY: Partido Revolucionario Febrerista (PRF)",
       "PY: Unión Nacional de Ciudadanos Éticos (UNACE)",
-      "Para el bien de todo el pueblo",
+      "For the good of all the people",
       "Most people can be trusted",
       "Tienen iguales oportunidades",
       "UY: Asamblea Popular",
@@ -646,7 +646,7 @@
   },
   "P16ST.C": {
     "code": "P16ST.C",
-    "label": "Democracia puede tener problemas pero es el mejor sistema de gobierno - La frase de Churchill",
+    "label": "Democracy best system (Churchill)",
     "isKey": true,
     "values": [
       "Agree",
@@ -889,7 +889,7 @@
       "9",
       "Some Trust",
       "Fairly Satisfied",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "A Lot of Trust",
       "Very Satisfied",
       "No Trust",
@@ -899,7 +899,7 @@
       "DK, no responde",
       "DK/No answer",
       "No se necesita mano dura",
-      "Para el bien de todo el pueblo",
+      "For the good of all the people",
       "Not At All Satisfied",
       "Little Trust",
       "Prefer a society respecting all rights y libertades, aunque haya algún desorden",
@@ -1072,7 +1072,7 @@
   },
   "P22N.D": {
     "code": "P22N.D",
-    "label": "La democracia es el único sistema con el que (país) puede llegar a ser desarrollado",
+    "label": "Democracy es el único sistema con el que (país) puede llegar a ser desarrollado",
     "isKey": false,
     "values": [
       "Agree",
@@ -1217,7 +1217,7 @@
   },
   "P24ST": {
     "code": "P24ST",
-    "label": "Government Administration Approval que encabeza el Presidente",
+    "label": "Presidential Government Approval",
     "isKey": false,
     "values": [
       "2",
@@ -1229,23 +1229,23 @@
       "8",
       "9",
       "Algunas veces",
-      "Aprueba",
+      "Approves",
       "Casi nunca",
       "Casi siempre",
       "Agree",
       "Disagree",
-      "La democracia no soluciona los problemas",
+      "Democracy no soluciona los problemas",
       "Democracy can function without parties",
-      "La democracia soluciona los problemas",
+      "Democracy soluciona los problemas",
       "Strongly agree",
       "Strongly disagree",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "No dicen lo que realmente piensan",
       "No answer",
       "DK",
       "Normalmente dicen lo que piensan",
-      "Nunca",
+      "Never",
       "Para nada justificable",
       "Siempre",
       "Without political parties there can be no democracy",
@@ -1299,7 +1299,7 @@
       "DK",
       "DK / No answer",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Siempre",
       "Without Congress there can be no democracy",
       "Un poco de mano dura del gobierno no viene mal al país"
@@ -1374,7 +1374,7 @@
       "Mejor",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Peor",
       "Siempre"
     ]
@@ -1438,7 +1438,7 @@
       "No answer",
       "DK",
       "Don't know what to do",
-      "Nunca",
+      "Never",
       "Little",
       "Siempre",
       "Yes"
@@ -2534,7 +2534,7 @@
       "DK",
       "No se pueden solucionar",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Little Trust",
       "Little",
       "Se están solucionando",
@@ -2682,7 +2682,7 @@
       "Not Very Satisfied",
       "DK",
       "Occasionally",
-      "Otros",
+      "Others",
       "Personas con tatuajes",
       "People discriminated by ideology",
       "Personas discriminadas por su raza (sin especificar)",
@@ -2784,9 +2784,9 @@
       "DK",
       "DK/NA",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
-      "Otros",
+      "Others",
       "Para nada justificable",
       "Pariente",
       "People discriminated by ideology",
@@ -2834,7 +2834,7 @@
       "No puede elegir, no sabe",
       "DK",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Obedecer la ley sin excepción",
       "Ocasionalmente",
       "Pariente",
@@ -2921,7 +2921,7 @@
       "Disagree",
       "Frecuentemente",
       "Social media creates an illusion of participation en política",
-      "Las redes sociales no sirven para participar en política",
+      "Social media no sirven para participar en política",
       "Social media enables political participation",
       "Strongly agree",
       "Strongly disagree",
@@ -2938,8 +2938,8 @@
       "DK",
       "DK/NA",
       "No vota/None",
-      "Nunca",
-      "Otros (partidos nacionales y provinciales)",
+      "Never",
+      "Others (national and provincial parties)",
       "Para nada justificable",
       "Not very interested",
       "Has remained the same",
@@ -2998,7 +2998,7 @@
       "NA",
       "No answer",
       "DK",
-      "Nunca",
+      "Never",
       "Rara vez",
       "Average",
       "Seguido",
@@ -3039,7 +3039,7 @@
       "DK",
       "DK o No answer",
       "Otra",
-      "Otros temas",
+      "Others temas",
       "Peor",
       "Little probable",
       "Política internacional",
@@ -3170,7 +3170,7 @@
       "DK/NA",
       "DK o No answer",
       "No tiene los medios",
-      "Nunca",
+      "Never",
       "Obedecer la ley sin excepción",
       "Ocasionalmente",
       "Seguir la conciencia en ocasiones",
@@ -3237,7 +3237,7 @@
   },
   "P67STA": {
     "code": "P67STA",
-    "label": "¿Los ciudadanos nacionales cumplen la ley?",
+    "label": "¿National citizens comply with the law?",
     "isKey": false,
     "values": [
       "Quite a bit",
@@ -3249,7 +3249,7 @@
   },
   "P67STB": {
     "code": "P67STB",
-    "label": "¿Los ciudadanos nacionales exigen sus derechos?",
+    "label": "¿National citizens demand their rights?",
     "isKey": false,
     "values": [
       "Quite a bit",
@@ -3267,7 +3267,7 @@
   },
   "P67STC": {
     "code": "P67STC",
-    "label": "¿Los ciudadanos nacionales son conscientes de sus obligaciones y deberes?",
+    "label": "¿National citizens are aware of their obligations?",
     "isKey": false,
     "values": [
       "Quite a bit",
@@ -3726,7 +3726,7 @@
       "NA",
       "DK",
       "DK, no responde",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -3738,7 +3738,7 @@
       "La ha realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría bajo ninguna circunstancia"
+      "Never la haría bajo ninguna circunstancia"
     ]
   },
   "P79STA": {
@@ -3756,7 +3756,7 @@
       "Not applicable",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Little"
     ]
   },
@@ -3770,7 +3770,7 @@
       "Muy frecuentemente",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P80N": {
@@ -3803,12 +3803,12 @@
     "isKey": false,
     "values": [
       "Somewhat",
-      "Aumentado mucho",
+      "Increased a lot",
       "Aumentado poco",
       "Conoce bastante",
       "Conoce muy bien",
       "Conoce poco",
-      "Disminuido mucho",
+      "Decreased a lot",
       "Disminuido poco",
       "A lot",
       "Nothing",
@@ -3840,7 +3840,7 @@
       "Very bad",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Average",
       "Siempre"
     ]
@@ -4165,7 +4165,7 @@
       "DK o No answer",
       "No tiene Seguro",
       "No tiene trabajo",
-      "Nunca",
+      "Never",
       "Otra",
       "Little",
       "Little preocupado",
@@ -4280,7 +4280,7 @@
       "DK/No answer",
       "No tiene Seguro",
       "No tiene trabajo",
-      "Nunca",
+      "Never",
       "Otra",
       "Little preocupado",
       "Preocupado",
@@ -4317,7 +4317,7 @@
       "DK / No answer",
       "No tiene trabajo",
       "No tiene trabajo (Cesantes, Estudiantes, Dueñas de casa, Jubilados)",
-      "Nunca",
+      "Never",
       "Little preocupado",
       "Practicante",
       "Preocupado",
@@ -18452,9 +18452,9 @@
       "Crime  -  seguridad pública",
       "Desocupación  -  desempleo",
       "Distribución del ingreso, injusticia social",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Same",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation  -  aumento de precios",
       "La economía - problemas económicos - financieros",
       "Bad",
@@ -18466,11 +18466,11 @@
       "None",
       "NA",
       "DK",
-      "Otros",
+      "Others",
       "Poverty",
       "Education problems",
-      "Problemas de la salud",
-      "Problemas del medio ambiente",
+      "Health problems",
+      "Environmental problems",
       "Average",
       "Poor basic services (water, electricity, etc.)",
       "Situación  -  problemas de la política",
@@ -18541,10 +18541,10 @@
       "Is stagnant",
       "Is progressing",
       "Falta de Oportunidades para la juventud",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Gas, combustible",
-      "Grupos poderosos en su propio beneficio",
-      "Inestabilidad en el empleo",
+      "Powerful groups for their own benefit",
+      "Job instability",
       "Inflation / aumento de precios",
       "Inflation /Aumento de precios",
       "Inflation,  aumento de precios",
@@ -18559,18 +18559,18 @@
       "DK, no responde",
       "Other responses",
       "Otro",
-      "Otros",
-      "Para el bien de todo el pueblo",
+      "Others",
+      "For the good of all the people",
       "Poverty",
       "Problemas con países vecinos",
       "Problemas de la Education",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Problemas de vivienda / habitación",
       "Problemas de vivienda, habitación",
-      "Problemas del medio ambiente",
-      "Problemas del medio ambiente, contaminación",
-      "Problemas del medio ambiente/contaminación",
+      "Environmental problems",
+      "Environmental problems, contaminación",
+      "Environmental problems/contaminación",
       "Problemas limítrofes, problemas con países vecinos",
       "Servicios básicos deficientes",
       "Situación / Problemas de la Política",
@@ -18603,7 +18603,7 @@
       "Ningún tema/No discute",
       "NA",
       "DK",
-      "Otros temas",
+      "Others temas",
       "Sobre Derechos Humanos",
       "Sobre Economía",
       "Sobre Moral",
@@ -18624,7 +18624,7 @@
     "values": [
       "Discusión sobre la pobreza",
       "NA",
-      "Otros temas",
+      "Others temas",
       "Sobre Economía",
       "Sobre Moral",
       "Sobre Política o temas políticos",
@@ -18642,7 +18642,7 @@
     "isKey": false,
     "values": [
       "NA",
-      "Otros temas",
+      "Others temas",
       "Sobre Derechos Humanos",
       "Sobre Economía",
       "Sobre Política o temas políticos",
@@ -18663,7 +18663,7 @@
       "Quite a bit orgulloso",
       "Disminuido",
       "En algunas circunstancias, un gobierno autoritario puede ser preferible {Gobierno Autoritario}",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Same",
       "Democracy is preferable to any other form of government {Democracia}",
       "Muy orgulloso",
@@ -18672,7 +18672,7 @@
       "DK",
       "DK/NA",
       "No soy (nacionalidad)",
-      "Para el bien de todo el pueblo",
+      "For the good of all the people",
       "Little orgulloso"
     ]
   },
@@ -18822,7 +18822,7 @@
   },
   "P22STA": {
     "code": "P22STA",
-    "label": "Democracia puede tener problemas pero es el mejor sistema de gobierno - La frase de Churchill",
+    "label": "Democracy best system (Churchill)",
     "isKey": false,
     "values": [
       "1 dia",
@@ -18865,7 +18865,7 @@
   },
   "P22NC": {
     "code": "P22NC",
-    "label": "La democracia discusión y acuerdos",
+    "label": "Democracy discusión y acuerdos",
     "isKey": false,
     "values": [
       "Agree",
@@ -18912,7 +18912,7 @@
       "None",
       "NA",
       "DK",
-      "Otros",
+      "Others",
       "Para nada grave",
       "Pertenezco a la mayoría",
       "Pertenezco a la minoría"
@@ -18923,9 +18923,9 @@
     "label": "Country for All or for the Powerful",
     "isKey": false,
     "values": [
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "DK, no responde",
-      "Para el bien de todo el pueblo"
+      "For the good of all the people"
     ]
   },
   "P25N": {
@@ -18945,10 +18945,10 @@
       "Somewhat in favor",
       "Somewhat against",
       "Aumentado algo",
-      "Aumentado mucho",
+      "Increased a lot",
       "Good",
       "Disminuido algo",
-      "Disminuido mucho",
+      "Decreased a lot",
       "La gente trataría de sacar partido",
       "La gente trataría de ser justa",
       "Bad",
@@ -18965,7 +18965,7 @@
   },
   "P27STA": {
     "code": "P27STA",
-    "label": "La democracia es el único sistema con el que (país) puede llegar a ser desarrollado",
+    "label": "Democracy es el único sistema con el que (país) puede llegar a ser desarrollado",
     "isKey": false,
     "values": [
       "Agree",
@@ -19074,7 +19074,7 @@
       "AR: Propuesta Republicana (PRO)",
       "AR: Unión Cívica Radical (UCR)",
       "Somewhat interested",
-      "Aprueba",
+      "Approves",
       "Casi ninguno",
       "Casi todos",
       "Frecuentemente influenciados por instituciones y gente poderosa",
@@ -19083,7 +19083,7 @@
       "Not interested at all",
       "None",
       "No",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "No dicen lo que realmente piensan",
       "Not registered/Underage",
@@ -19091,7 +19091,7 @@
       "DK",
       "No vota/None",
       "Normalmente dicen lo que piensan",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Not very interested",
       "Son bastante independientes",
       "Yes",
@@ -19128,7 +19128,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Prefer a society respecting all rights y libertades, aunque haya algún desorden",
       "Prefer an ordered society even if limited algunas libertades",
       "Average",
@@ -19220,10 +19220,10 @@
     "isKey": false,
     "values": [
       "Somewhat",
-      "Aprueba",
+      "Approves",
       "A lot",
       "None",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "No answer",
       "DK",
@@ -19577,7 +19577,7 @@
       "6 a 10 años",
       "Fight climate change even if it hurts growth",
       "Economic growth even if it hurts climate",
-      "Aprueba",
+      "Approves",
       "Agree",
       "Disagree",
       "Democracy can function without parties",
@@ -19589,11 +19589,11 @@
       "Very Bads",
       "More bien buenas",
       "More bien malas",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "DK",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Without political parties there can be no democracy",
       "Ya lo tengo"
     ]
@@ -19640,8 +19640,8 @@
       "NA",
       "DK",
       "DK/No answer",
-      "Nunca",
-      "Nunca se justifica",
+      "Never",
+      "Never se justifica",
       "Ocasionalmente",
       "Siempre se justifica",
       "Yes",
@@ -19667,7 +19667,7 @@
       "More bien malas",
       "NA",
       "DK",
-      "Nunca se justifica",
+      "Never se justifica",
       "Siempre se justifica"
     ]
   },
@@ -19799,7 +19799,7 @@
     "label": "Interpersonal Trust",
     "isKey": false,
     "values": [
-      "Aprueba",
+      "Approves",
       "Argentina",
       "Bolivia",
       "Brasil",
@@ -19811,7 +19811,7 @@
       "México",
       "None",
       "No",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "No dicen lo que realmente piensan",
       "No answer",
@@ -19931,7 +19931,7 @@
       "Improve politics",
       "Muy orgulloso",
       "Nothing orgulloso",
-      "Ni la mejoran ni la empeoran",
+      "Neither improve nor worsen",
       "NA",
       "DK",
       "DK/NA",
@@ -19945,17 +19945,17 @@
   },
   "P46ST": {
     "code": "P46ST",
-    "label": "Government Administration Approval que encabeza el Presidente",
+    "label": "Presidential Government Approval",
     "isKey": false,
     "values": [
       "A todos con iguales condiciones",
-      "Aprueba",
+      "Approves",
       "Con condiciones especiales",
       "Conoce bastante",
       "Conoce mucho",
       "Conoce poco",
       "Lo representa bien",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "No lo representa bien",
       "No answer",
@@ -20102,7 +20102,7 @@
       "DK",
       "DK/NA",
       "No suelo hacerlo",
-      "Nunca",
+      "Never",
       "Social Media",
       "Siempre",
       "Yes"
@@ -20347,9 +20347,9 @@
       "DK/NA",
       "No se ha independizado",
       "No se puede ganarle al narcotráfico y crimen organizado",
-      "Nunca",
+      "Never",
       "Other responses",
-      "Otros países. Incorrecto",
+      "Others países. Incorrecto",
       "Portugal",
       "Productos/servicios importados de marcas internacionales reconocidas",
       "Productos/servicios producidos en el país de marcas nacionales reconocidas........",
@@ -20399,7 +20399,7 @@
       "DK/NA",
       "DK/NA",
       "No significa nada para mí",
-      "Nunca",
+      "Never",
       "Todas"
     ]
   },
@@ -20915,7 +20915,7 @@
   },
   "P69STU25": {
     "code": "P69STU25",
-    "label": "Quiénes son países de UE: Otros países/no correctos",
+    "label": "Quiénes son países de UE: Others países/no correctos",
     "isKey": false,
     "values": [
       "Menciona",
@@ -21358,7 +21358,7 @@
       "None",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Siempre",
       "Total"
     ]
@@ -21665,13 +21665,13 @@
       "Is in decline",
       "Is stagnant",
       "Is progressing",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Ha empeorado algo más",
       "Ha empeorado mucho",
       "Ha mejorado algo más",
       "Ha mejorado mucho más",
       "Ha permanecido casi igual",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation,  aumento de precios",
       "Democracy is preferable to any other form of government {Democracia}",
       "La economía, problemas económicos, financieros",
@@ -21682,11 +21682,11 @@
       "NA",
       "DK",
       "No soy (nacionalidad)",
-      "Otros",
+      "Others",
       "Poverty",
       "Little orgulloso",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Problemas de vivienda, habitación",
       "Servicios básicos deficientes",
       "Situación, problemas de la política",
@@ -21736,8 +21736,8 @@
       "NA",
       "DK",
       "Otro significado neutro",
-      "Otros significado negativos",
-      "Otros significados positivos",
+      "Others significado negativos",
+      "Others significados positivos",
       "Paz y unidad",
       "Penurias sociales y económicas",
       "Regla de la mayoría",
@@ -21764,8 +21764,8 @@
       "Movimientos",
       "NA",
       "Otro significado neutro",
-      "Otros significado negativos",
-      "Otros significados positivos",
+      "Others significado negativos",
+      "Others significados positivos",
       "Paz y unidad",
       "Penurias sociales y económicas",
       "Regla de la mayoría",
@@ -21778,10 +21778,10 @@
     "label": "Support for Democracy",
     "isKey": true,
     "values": [
-      "0 Izquierda",
-      "00 Izquierda",
+      "0 Left",
+      "00 Left",
       "1",
-      "10 Derecha",
+      "10 Right",
       "2",
       "3",
       "4",
@@ -21792,19 +21792,19 @@
       "9",
       "For people like us, it makes no difference whether we have a democratic or non-democratic regime {Da lo mismo}",
       "En algunas circunstancias, un gobierno autoritario puede ser preferible {Gobierno Autoritario}",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Unfair",
       "Fair",
       "Democracy is preferable to any other form of government {Democracia}",
-      "La democracia no soluciona los problemas",
-      "La democracia soluciona los problemas",
+      "Democracy no soluciona los problemas",
+      "Democracy soluciona los problemas",
       "Very unfair",
       "Very fair",
       "None",
       "NA",
       "DK",
       "DK, no responde",
-      "Para el bien de todo el pueblo"
+      "For the good of all the people"
     ]
   },
   "P17ST": {
@@ -21818,7 +21818,7 @@
       "En algunas circunstancias, un gobierno autoritario puede ser preferible {Gobierno Autoritario}",
       "Disagree",
       "Gobierno de la mayoría",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Unfair",
       "Fair",
       "Democracy is preferable to any other form of government {Democracia}",
@@ -21832,7 +21832,7 @@
       "DK",
       "DK/NA",
       "DK, no responde",
-      "Para el bien de todo el pueblo",
+      "For the good of all the people",
       "Respeto a las minorías",
       "Un sistema de partidos que compitan entre ellos",
       "Un sistema judicial que trate a todos por igual",
@@ -21844,7 +21844,7 @@
     "label": "No puede haber democracia sin un congreso nacional",
     "isKey": false,
     "values": [
-      "1 Para nada justificable",
+      "1 Not justifiable at all",
       "10 Totalmente justificable",
       "2",
       "3",
@@ -21883,7 +21883,7 @@
     "isKey": false,
     "values": [
       "1",
-      "1 Para nada justificable",
+      "1 Not justifiable at all",
       "10 Totalmente justificable",
       "2",
       "3",
@@ -21899,7 +21899,7 @@
       "Agree",
       "Derecha",
       "Disagree",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Izquierda",
       "Strongly agree",
       "Very unfavorable",
@@ -21914,7 +21914,7 @@
       "DK, no responde",
       "No tienen iguales oportunidades",
       "Obedecer las leyes sin excepción",
-      "Para el bien de todo el pueblo",
+      "For the good of all the people",
       "Little probable",
       "Seguir la conciencia en ocasiones",
       "Tienen iguales oportunidades"
@@ -21934,7 +21934,7 @@
   },
   "P25STB": {
     "code": "P25STB",
-    "label": "Democracia puede tener problemas pero es el mejor sistema de gobierno - La frase de Churchill",
+    "label": "Democracy best system (Churchill)",
     "isKey": false,
     "values": [
       "Agree",
@@ -21946,7 +21946,7 @@
   },
   "P25STC": {
     "code": "P25STC",
-    "label": "La democracia es el único sistema con el que (país) puede llegar a ser desarrollado",
+    "label": "Democracy es el único sistema con el que (país) puede llegar a ser desarrollado",
     "isKey": false,
     "values": [
       "Agree",
@@ -22113,7 +22113,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Little",
       "Without political parties there can be no democracy",
       "Vota nulo/Blanco"
@@ -22183,7 +22183,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Paraguay",
       "Little",
       "Average",
@@ -22221,7 +22221,7 @@
       "No answer",
       "DK",
       "DK/No answer",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
       "Otra respuesta",
       "Paraguay",
@@ -22629,7 +22629,7 @@
       "DK/NA",
       "No vota/None",
       "Normalmente dicen lo que piensan",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Yes",
       "Vota nulo/Blanco"
     ]
@@ -22680,7 +22680,7 @@
       "Manifestación/protesta",
       "Improve politics",
       "México",
-      "Ni la mejoran ni la empeoran",
+      "Neither improve nor worsen",
       "None",
       "NA",
       "It doesn't matter how you vote e",
@@ -22715,7 +22715,7 @@
       "NA",
       "DK",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
       "Todo o casi todo el tiempo"
     ]
@@ -23330,7 +23330,7 @@
       "Casi siempre",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Siempre"
     ]
   },
@@ -23758,7 +23758,7 @@
       "Muy frecuentemente",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P71STB": {
@@ -23771,7 +23771,7 @@
       "Muy frecuentemente",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P71STC": {
@@ -23784,7 +23784,7 @@
       "Muy frecuentemente",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P71STD": {
@@ -23797,7 +23797,7 @@
       "Muy frecuentemente",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P72STA": {
@@ -23808,7 +23808,7 @@
       "La ha realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P72STB": {
@@ -23818,7 +23818,7 @@
     "values": [
       "Ha realizado",
       "DK, no responde",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -23830,7 +23830,7 @@
       "La he realizado",
       "La podría hacer",
       "NA",
-      "Nunca la haría, bajo ninguna circunstancia"
+      "Never la haría, bajo ninguna circunstancia"
     ]
   },
   "P72STD": {
@@ -23841,7 +23841,7 @@
       "La he realizado",
       "La podría hacer",
       "NA",
-      "Nunca la haría, bajo ningún concepto"
+      "Never la haría, bajo ningún concepto"
     ]
   },
   "P72STE": {
@@ -23852,7 +23852,7 @@
       "La ha realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P72STF": {
@@ -23863,7 +23863,7 @@
       "La ha realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P73STA": {
@@ -23874,7 +23874,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P73STB": {
@@ -23885,7 +23885,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P73STC": {
@@ -23896,7 +23896,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P73STD": {
@@ -23907,7 +23907,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P73STE": {
@@ -23918,7 +23918,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P73STF": {
@@ -23929,7 +23929,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P73STG": {
@@ -23940,12 +23940,12 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P74STA": {
     "code": "P74STA",
-    "label": "¿Los ciudadanos nacionales cumplen la ley?",
+    "label": "¿National citizens comply with the law?",
     "isKey": false,
     "values": [
       "Quite a bit",
@@ -23957,7 +23957,7 @@
   },
   "P74STB": {
     "code": "P74STB",
-    "label": "¿Los ciudadanos nacionales exigen sus derechos?",
+    "label": "¿National citizens demand their rights?",
     "isKey": false,
     "values": [
       "Quite a bit",
@@ -23969,7 +23969,7 @@
   },
   "P74STC": {
     "code": "P74STC",
-    "label": "¿Los ciudadanos nacionales son conscientes de sus obligaciones y deberes?",
+    "label": "¿National citizens are aware of their obligations?",
     "isKey": false,
     "values": [
       "Quite a bit",
@@ -24034,7 +24034,7 @@
       "NA",
       "DK",
       "DK/No answer",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
       "Todo o casi todo el tiempo"
     ]
@@ -24079,7 +24079,7 @@
       "NA",
       "DK",
       "DK/No answer",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
       "Siempre",
       "Todo o casi todo el tiempo"
@@ -24090,9 +24090,9 @@
     "label": "¿Confía en que dinero de los impuestos serán bien gastados por el Estado?",
     "isKey": false,
     "values": [
-      "Aumentado mucho",
+      "Increased a lot",
       "Aumentado poco",
-      "Disminuido mucho",
+      "Decreased a lot",
       "Disminuido poco",
       "No",
       "NA",
@@ -30673,7 +30673,7 @@
       "9",
       "Agree",
       "Disagree",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Strongly agree",
       "Strongly disagree",
       "More pobres",
@@ -30682,7 +30682,7 @@
       "NA",
       "DK",
       "DK, no responde",
-      "Para el bien de todo el pueblo"
+      "For the good of all the people"
     ]
   },
   "P13ST.C": {
@@ -30716,18 +30716,18 @@
     "values": [
       "Would support military gov. if things get very difficult",
       "Would never support a military government",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Democracy can function without parties",
       "NA",
       "DK",
       "DK, no responde",
-      "Para el bien de todo el pueblo",
+      "For the good of all the people",
       "Without political parties there can be no democracy"
     ]
   },
   "P22ST.A": {
     "code": "P22ST.A",
-    "label": "Democracia puede tener problemas pero es el mejor sistema de gobierno - La frase de Churchill",
+    "label": "Democracy best system (Churchill)",
     "isKey": false,
     "values": [
       "2",
@@ -30800,7 +30800,7 @@
   },
   "P22NA.C": {
     "code": "P22NA.C",
-    "label": "La democracia crea condiciones para prosperar",
+    "label": "Democracy crea condiciones para prosperar",
     "isKey": false,
     "values": [
       "Agree",
@@ -30905,9 +30905,9 @@
       "Somewhat",
       "Some Trust",
       "Aumentado algo",
-      "Aumentado mucho",
+      "Increased a lot",
       "Disminuido algo",
-      "Disminuido mucho",
+      "Decreased a lot",
       "Mucha",
       "A Lot of Trust",
       "Very Goods",
@@ -30983,7 +30983,7 @@
   },
   "P25ST": {
     "code": "P25ST",
-    "label": "There can be no democracy without political parties",
+    "label": "No democracy without political parties",
     "isKey": false,
     "values": [
       "Algunas veces",
@@ -30992,7 +30992,7 @@
       "Agree",
       "Disagree",
       "Fraudulentas",
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Democracy can function without parties",
       "The way one votes can make things diferentes",
       "Limpias",
@@ -31009,8 +31009,8 @@
       "DK",
       "DK, no responde",
       "DK/NA",
-      "Nunca",
-      "Para el bien de todo el pueblo",
+      "Never",
+      "For the good of all the people",
       "Most people can be trusted",
       "Siempre",
       "Without political parties there can be no democracy",
@@ -31067,12 +31067,12 @@
       "Somewhat in favor",
       "Some Trust",
       "Somewhat against",
-      "Aprueba",
+      "Approves",
       "A Lot of Trust",
       "Strongly in favor",
       "Strongly against",
       "No Trust",
-      "No aprueba",
+      "Disapproves",
       "No answer",
       "DK",
       "DK/NA",
@@ -31408,7 +31408,7 @@
       "No conoce",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P37ST.AB": {
@@ -31434,7 +31434,7 @@
       "No conoce",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P37ST.AC": {
@@ -31447,7 +31447,7 @@
       "Muy frecuentemente",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P37ST.BA": {
@@ -31471,7 +31471,7 @@
       "Not applicable",
       "No conoce",
       "NA",
-      "Nunca lo haría bajo ninguna circunstancia"
+      "Never lo haría bajo ninguna circunstancia"
     ]
   },
   "P37ST.BB": {
@@ -31494,7 +31494,7 @@
       "Not applicable",
       "No conoce",
       "DK, no responde",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -31606,7 +31606,7 @@
       "9",
       "Argentina",
       "Aumentado algo",
-      "Aumentado mucho",
+      "Increased a lot",
       "Bien",
       "Bolivia",
       "Brasil",
@@ -31616,7 +31616,7 @@
       "Cuba",
       "Agree",
       "Disminuido algo",
-      "Disminuido mucho",
+      "Decreased a lot",
       "Ecuador",
       "El Salvador",
       "Disagree",
@@ -31659,7 +31659,7 @@
       "Alemania",
       "Argentina",
       "Aumentado algo",
-      "Aumentado mucho",
+      "Increased a lot",
       "Austria",
       "Bien",
       "Bolivia",
@@ -31672,7 +31672,7 @@
       "Cuba",
       "Agree",
       "Disminuido algo",
-      "Disminuido mucho",
+      "Decreased a lot",
       "Ecuador",
       "Disagree",
       "España",
@@ -31781,7 +31781,7 @@
       "Improve politics",
       "México",
       "Nadie, porque no hay deterioro del medioambiente",
-      "Ni la mejoran ni la empeoran",
+      "Neither improve nor worsen",
       "None",
       "NA",
       "No lo representa bien",
@@ -32208,8 +32208,8 @@
       "More bien malas",
       "NA",
       "DK",
-      "Nunca la hari'a",
-      "Nunca la haría"
+      "Never la hari'a",
+      "Never la haría"
     ]
   },
   "P55ST.B": {
@@ -32225,8 +32225,8 @@
       "More bien malas",
       "NA",
       "DK",
-      "Nunca la hari'a",
-      "Nunca las hari'a"
+      "Never la hari'a",
+      "Never las hari'a"
     ]
   },
   "P55ST.C": {
@@ -32243,8 +32243,8 @@
       "More bien malas",
       "NA",
       "DK",
-      "Nunca la haria",
-      "Nunca las hari'a"
+      "Never la haria",
+      "Never las hari'a"
     ]
   },
   "P56IA": {
@@ -32324,8 +32324,8 @@
     "label": "Grado de aprobación de Hugo Chávez",
     "isKey": false,
     "values": [
-      "Aprueba algo",
-      "Aprueba mucho",
+      "Approves algo",
+      "Approves mucho",
       "Desaprueba algo",
       "Desaprueba mucho",
       "NA",
@@ -32839,9 +32839,9 @@
     "isKey": false,
     "values": [
       "Ambos",
-      "Aprueba",
+      "Approves",
       "No",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "No answer",
       "DK",
@@ -32908,7 +32908,7 @@
       "NA",
       "No hay diferencias",
       "DK/No answer",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
       "Todo o casi todo el tiempo"
     ]
@@ -33363,7 +33363,7 @@
       "Las empresas privadas no invierten suficiente",
       "Los (nacionalidad) no tienen iniciativa para crear nuevas em",
       "NA",
-      "Otros"
+      "Others"
     ]
   },
   "P81ST.2": {
@@ -33374,7 +33374,7 @@
       "El Estado tiene una política económica inadecuada",
       "Los (nacionalidad) no tienen iniciativa para crear nuevas em",
       "NA",
-      "Otros"
+      "Others"
     ]
   },
   "P81ST.3": {
@@ -33418,7 +33418,7 @@
   },
   "P81ST_4": {
     "code": "P81ST_4",
-    "label": "Razón principal del desempleo hoy: Otros",
+    "label": "Razón principal del desempleo hoy: Others",
     "isKey": false,
     "values": [
       "Menciona",
@@ -33639,8 +33639,8 @@
       "NA",
       "DK",
       "Otro significado neutro",
-      "Otros significado negativos",
-      "Otros significados positivos",
+      "Others significado negativos",
+      "Others significados positivos",
       "Paz y unidad",
       "Regla de la mayoría",
       "Seguridad personal"
@@ -33664,8 +33664,8 @@
       "Mal gobierno",
       "NA",
       "Otro significado neutro",
-      "Otros significado negativos",
-      "Otros significados positivos",
+      "Others significado negativos",
+      "Others significados positivos",
       "Paz y unidad",
       "Seguridad personal"
     ]
@@ -33706,11 +33706,11 @@
       "Unemployment",
       "Racial discrimination",
       "Extranjeros",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Falta parques, lugares de esparcimiento",
       "Lack of concern for the elderly",
       "Same",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation/aumento de precios",
       "Inmigrantes",
       "Economy/economic/financial problems",
@@ -33722,12 +33722,12 @@
       "None",
       "NA",
       "DK",
-      "Otros",
+      "Others",
       "Poverty",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Housing problems",
-      "Problemas del medio ambiente",
+      "Environmental problems",
       "Energy problems",
       "Poor basic services (water, electricity, etc.)",
       "Political situation/problems",
@@ -33840,7 +33840,7 @@
   },
   "P13STA": {
     "code": "P13STA",
-    "label": "Democracia puede tener problemas pero es el mejor sistema de gobierno - La frase de Churchill",
+    "label": "Democracy best system (Churchill)",
     "isKey": true,
     "values": [
       "Agree",
@@ -33864,7 +33864,7 @@
   },
   "P13STC": {
     "code": "P13STC",
-    "label": "La democracia crea condiciones para prosperar",
+    "label": "Democracy crea condiciones para prosperar",
     "isKey": true,
     "values": [
       "Some Trust",
@@ -33945,7 +33945,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -33957,7 +33957,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -33969,7 +33969,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -33981,7 +33981,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -33993,7 +33993,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -34005,7 +34005,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -34017,7 +34017,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -34029,7 +34029,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -34041,7 +34041,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -34053,7 +34053,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -34065,7 +34065,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -34077,7 +34077,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -34089,7 +34089,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -34219,7 +34219,7 @@
       "No answer",
       "DK",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Obedecer las leyes sin excepción",
       "Para nada justificable",
       "Not very interested",
@@ -34617,7 +34617,7 @@
       "NA",
       "DK",
       "DK/NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P30ST.C": {
@@ -34643,7 +34643,7 @@
       "NA",
       "DK",
       "DK/NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P30ST.D": {
@@ -34673,18 +34673,18 @@
     "label": "Problema de la energía",
     "isKey": false,
     "values": [
-      "Aprueba",
-      "No aprueba",
+      "Approves",
+      "Disapproves",
       "NA"
     ]
   },
   "P32NCC": {
     "code": "P32NCC",
-    "label": "Aprueba lucha contra la pobreza",
+    "label": "Approves lucha contra la pobreza",
     "isKey": false,
     "values": [
-      "Aprueba",
-      "No aprueba",
+      "Approves",
+      "Disapproves",
       "NA"
     ]
   },
@@ -34693,8 +34693,8 @@
     "label": "Relaciones exteriores con los otros países de América Latina",
     "isKey": false,
     "values": [
-      "Aprueba",
-      "No aprueba",
+      "Approves",
+      "Disapproves",
       "NA"
     ]
   },
@@ -35652,7 +35652,7 @@
       "Muy mal",
       "NA",
       "DK",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P62ST.B": {
@@ -35672,7 +35672,7 @@
       "NA",
       "DK",
       "DK, no responde",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -35684,7 +35684,7 @@
       "La ha realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P64ST": {
@@ -35759,9 +35759,9 @@
       "DK",
       "DK/No answer",
       "No vota/None",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Yes",
       "Todo o casi todo el tiempo",
       "Todos",
@@ -35857,7 +35857,7 @@
       "No menciona",
       "DK",
       "DK/No answer",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
       "Little",
       "Todo o casi todo el tiempo"
@@ -35900,7 +35900,7 @@
     "label": "Usted o su familia han sido víctimas de un delito",
     "isKey": false,
     "values": [
-      "01 Para nada justificable",
+      "01 Not justifiable at all",
       "10 Totalmente justificable",
       "2",
       "3",
@@ -36029,7 +36029,7 @@
       "NA",
       "DK",
       "DK/No answer",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
       "Little",
       "Todo o casi todo el tiempo",
@@ -36043,7 +36043,7 @@
     "values": [
       "NA",
       "No trabaja",
-      "Nunca",
+      "Never",
       "Rara vez",
       "Siempre",
       "Varias veces a la semana",
@@ -36058,7 +36058,7 @@
     "values": [
       "NA",
       "No trabaja",
-      "Nunca",
+      "Never",
       "Rara vez",
       "Siempre",
       "Varias veces a la semana",
@@ -36215,7 +36215,7 @@
       "No",
       "NA",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Yes",
       "Todos los días",
       "Una vez a la semana",
@@ -36287,7 +36287,7 @@
       "NA",
       "No answer",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P80ND": {
@@ -36404,7 +36404,7 @@
       "NA",
       "No answer",
       "DK",
-      "Nunca o casi nunca",
+      "Never o casi nunca",
       "Peores condiciones",
       "Varias veces al dia"
     ]
@@ -36476,7 +36476,7 @@
       "DK",
       "DK o No answer",
       "No, no recibo remesas",
-      "Otros",
+      "Others",
       "Prostitución",
       "Robo de autos",
       "Trata de personas",
@@ -36737,7 +36737,7 @@
       "Menciona",
       "NA",
       "No menciona",
-      "Nunca se justifica",
+      "Never se justifica",
       "Siempre se justifica"
     ]
   },
@@ -36757,7 +36757,7 @@
       "Menciona",
       "NA",
       "No menciona",
-      "Nunca se justifica",
+      "Never se justifica",
       "Siempre se justifica"
     ]
   },
@@ -38832,7 +38832,7 @@
   },
   "P19S.TA": {
     "code": "P19S.TA",
-    "label": "Democracia puede tener problemas pero es el mejor sistema de gobierno - La frase de Churchill",
+    "label": "Democracy best system (Churchill)",
     "isKey": false,
     "values": [
       "Agree",
@@ -38981,7 +38981,7 @@
       "No Trust",
       "NA",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little Trust",
       "Poorly guaranteed"
     ]
@@ -38998,7 +38998,7 @@
       "No Trust",
       "NA",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little Trust",
       "Poorly guaranteed"
     ]
@@ -39015,7 +39015,7 @@
       "No Trust",
       "NA",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little Trust",
       "Poorly guaranteed"
     ]
@@ -39032,7 +39032,7 @@
       "No Trust",
       "NA",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little Trust",
       "Poorly guaranteed"
     ]
@@ -39049,7 +39049,7 @@
       "No Trust",
       "NA",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little Trust",
       "Poorly guaranteed"
     ]
@@ -39066,7 +39066,7 @@
       "No Trust",
       "NA",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little Trust",
       "Poorly guaranteed"
     ]
@@ -39083,7 +39083,7 @@
       "No Trust",
       "NA",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little Trust",
       "Poorly guaranteed"
     ]
@@ -39096,7 +39096,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -39108,7 +39108,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -39120,7 +39120,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -39132,7 +39132,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -39144,7 +39144,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -39156,7 +39156,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -39451,17 +39451,17 @@
   },
   "P32N.B": {
     "code": "P32N.B",
-    "label": "Aprueba o No aprueba manera como (país) está enfrentando: Alza de precios de los alimentos.",
+    "label": "Approves o Disapproves manera como (país) está enfrentando: Alza de precios de los alimentos.",
     "isKey": false,
     "values": [
       "Acceso a más productos",
       "Somewhat favorable",
-      "Aprueba",
+      "Approves",
       "Inversión en proyectos de infraestructura",
       "Mejoras tecnológicas rápidas de los productos",
       "Very favorable",
       "None",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "No muy favorable",
       "DK/NA",
@@ -39475,11 +39475,11 @@
   },
   "P32N.C": {
     "code": "P32N.C",
-    "label": "Aprueba o No aprueba manera como (país) está enfrentando: Alza de precios del petróleo",
+    "label": "Approves o Disapproves manera como (país) está enfrentando: Alza de precios del petróleo",
     "isKey": false,
     "values": [
-      "Aprueba",
-      "No aprueba",
+      "Approves",
+      "Disapproves",
       "NA"
     ]
   },
@@ -39622,7 +39622,7 @@
       "OAS (Organization of American States)",
       "ONU",
       "Otra respuesta",
-      "Otros",
+      "Others",
       "PNUD (Programa de Naciones Unidas para el Desarrollo)",
       "Paraguay",
       "UNASUR",
@@ -40021,7 +40021,7 @@
       "9",
       "NA",
       "DK",
-      "Nunca se justifica",
+      "Never se justifica",
       "Siempre se justifica"
     ]
   },
@@ -40194,7 +40194,7 @@
   },
   "P66ST.A": {
     "code": "P66ST.A",
-    "label": "¿Los ciudadanos nacionales cumplen la ley?",
+    "label": "¿National citizens comply with the law?",
     "isKey": false,
     "values": [
       "Quite a bit",
@@ -40212,7 +40212,7 @@
   },
   "P66ST.B": {
     "code": "P66ST.B",
-    "label": "¿Los ciudadanos nacionales exigen sus derechos?",
+    "label": "¿National citizens demand their rights?",
     "isKey": false,
     "values": [
       "Quite a bit",
@@ -40230,7 +40230,7 @@
   },
   "P66ST.C": {
     "code": "P66ST.C",
-    "label": "¿Los ciudadanos nacionales son conscientes de sus obligaciones y deberes?",
+    "label": "¿National citizens are aware of their obligations?",
     "isKey": false,
     "values": [
       "Quite a bit",
@@ -40328,7 +40328,7 @@
       "No answer",
       "DK",
       "DK, no responde",
-      "Nunca se justifica",
+      "Never se justifica",
       "Other responses",
       "Siempre se justifica"
     ]
@@ -40420,8 +40420,8 @@
       "No answer",
       "DK",
       "DK/No answer",
-      "Nunca",
-      "Nunca se justifica",
+      "Never",
+      "Never se justifica",
       "Ocasionalmente",
       "Other responses",
       "Para nada justificable",
@@ -40455,7 +40455,7 @@
     "values": [
       "El Estado no puede resolver el problema",
       "Gran parte del problema",
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "NA",
@@ -40475,7 +40475,7 @@
     "values": [
       "El Estado no puede resolver el problema",
       "Gran parte del problema",
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "No",
@@ -40495,7 +40495,7 @@
     "values": [
       "El Estado no puede resolver el problema",
       "Gran parte del problema",
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "No",
@@ -40515,7 +40515,7 @@
     "values": [
       "El Estado no puede resolver el problema",
       "Gran parte del problema",
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "No",
@@ -40577,7 +40577,7 @@
       "Frecuentemente",
       "Muy frecuentemente",
       "NA",
-      "Nunca",
+      "Never",
       "Ocasionalmente/ casi nunca"
     ]
   },
@@ -40589,7 +40589,7 @@
       "Frecuentemente",
       "Muy frecuentemente",
       "NA",
-      "Nunca",
+      "Never",
       "Ocasionalmente/ casi nunca"
     ]
   },
@@ -40601,7 +40601,7 @@
       "Frecuentemente",
       "Muy frecuentemente",
       "NA",
-      "Nunca",
+      "Never",
       "Ocasionalmente/ casi nunca"
     ]
   },
@@ -40622,7 +40622,7 @@
       "None",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Ocasionalmente/ casi nunca"
     ]
   },
@@ -40771,7 +40771,7 @@
       "La podría hacer",
       "NA",
       "DK/No answer",
-      "Nunca la haría, bajo ning"
+      "Never la haría, bajo ning"
     ]
   },
   "P82WVSTB": {
@@ -40781,7 +40781,7 @@
     "values": [
       "Ha realizado",
       "DK, no responde",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -40794,7 +40794,7 @@
       "La podría hacer",
       "NA",
       "DK",
-      "Nunca la haría, bajo ninguna circunstancia"
+      "Never la haría, bajo ninguna circunstancia"
     ]
   },
   "P82ST.D": {
@@ -40806,7 +40806,7 @@
       "La podría hacer",
       "NA",
       "DK",
-      "Nunca la haría, bajo ning"
+      "Never la haría, bajo ning"
     ]
   },
   "P82ST.E": {
@@ -40818,7 +40818,7 @@
       "La podría hacer",
       "NA",
       "DK",
-      "Nunca la haría, bajo ningún concepto"
+      "Never la haría, bajo ningún concepto"
     ]
   },
   "P83ST.A": {
@@ -40829,7 +40829,7 @@
       "La he realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P83ST.B": {
@@ -40840,7 +40840,7 @@
       "La he realizado",
       "Could carry it out",
       "NA",
-      "Nunca lo haría"
+      "Never lo haría"
     ]
   },
   "P83ST.C": {
@@ -40851,7 +40851,7 @@
       "La he realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P83ST.D": {
@@ -40862,7 +40862,7 @@
       "La he realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P83ST.E": {
@@ -40873,7 +40873,7 @@
       "La he realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P83ST.F": {
@@ -40884,7 +40884,7 @@
       "La he realizado",
       "Could carry it out",
       "NA",
-      "Nunca la haría"
+      "Never la haría"
     ]
   },
   "P84N.A": {
@@ -41156,7 +41156,7 @@
       "NA",
       "No menciona",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P88ND": {
@@ -41858,7 +41858,7 @@
   },
   "P95ST.I": {
     "code": "P95ST.I",
-    "label": "Cómo se informa de política: Otros",
+    "label": "Cómo se informa de política: Others",
     "isKey": false,
     "values": [
       "Menciona",
@@ -42262,7 +42262,7 @@
       "NA",
       "No menciona",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -42281,7 +42281,7 @@
       "NA",
       "No menciona",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -42300,7 +42300,7 @@
       "NA",
       "No menciona",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -42319,7 +42319,7 @@
       "NA",
       "No menciona",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -42338,7 +42338,7 @@
       "NA",
       "No menciona",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -42357,7 +42357,7 @@
       "NA",
       "No menciona",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -42376,7 +42376,7 @@
       "NA",
       "No menciona",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -42391,7 +42391,7 @@
       "Menciona",
       "NA",
       "No menciona",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -42405,7 +42405,7 @@
       "Menciona",
       "NA",
       "No menciona",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -42419,7 +42419,7 @@
       "Menciona",
       "NA",
       "No menciona",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -42433,7 +42433,7 @@
       "Menciona",
       "NA",
       "No menciona",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -42445,7 +42445,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -42457,7 +42457,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -42474,7 +42474,7 @@
   },
   "P20ST.A": {
     "code": "P20ST.A",
-    "label": "Democracia puede tener problemas pero es el mejor sistema de gobierno - La frase de Churchill",
+    "label": "Democracy best system (Churchill)",
     "isKey": false,
     "values": [
       "Some Trust",
@@ -43019,7 +43019,7 @@
       "DK",
       "DK, no responde",
       "No tiene influencia",
-      "Nunca"
+      "Never"
     ]
   },
   "P45ST.C": {
@@ -43120,8 +43120,8 @@
     "label": "Grado de aprobación de Hugo Chávez",
     "isKey": false,
     "values": [
-      "Aprueba algo",
-      "Aprueba mucho",
+      "Approves algo",
+      "Approves mucho",
       "Desaprueba algo",
       "Desaprueba mucho",
       "NA",
@@ -43162,7 +43162,7 @@
   },
   "P51N.B": {
     "code": "P51N.B",
-    "label": "How democratic es EEUU",
+    "label": "How democratic is EEUU",
     "isKey": false,
     "values": [
       "02",
@@ -43182,7 +43182,7 @@
   },
   "P51N.C": {
     "code": "P51N.C",
-    "label": "How democratic es Venezuela",
+    "label": "How democratic is Venezuela",
     "isKey": false,
     "values": [
       "02",
@@ -43202,7 +43202,7 @@
   },
   "P51N.D": {
     "code": "P51N.D",
-    "label": "How democratic es Honduras",
+    "label": "How democratic is Honduras",
     "isKey": false,
     "values": [
       "02",
@@ -43222,7 +43222,7 @@
   },
   "P51N.E": {
     "code": "P51N.E",
-    "label": "How democratic es Cuba",
+    "label": "How democratic is Cuba",
     "isKey": false,
     "values": [
       "02",
@@ -43242,7 +43242,7 @@
   },
   "P51N.F": {
     "code": "P51N.F",
-    "label": "How democratic es España",
+    "label": "How democratic is España",
     "isKey": false,
     "values": [
       "02",
@@ -43517,7 +43517,7 @@
       "NA",
       "No answer",
       "DK",
-      "Nunca será un problema necesario de ocuparse",
+      "Never será un problema necesario de ocuparse",
       "Todavía no es un problema urgente, pero lo será en el futuro"
     ]
   },
@@ -43578,7 +43578,7 @@
       "9",
       "NA",
       "DK",
-      "Nunca se justifica",
+      "Never se justifica",
       "Siempre se justifica"
     ]
   },
@@ -43662,8 +43662,8 @@
     "label": "Apueba la manera como el Gobierno está enfrentando la crisis económica",
     "isKey": false,
     "values": [
-      "Aprueba",
-      "No aprueba",
+      "Approves",
+      "Disapproves",
       "NA"
     ]
   },
@@ -43672,7 +43672,7 @@
     "label": "Satisfaction with la manera como funcionan los hospitales públicos",
     "isKey": false,
     "values": [
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "NA",
@@ -43684,7 +43684,7 @@
     "label": "Satisfaction with la manera como funciona la educación pública",
     "isKey": false,
     "values": [
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "NA",
@@ -43696,7 +43696,7 @@
     "label": "Satisfaction with la manera como funciona la policía",
     "isKey": false,
     "values": [
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "NA",
@@ -43708,7 +43708,7 @@
     "label": "Satisfaction with la manera como funciona el sistema judicial",
     "isKey": false,
     "values": [
-      "01 Para nada justificable",
+      "01 Not justifiable at all",
       "10 Totalmente justificable",
       "2",
       "3",
@@ -43718,7 +43718,7 @@
       "7",
       "8",
       "9",
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "NA",
@@ -43731,7 +43731,7 @@
     "label": "Satisfaction with la manera como funciona el lugar donde saca el documento de identidad",
     "isKey": false,
     "values": [
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "NA",
@@ -43743,7 +43743,7 @@
     "label": "Grado de satisfacción con los servicios públicos: La recolección de basura",
     "isKey": false,
     "values": [
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "NA",
@@ -43756,7 +43756,7 @@
     "label": "Grado de satisfacción con los servicios públicos: El alcantarillado",
     "isKey": false,
     "values": [
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "NA",
@@ -43968,7 +43968,7 @@
   },
   "P90ST.A": {
     "code": "P90ST.A",
-    "label": "Cómo se informa de política: Con la familia",
+    "label": "Cómo se informa de política: With family",
     "isKey": false,
     "values": [
       "Menciona",
@@ -44040,7 +44040,7 @@
   },
   "P90ST.I": {
     "code": "P90ST.I",
-    "label": "Cómo se informa de política: Otros",
+    "label": "Cómo se informa de política: Others",
     "isKey": false,
     "values": [
       "Menciona",
@@ -44547,7 +44547,7 @@
   },
   "P14ST.A": {
     "code": "P14ST.A",
-    "label": "Democracia puede tener problemas pero es el mejor sistema de gobierno - La frase de Churchill",
+    "label": "Democracy best system (Churchill)",
     "isKey": true,
     "values": [
       "Somewhat",
@@ -44958,7 +44958,7 @@
       "No Trust",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Little",
       "Little Trust"
     ]
@@ -44978,8 +44978,8 @@
       "NA",
       "DK",
       "DK/No answer",
-      "Nunca",
-      "Nunca bajo ninguna circunstancia",
+      "Never",
+      "Never bajo ninguna circunstancia",
       "Little Trust",
       "Podría realizar"
     ]
@@ -45643,7 +45643,7 @@
   },
   "P44ST.B": {
     "code": "P44ST.B",
-    "label": "How democratic es EEUU",
+    "label": "How democratic is EEUU",
     "isKey": false,
     "values": [
       "2",
@@ -45670,14 +45670,14 @@
       "Not democratic",
       "DK",
       "DK, no responde",
-      "Nunca",
+      "Never",
       "Other responses",
       "Fully democratic"
     ]
   },
   "P44ST.C": {
     "code": "P44ST.C",
-    "label": "How democratic es Venezuela",
+    "label": "How democratic is Venezuela",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -45699,13 +45699,13 @@
       "Very Bad",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Other responses"
     ]
   },
   "P44ST.D": {
     "code": "P44ST.D",
-    "label": "How democratic es Honduras",
+    "label": "How democratic is Honduras",
     "isKey": false,
     "values": [
       "2",
@@ -45730,7 +45730,7 @@
       "No answer",
       "DK",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Would never do them",
       "Other responses",
       "Fully democratic"
@@ -45738,7 +45738,7 @@
   },
   "P44ST.E": {
     "code": "P44ST.E",
-    "label": "How democratic es Cuba",
+    "label": "How democratic is Cuba",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -45763,7 +45763,7 @@
   },
   "P44ST.F": {
     "code": "P44ST.F",
-    "label": "How democratic es España",
+    "label": "How democratic is España",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -45787,7 +45787,7 @@
   },
   "P44N.G": {
     "code": "P44N.G",
-    "label": "How democratic es Canadá",
+    "label": "How democratic is Canadá",
     "isKey": false,
     "values": [
       "2",
@@ -46032,7 +46032,7 @@
   },
   "P50ST.A": {
     "code": "P50ST.A",
-    "label": "Los ciudadanos nacionales cumplen la ley",
+    "label": "National citizens comply with the law",
     "isKey": false,
     "values": [
       "Somewhat guaranteed",
@@ -46046,7 +46046,7 @@
       "DK o No answer",
       "DK, no responde",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed",
       "Yes"
@@ -46054,7 +46054,7 @@
   },
   "P50ST.B": {
     "code": "P50ST.B",
-    "label": "Los ciudadanos nacionales exigen sus derechos",
+    "label": "National citizens demand their rights",
     "isKey": false,
     "values": [
       "Somewhat guaranteed",
@@ -46066,7 +46066,7 @@
       "NA",
       "DK",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed",
       "Yes"
@@ -46086,7 +46086,7 @@
       "NA",
       "DK",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed",
       "Yes"
@@ -46223,7 +46223,7 @@
   },
   "P59ST.A": {
     "code": "P59ST.A",
-    "label": "Government Administration Approval que encabeza el Presidente",
+    "label": "Presidential Government Approval",
     "isKey": false,
     "values": [
       "1 Nothing dispuesto",
@@ -46236,8 +46236,8 @@
       "7",
       "8",
       "9",
-      "Aprueba",
-      "No aprueba",
+      "Approves",
+      "Disapproves",
       "NA",
       "No answer",
       "DK"
@@ -46245,7 +46245,7 @@
   },
   "P59N.B": {
     "code": "P59N.B",
-    "label": "Aprueba/no aprueba la manera en que el gobierno maneja el tema de la seguridad y crimen",
+    "label": "Approves/no aprueba la manera en que el gobierno maneja el tema de la seguridad y crimen",
     "isKey": false,
     "values": [
       "01 Nothing eficiente",
@@ -46258,8 +46258,8 @@
       "7",
       "8",
       "9",
-      "Aprueba",
-      "No aprueba",
+      "Approves",
+      "Disapproves",
       "NA",
       "DK"
     ]
@@ -46902,7 +46902,7 @@
   },
   "P77ST.I": {
     "code": "P77ST.I",
-    "label": "Cómo se informa de política: Otros",
+    "label": "Cómo se informa de política: Others",
     "isKey": false,
     "values": [
       "Menciona",
@@ -47983,7 +47983,7 @@
       "Partidos Social Demócratas",
       "Partidos comunistas",
       "Partidos con temas específicos",
-      "Perdidos (Partidos sin familia, Otros)"
+      "Perdidos (Partidos sin familia, Others)"
     ]
   },
   "P5STIC1A": {
@@ -48072,7 +48072,7 @@
   },
   "P16ST.A": {
     "code": "P16ST.A",
-    "label": "Democracia puede tener problemas pero es el mejor sistema de gobierno - La frase de Churchill",
+    "label": "Democracy best system (Churchill)",
     "isKey": true,
     "values": [
       "Agree",
@@ -48269,7 +48269,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "PY: Asociación Nacional Republicana (ANR)",
       "PY: Movimiento Popular Tekojojá (MPT)",
       "PY: Partido Democrático Progresista (PDP)",
@@ -48929,7 +48929,7 @@
       "DK",
       "DK/NA",
       "DK o No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -48948,7 +48948,7 @@
       "DK",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -48967,7 +48967,7 @@
       "DK",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -48986,7 +48986,7 @@
       "DK",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -48999,7 +48999,7 @@
       "Completamente guaranteed",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -49012,7 +49012,7 @@
       "Completamente guaranteed",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -49025,7 +49025,7 @@
       "Completamente guaranteed",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -49038,7 +49038,7 @@
       "Completamente guaranteed",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -49051,7 +49051,7 @@
       "Completamente guaranteed",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -49064,7 +49064,7 @@
       "Completamente guaranteed",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -49077,7 +49077,7 @@
       "Completamente guaranteed",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -49090,7 +49090,7 @@
       "Completamente guaranteed",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -49104,7 +49104,7 @@
       "No",
       "DK/NA",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed",
       "Yes"
     ]
@@ -49215,7 +49215,7 @@
   },
   "P49ST.C": {
     "code": "P49ST.C",
-    "label": "How democratic es Venezuela",
+    "label": "How democratic is Venezuela",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -49229,10 +49229,10 @@
       "8",
       "9",
       "Aumentado algo",
-      "Aumentado mucho",
+      "Increased a lot",
       "Bien",
       "Disminuido algo",
-      "Disminuido mucho",
+      "Decreased a lot",
       "Mal",
       "Muy bien",
       "Very Goods",
@@ -49248,7 +49248,7 @@
   },
   "P49ST.E": {
     "code": "P49ST.E",
-    "label": "How democratic es España",
+    "label": "How democratic is España",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -49272,13 +49272,13 @@
       "DK",
       "DK lo sufiente",
       "DK, no responde",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
   "P49ST.F": {
     "code": "P49ST.F",
-    "label": "How democratic es Canadá",
+    "label": "How democratic is Canadá",
     "isKey": false,
     "values": [
       "2",
@@ -50347,7 +50347,7 @@
       "Not applicable",
       "NA",
       "No recuerda",
-      "Otros"
+      "Others"
     ]
   },
   "P80ST.D": {
@@ -50492,7 +50492,7 @@
       "Alguna vez",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Rara vez",
       "Seguido"
     ]
@@ -52045,11 +52045,11 @@
       "Crime/public safety",
       "Desocupacion/desempleo",
       "Unemployment",
-      "Distribucion del ingreso, injusticia social",
-      "Falta de oportunidades para la juventud",
+      "Income distribution, social injustice",
+      "Lack of opportunities for youth",
       "Falta parques, lugares de esparcimiento",
       "Same",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation / aumento de precios",
       "Inflation/aumento de precios",
       "La Pandemia/ Coronavirus/ Covid-19",
@@ -52067,24 +52067,24 @@
       "NA",
       "No answer",
       "DK",
-      "Otros",
+      "Others",
       "Poverty",
       "Education problems",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Problemas de medio ambiente/contaminacion",
       "Problemas de salud",
       "Problemas de vivienda/habitacion",
       "Housing problems",
-      "Problemas del medio ambiente",
+      "Environmental problems",
       "Average",
       "Servicios basicos deficientes (agua, luz, etc)",
-      "Situacion/problemas de la politica",
+      "Political situation/problems",
       "Political situation/problems",
       "Todo muy caro",
       "Transport",
       "A little better",
-      "Violacion de los derechos humanos",
+      "Human rights violations",
       "Human rights violations,",
       "Violence/pandillas"
     ]
@@ -52100,10 +52100,10 @@
       "Corruption",
       "Crime/public safety",
       "Unemployment",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Lack of concern for the elderly",
       "Same",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation/aumento de precios",
       "Economy/economic/financial problems",
       "Bad",
@@ -52116,10 +52116,10 @@
       "NA",
       "No answer",
       "DK",
-      "Otros",
+      "Others",
       "Poverty",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Housing problems",
       "Average",
       "Political situation/problems",
@@ -52144,12 +52144,12 @@
       "Crime/public safety",
       "Unemployment",
       "Racial discrimination",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Lack of concern for the elderly",
       "Gas, fuel, shortage",
       "Guerrilla",
       "Same",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation/aumento de precios",
       "Infraestructura",
       "Inmigrantes",
@@ -52166,12 +52166,12 @@
       "NA",
       "No answer",
       "DK",
-      "Otros",
+      "Others",
       "Poverty",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Housing problems",
-      "Problemas del medio ambiente",
+      "Environmental problems",
       "Energy problems",
       "Average",
       "Poor basic services (water, electricity, etc.)",
@@ -52247,13 +52247,13 @@
       "Desocupación  / desempleo",
       "Distribución del ingreso, injusticia social",
       "En algunas circunstancias, un gobierno autoritario puede ser preferible {Gobierno Autoritario}",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Same",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation / aumento de precios",
       "Democracy is preferable to any other form of government {Democracia}",
       "Economy/economic/financial problems",
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Much better",
       "Much worse",
       "Very Satisfied",
@@ -52265,13 +52265,13 @@
       "No answer",
       "DK",
       "DK/NA",
-      "Otros",
+      "Others",
       "Poverty",
       "Problemas con países vecinos",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Problemas de vivienda / habitación",
-      "Problemas del medio ambiente/contaminación",
+      "Environmental problems/contaminación",
       "Energy problems",
       "Problemas limítrofes",
       "Most people can be trusted",
@@ -52302,9 +52302,9 @@
       "Distribución del ingreso, injusticia social",
       "In some circumstances, an authoritarian government may be preferable",
       "En algunas circunstancias, un gobierno autoritario puede ser preferible {Gobierno Autoritario}",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Same",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation / aumento de precios",
       "Democracy is preferable to any other form of government",
       "Democracy is preferable to any other form of government {Democracia}",
@@ -52319,11 +52319,11 @@
       "No answer",
       "DK",
       "DK/NA",
-      "Otros",
+      "Others",
       "Poverty",
       "Problemas con países vecinos",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Problemas de vivienda / habitación",
       "Energy problems",
       "Problemas limítrofes",
@@ -52623,7 +52623,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Vota nulo/Blanco"
     ]
   },
@@ -52852,12 +52852,12 @@
       "Casi nunca",
       "Frecuentemente",
       "Muy frecuentemente",
-      "Nunca"
+      "Never"
     ]
   },
   "P31N.A": {
     "code": "P31N.A",
-    "label": "Dispuesto a salir a marchar y protestar por: Aumento de salario y mejores condiciones de trabajo",
+    "label": "Willing to march/protest for: Higher wages and better working conditions",
     "isKey": false,
     "values": [
       "2",
@@ -52957,7 +52957,7 @@
     "values": [
       "More de una vez en los últimos tres años",
       "No answer",
-      "Nunca hecho",
+      "Never hecho",
       "Una vez en los últimos tres años"
     ]
   },
@@ -52968,7 +52968,7 @@
     "values": [
       "More de una vez en los últimos tres años",
       "No answer",
-      "Nunca hecho",
+      "Never hecho",
       "Una vez en los últimos tres años"
     ]
   },
@@ -52980,7 +52980,7 @@
       "More de una vez en los últimos tres años",
       "No answer",
       "DK",
-      "Nunca hecho",
+      "Never hecho",
       "Una vez en los últimos tres años"
     ]
   },
@@ -52992,7 +52992,7 @@
       "More de una vez en los últimos tres años",
       "No answer",
       "DK",
-      "Nunca hecho",
+      "Never hecho",
       "Una vez en los últimos tres años"
     ]
   },
@@ -53004,7 +53004,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P36TGB.B": {
@@ -53015,7 +53015,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P36TGB.C": {
@@ -53026,7 +53026,7 @@
       "A menudo",
       "A veces",
       "No answer",
-      "Nunca"
+      "Never"
     ]
   },
   "P36TGB.D": {
@@ -53037,7 +53037,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P36TGB.E": {
@@ -53048,7 +53048,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P36TGB.F": {
@@ -53059,7 +53059,7 @@
       "A menudo",
       "A veces",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P36TGB.G": {
@@ -53070,7 +53070,7 @@
       "A menudo",
       "A veces",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P37GBS": {
@@ -53092,9 +53092,9 @@
     "label": "Government Administration Approval que encabeza el presidente",
     "isKey": false,
     "values": [
-      "Aprueba",
+      "Approves",
       "No",
-      "No aprueba",
+      "Disapproves",
       "No answer",
       "DK/NA",
       "Yes"
@@ -53372,7 +53372,7 @@
   },
   "P50TGB.C": {
     "code": "P50TGB.C",
-    "label": "How democratic es EEUU",
+    "label": "How democratic is EEUU",
     "isKey": false,
     "values": [
       "2",
@@ -53392,7 +53392,7 @@
   },
   "P50TGB.D": {
     "code": "P50TGB.D",
-    "label": "How democratic es España",
+    "label": "How democratic is España",
     "isKey": false,
     "values": [
       "2",
@@ -53626,7 +53626,7 @@
       "None",
       "No answer",
       "DK",
-      "Otros",
+      "Others",
       "Protección contra el crimen",
       "Violación a los Derechos Humanos"
     ]
@@ -53646,7 +53646,7 @@
       "None",
       "No answer",
       "DK",
-      "Otros",
+      "Others",
       "Protección contra el crimen",
       "Violación a los Derechos Humanos"
     ]
@@ -53751,7 +53751,7 @@
       "No conozco a nadie que haya presenciado un acto de corruption",
       "No answer",
       "DK",
-      "Nunca presenció un acto de corruption",
+      "Never presenció un acto de corruption",
       "Presenció"
     ]
   },
@@ -53811,7 +53811,7 @@
       "NA",
       "DK",
       "DK/No answer",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
       "Little",
       "Average",
@@ -53857,7 +53857,7 @@
   },
   "P70NE": {
     "code": "P70NE",
-    "label": "Problema narcotráfico - invertir recursos: Otros-Legalización de las drogas (solo AR,CO,CR,UY)",
+    "label": "Problema narcotráfico - invertir recursos: Others-Legalización de las drogas (solo AR,CO,CR,UY)",
     "isKey": false,
     "values": [
       "Menciona",
@@ -53866,7 +53866,7 @@
   },
   "P70NF": {
     "code": "P70NF",
-    "label": "Problema narcotráfico - invertir recursos: Otros-Education/más educación/calidad (solo AR,CO,UY)",
+    "label": "Problema narcotráfico - invertir recursos: Others-Education/más educación/calidad (solo AR,CO,UY)",
     "isKey": false,
     "values": [
       "Menciona",
@@ -53875,7 +53875,7 @@
   },
   "P70NG": {
     "code": "P70NG",
-    "label": "Problema narcotráfico - invertir recursos: Otros-Mayor control en las fronteras (solo AR)",
+    "label": "Problema narcotráfico - invertir recursos: Others-Mayor control en las fronteras (solo AR)",
     "isKey": false,
     "values": [
       "Menciona",
@@ -53884,7 +53884,7 @@
   },
   "P70NH": {
     "code": "P70NH",
-    "label": "Problema narcotráfico - invertir recursos: Otros-Controlar/investigar al gobierno/políticos/policía (solo AR,UY)",
+    "label": "Problema narcotráfico - invertir recursos: Others-Controlar/investigar al gobierno/políticos/policía (solo AR,UY)",
     "isKey": false,
     "values": [
       "Menciona",
@@ -53893,7 +53893,7 @@
   },
   "P70NI": {
     "code": "P70NI",
-    "label": "Problema narcotráfico - invertir recursos: Otros-Ir por los fondos narcos/ los que venden (solo AR)",
+    "label": "Problema narcotráfico - invertir recursos: Others-Ir por los fondos narcos/ los que venden (solo AR)",
     "isKey": false,
     "values": [
       "Menciona",
@@ -53945,7 +53945,7 @@
       "Hace más de un año",
       "No answer",
       "DK",
-      "Nunca o casi nunca"
+      "Never o casi nunca"
     ]
   },
   "P75NC.B": {
@@ -53959,7 +53959,7 @@
       "Hace más de un año",
       "No answer",
       "DK",
-      "Nunca o casi nunca"
+      "Never o casi nunca"
     ]
   },
   "P78NC": {
@@ -54437,7 +54437,7 @@
   },
   "P85NCJ": {
     "code": "P85NCJ",
-    "label": "Lugar donde se conecta a Internet: Otros",
+    "label": "Lugar donde se conecta a Internet: Others",
     "isKey": false,
     "values": [
       "Menciona",
@@ -54473,7 +54473,7 @@
       "More de 12 veces",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P87NC": {
@@ -54487,7 +54487,7 @@
       "More de 12 veces",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P89NC": {
@@ -55205,9 +55205,9 @@
     "label": "Interpersonal Trust",
     "isKey": true,
     "values": [
-      "00 Izquierda",
+      "00 Left",
       "1",
-      "10 Derecha",
+      "10 Right",
       "2",
       "3",
       "4",
@@ -55227,12 +55227,12 @@
       "AR: Propuesta Republicana (PRO)",
       "AR: Unión Cívica Radical (UCR)",
       "Some Trust",
-      "Aprueba",
+      "Approves",
       "A Lot of Trust",
       "No Trust",
       "None",
       "Not applicable",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "Not registered/Underage",
       "No answer",
@@ -55240,7 +55240,7 @@
       "DK/NA",
       "DK/NA",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Little Trust",
       "Most people can be trusted",
       "One can never be too careful",
@@ -55394,7 +55394,7 @@
       "7",
       "8",
       "9",
-      "Aprueba",
+      "Approves",
       "Derecha",
       "Unfair",
       "Izquierda",
@@ -55402,7 +55402,7 @@
       "Very unfair",
       "Very fair",
       "None",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "DK",
       "DK/NA",
@@ -55423,7 +55423,7 @@
       "NA",
       "No answer",
       "DK",
-      "Nunca",
+      "Never",
       "Little"
     ]
   },
@@ -55437,7 +55437,7 @@
       "Muy frecuentemente",
       "NA",
       "DK",
-      "Nunca"
+      "Never"
     ]
   },
   "P21TGB.A": {
@@ -55448,7 +55448,7 @@
       "Ha realizado",
       "DK, no responde",
       "DK/No answer",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -55464,13 +55464,13 @@
       "No existe conflicto",
       "DK, no responde",
       "DK/No answer",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
   "P21ST.C": {
     "code": "P21ST.C",
-    "label": "Acciones que ha realizado: Participar en protestas no autorizadas, marchas, bloquear el tráfico",
+    "label": "Acciones que ha realizado: Participate in unauthorized protests, marchas, bloquear el tráfico",
     "isKey": false,
     "values": [
       "Débil",
@@ -55480,7 +55480,7 @@
       "No existe conflicto",
       "DK, no responde",
       "DK/No answer",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -55491,7 +55491,7 @@
     "values": [
       "Ha realizado",
       "DK, no responde",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -55502,7 +55502,7 @@
     "values": [
       "Ha realizado",
       "DK, no responde",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -55525,7 +55525,7 @@
       "NA",
       "DK",
       "DK, no responde",
-      "Nunca bajo ninguna circunstancia",
+      "Never bajo ninguna circunstancia",
       "Podría realizar"
     ]
   },
@@ -55550,7 +55550,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Vota nulo/Blanco",
       "Votó por el partido de oposición",
       "Votó por el partido en el gobierno"
@@ -56041,7 +56041,7 @@
       "DK",
       "OAS (Organization of American States)",
       "ONU",
-      "Otros",
+      "Others",
       "PNUD (Programa de Naciones Unidas para el Desarrollo)",
       "UNASUR"
     ]
@@ -56270,11 +56270,11 @@
       "08",
       "09",
       "Somewhat",
-      "Aprueba",
+      "Approves",
       "A lot",
       "Nothing",
       "Nothing de aumento",
-      "No aprueba",
+      "Disapproves",
       "No answer",
       "DK",
       "DK/No answer",
@@ -56284,15 +56284,15 @@
   },
   "P48STGBS": {
     "code": "P48STGBS",
-    "label": "Aprueba la gestión del gobierno encabezada por el Presidente (nombre)",
+    "label": "Approves la gestión del gobierno encabezada por el Presidente (nombre)",
     "isKey": false,
     "values": [
-      "Aprueba",
+      "Approves",
       "Bien",
       "Mal",
       "Muy bien",
       "Muy mal",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "DK"
     ]
@@ -56305,7 +56305,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -56317,7 +56317,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -56329,7 +56329,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -56341,7 +56341,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -56353,7 +56353,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -56365,7 +56365,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -56377,7 +56377,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -56389,7 +56389,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -56401,7 +56401,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -56415,7 +56415,7 @@
       "Menciona",
       "No menciona",
       "DK/No answer",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -57502,7 +57502,7 @@
     "label": "Satisfaction with Democracy",
     "isKey": true,
     "values": [
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Rather Satisfied",
       "Not Satisfied At All",
@@ -57516,7 +57516,7 @@
     "label": "Satisfaction with economy performance",
     "isKey": true,
     "values": [
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Very Satisfied",
       "Rather Satisfied",
       "Not Satisfied At All",
@@ -57524,7 +57524,7 @@
       "No answer",
       "DK",
       "DK, no responde",
-      "Para el bien de todo el pueblo"
+      "For the good of all the people"
     ]
   },
   "P13STGBSA": {
@@ -57633,9 +57633,9 @@
     "label": "Voto gobierno-oposición",
     "isKey": true,
     "values": [
-      "Aprueba",
+      "Approves",
       "Not applicable",
-      "No aprueba",
+      "Disapproves",
       "DK",
       "Voto por el partido de oposición",
       "Voto por el partido en el gobierno"
@@ -57665,16 +57665,16 @@
       "AR: Partido Socialista (PS)",
       "AR: Propuesta Republicana (PRO)",
       "AR: Unión Cívica Radical (UCR)",
-      "Aprueba",
+      "Approves",
       "Derecha",
       "Izquierda",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "Not registered/Underage",
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "PY: Asociación Nacional Republicana (ANR)",
       "PY: Movimiento Popular Tekojojá (MPT)",
       "PY: Partido Democrático Progresista (PDP)",
@@ -57708,7 +57708,7 @@
   },
   "P26STA": {
     "code": "P26STA",
-    "label": "Cómo se informa de política: Con la familia",
+    "label": "Cómo se informa de política: With family",
     "isKey": false,
     "values": [
       "Menciona",
@@ -57789,7 +57789,7 @@
   },
   "P26STJ": {
     "code": "P26STJ",
-    "label": "¿Como se informa Ud. de los asuntos politicos?. Otros",
+    "label": "¿Como se informa Ud. de los asuntos politicos?. Others",
     "isKey": false,
     "values": [
       "Menciona",
@@ -58315,7 +58315,7 @@
       "No ha tenido contacto",
       "DK",
       "DK, no responde",
-      "Nunca",
+      "Never",
       "Has remained the same",
       "Una o dos veces",
       "Unas pocas veces"
@@ -58329,7 +58329,7 @@
       "A menudo",
       "No ha tenido contacto",
       "DK, no responde",
-      "Nunca",
+      "Never",
       "Una o dos veces",
       "Unas pocas veces"
     ]
@@ -58342,7 +58342,7 @@
       "A menudo",
       "No ha tenido contacto",
       "DK, no responde",
-      "Nunca",
+      "Never",
       "Una o dos veces",
       "Unas pocas veces"
     ]
@@ -58355,7 +58355,7 @@
       "A menudo",
       "No ha tenido contacto",
       "DK, no responde",
-      "Nunca",
+      "Never",
       "Una o dos veces",
       "Unas pocas veces"
     ]
@@ -58368,7 +58368,7 @@
       "A menudo",
       "No ha tenido contacto",
       "DK, no responde",
-      "Nunca",
+      "Never",
       "Una o dos veces",
       "Unas pocas veces"
     ]
@@ -58381,7 +58381,7 @@
       "A menudo",
       "No ha tenido contacto",
       "DK, no responde",
-      "Nunca",
+      "Never",
       "Una o dos veces",
       "Unas pocas veces"
     ]
@@ -58397,7 +58397,7 @@
       "No ha tenido contacto",
       "DK",
       "DK, no responde",
-      "Nunca",
+      "Never",
       "Si",
       "Una o dos veces",
       "Unas pocas veces"
@@ -58486,7 +58486,7 @@
       "No answer",
       "DK",
       "DK, no responde",
-      "Otros",
+      "Others",
       "Participar en protestar o marchas contra la corruption",
       "Rechazar pagar sobornos/coimas/mordidas",
       "Votar por candidatos o partidos limpios o por partidos que prometan luchar contra la corruption"
@@ -58510,7 +58510,7 @@
       "Ni de acuerdo ni en desacuerdo",
       "No answer",
       "DK",
-      "Otros",
+      "Others",
       "Participar en protestar o marchas contra la corruption",
       "Rechazar pagar sobornos/coimas/mordidas",
       "Votar por candidatos o partidos limpios o por partidos que prometan luchar contra la corruption"
@@ -58584,7 +58584,7 @@
   },
   "P44STMC": {
     "code": "P44STMC",
-    "label": "La democracia permite que se solucionen los problemas que tenemos",
+    "label": "Democracy permite que se solucionen los problemas que tenemos",
     "isKey": false,
     "values": [
       "Agree",
@@ -58723,7 +58723,7 @@
   },
   "P49STAB": {
     "code": "P49STAB",
-    "label": "Instituciones que conoce: BID (Banco Interamericano de Desarrollo)",
+    "label": "Instituciones que conoce: IDB (Inter-American Development Bank)",
     "isKey": false,
     "values": [
       "Conoce",
@@ -58894,7 +58894,7 @@
       "DK, no responde",
       "OEA Organizacion de Estados Americanos",
       "ONU Naciones Unidas",
-      "Otros",
+      "Others",
       "PNUD Programa de Naciones Unidas para el Desarrollo",
       "Little"
     ]
@@ -58905,7 +58905,7 @@
     "isKey": false,
     "values": [
       "BCIE (Banco Centro Americano de Intergración Económica){BCIE}",
-      "BID (Banco Interamericano de Desarrollo){BID}",
+      "IDB (Inter-American Development Bank){BID}",
       "BID Banco Interamericano del desarrollo",
       "Banco Centro Americano de Integracion Economica BCIE",
       "Banco Mundial",
@@ -58922,7 +58922,7 @@
       "OEA Organizacion de Estados Americanos",
       "ONU (Naciones Unidas){ONU}",
       "ONU Naciones Unidas",
-      "Otros",
+      "Others",
       "PNUD (Programa de Naciones Unidas para el Desarrollo){PNUD}",
       "PNUD Programa de Naciones Unidas para el Desarrollo"
     ]
@@ -59345,7 +59345,7 @@
   },
   "P56N_J": {
     "code": "P56N_J",
-    "label": "Característica que cree Ud. que hace conocido a [País]: Otros",
+    "label": "Característica que cree Ud. que hace conocido a [País]: Others",
     "isKey": false,
     "values": [
       "Menciona",
@@ -60280,7 +60280,7 @@
     "label": "Satisfaction with Democracy",
     "isKey": true,
     "values": [
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Very Satisfied",
       "Not Satisfied At All",
       "Not Very Satisfied",
@@ -60451,8 +60451,8 @@
     "label": "Approval of the president's government administration",
     "isKey": true,
     "values": [
-      "Aprueba",
-      "No aprueba",
+      "Approves",
+      "Disapproves",
       "DK"
     ]
   },
@@ -61261,7 +61261,7 @@
   },
   "P49STA.2": {
     "code": "P49STA.2",
-    "label": "Instituciones que conoce: BID (Banco Interamericano de Desarrollo)",
+    "label": "Instituciones que conoce: IDB (Inter-American Development Bank)",
     "isKey": false,
     "values": [
       "Conoce",
@@ -62309,7 +62309,7 @@
       "Less de una vez al mes",
       "Less de una vez cada 3 meses",
       "DK/No answer",
-      "Nunca",
+      "Never",
       "Una vez al mes"
     ]
   },
@@ -62946,7 +62946,7 @@
       "Unemployment",
       "Racial discrimination",
       "Extranjeros",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Lack of concern for the elderly",
       "Inflation/aumento de precios",
       "Inmigrantes",
@@ -62958,12 +62958,12 @@
       "NA",
       "No poder estar en mi país",
       "DK",
-      "Otros",
+      "Others",
       "Poverty",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Housing problems",
-      "Problemas del medio ambiente",
+      "Environmental problems",
       "Energy problems",
       "Poor basic services (water, electricity, etc.)",
       "Political situation/problems",
@@ -62987,9 +62987,9 @@
       "Corruption",
       "Crime/public safety",
       "Unemployment",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Lack of concern for the elderly",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation/aumento de precios",
       "Inmigrantes",
       "Economy/economic/financial problems",
@@ -63001,12 +63001,12 @@
       "NA",
       "No poder estar en mi país",
       "DK",
-      "Otros",
+      "Others",
       "Poverty",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Housing problems",
-      "Problemas del medio ambiente",
+      "Environmental problems",
       "Energy problems",
       "Poor basic services (water, electricity, etc.)",
       "Political situation/problems",
@@ -63139,7 +63139,7 @@
     "isKey": true,
     "values": [
       "Somewhat",
-      "Mas bien satisfecho",
+      "Rather satisfied",
       "Mucha",
       "Very Satisfied",
       "Not Satisfied At All",
@@ -63301,7 +63301,7 @@
   },
   "P16NC.C": {
     "code": "P16NC.C",
-    "label": "Trust in que las instituciones operan para mejorar nuestra calidad de vida: Sindicatos",
+    "label": "Trust institutions improve quality of life: Unions",
     "isKey": false,
     "values": [
       "Somewhat",
@@ -63340,7 +63340,7 @@
   },
   "P16NC.F": {
     "code": "P16NC.F",
-    "label": "Trust in que las instituciones operan para mejorar nuestra calidad de vida: Bancos",
+    "label": "Trust institutions improve quality of life: Banks",
     "isKey": false,
     "values": [
       "Somewhat",
@@ -63353,7 +63353,7 @@
   },
   "P16NC.G": {
     "code": "P16NC.G",
-    "label": "Trust in que las instituciones operan para mejorar nuestra calidad de vida: Organismos multilaterales/internacionales (BID/CAF)",
+    "label": "Trust institutions improve quality of life: Multilateral organizations (IDB/CAF)",
     "isKey": false,
     "values": [
       "Somewhat",
@@ -63513,8 +63513,8 @@
     "label": "Approval of the president's government administration",
     "isKey": false,
     "values": [
-      "Aprueba",
-      "No aprueba",
+      "Approves",
+      "Disapproves",
       "DK"
     ]
   },
@@ -63539,7 +63539,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "PY: Asociación Nacional Republicana (ANR)",
       "PY: Movimiento Popular Tekojojá (MPT)",
       "PY: Partido Democrático Progresista (PDP)",
@@ -64335,7 +64335,7 @@
       "NA",
       "No sé, yo no pago la cuenta de la luz",
       "No tiene acceso a electricidad",
-      "Nunca he tenido dificultades",
+      "Never he tenido dificultades",
       "Siempre he tenido dificultades"
     ]
   },
@@ -64347,7 +64347,7 @@
       "Frecuentemente cuando hace mucho calor",
       "Frecuentemente cuando hace mucho frío",
       "DK/No answer",
-      "Nunca"
+      "Never"
     ]
   },
   "P34NI.AA": {
@@ -64837,7 +64837,7 @@
   },
   "P44STA.B": {
     "code": "P44STA.B",
-    "label": "De la lista de instituciones internacionales mencione todas las que conoce: BID (Banco Interamericano de Desarrollo)",
+    "label": "De la lista de instituciones internacionales mencione todas las que conoce: IDB (Inter-American Development Bank)",
     "isKey": false,
     "values": [
       "Conoce",
@@ -65050,7 +65050,7 @@
   },
   "P47NC.A": {
     "code": "P47NC.A",
-    "label": "Conocimiento sobre las relaciones entre (PAÍS) y organismos internacionales: BID (Banco Interamericano de Desarrollo)",
+    "label": "Conocimiento sobre las relaciones entre (PAÍS) y organismos internacionales: IDB (Inter-American Development Bank)",
     "isKey": false,
     "values": [
       "Good",
@@ -65600,7 +65600,7 @@
       "Strongly disagree",
       "DK/NA",
       "DK/NA",
-      "Nunca me fijo",
+      "Never me fijo",
       "Siempre me fijo"
     ]
   },
@@ -65611,7 +65611,7 @@
     "values": [
       "A veces me fijo",
       "DK/NA",
-      "Nunca me fijo",
+      "Never me fijo",
       "Siempre me fijo"
     ]
   },
@@ -65622,7 +65622,7 @@
     "values": [
       "A veces me fijo",
       "DK/NA",
-      "Nunca me fijo",
+      "Never me fijo",
       "Siempre me fijo"
     ]
   },
@@ -65768,7 +65768,7 @@
       "En familia",
       "Entre amigos",
       "Social media creates an illusion of participation en política",
-      "Las redes sociales no sirven para participar en política",
+      "Social media no sirven para participar en política",
       "Social media enables political participation",
       "Manifestación/protesta",
       "Menciona",
@@ -66342,7 +66342,7 @@
     "isKey": false,
     "values": [
       "DK/No answer",
-      "Nunca viajé al exterior",
+      "Never viajé al exterior",
       "Viajo al menos una vez al año",
       "Viajo mas de una vez al año",
       "Viajé pocas veces"
@@ -66558,7 +66558,7 @@
     "label": "Satisfaction with economy performance",
     "isKey": true,
     "values": [
-      "Grupos poderosos en su propio beneficio",
+      "Powerful groups for their own benefit",
       "Very Satisfied",
       "Rather Satisfied",
       "Not Satisfied At All",
@@ -66566,7 +66566,7 @@
       "Not Very Satisfied",
       "DK",
       "DK/NA",
-      "Para el bien de todo el pueblo"
+      "For the good of all the people"
     ]
   },
   "P13ST.D": {
@@ -67388,10 +67388,10 @@
     "label": "Reciben más de lo que deberían recibir o no reciben más de lo que deberían: Los Inmigrantes",
     "isKey": false,
     "values": [
-      "Aprueba",
+      "Approves",
       "Los funcionarios públicos",
       "Los jueces",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "DK/NA"
     ]
@@ -67401,9 +67401,9 @@
     "label": "Reciben más de lo que deberían recibir o no reciben más de lo que deberían: Los jóvenes",
     "isKey": false,
     "values": [
-      "Aprueba",
+      "Approves",
       "El presidente de la República",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "DK/NA"
     ]
@@ -67475,7 +67475,7 @@
   },
   "P20STM.C": {
     "code": "P20STM.C",
-    "label": "Acuerdo/Desacuerdo: La democracia permite que se solucionen los problemas que tenemos",
+    "label": "Acuerdo/Desacuerdo: Democracy permite que se solucionen los problemas que tenemos",
     "isKey": false,
     "values": [
       "Agree",
@@ -67755,7 +67755,7 @@
   },
   "P29ST.D": {
     "code": "P29ST.D",
-    "label": "Agree con que al mismo precio prefiero comprar bienes nacionales que importados",
+    "label": "Agree: prefer buying national goods over imports at same price",
     "isKey": false,
     "values": [
       "Somewhat unfavorable",
@@ -67916,7 +67916,7 @@
   },
   "P36STM.B": {
     "code": "P36STM.B",
-    "label": "Conocimienro del BID (Banco Interamericano de Desarrollo)",
+    "label": "Conocimienro del IDB (Inter-American Development Bank)",
     "isKey": false,
     "values": [
       "No conoce",
@@ -67960,7 +67960,7 @@
   },
   "P36STMB.B": {
     "code": "P36STMB.B",
-    "label": "Trust in el BID (Banco Interamericano de Desarrollo)",
+    "label": "Trust in el IDB (Inter-American Development Bank)",
     "isKey": false,
     "values": [
       "Somewhat",
@@ -68166,7 +68166,7 @@
       "Not interested at all",
       "NA",
       "DK",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed",
       "Not very interested"
     ]
@@ -68183,7 +68183,7 @@
       "None",
       "NA",
       "DK/NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -68200,7 +68200,7 @@
       "None",
       "NA",
       "DK/NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -68217,7 +68217,7 @@
       "None",
       "NA",
       "DK/NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -68234,7 +68234,7 @@
       "None",
       "NA",
       "DK/NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Little",
       "Poorly guaranteed"
     ]
@@ -68247,7 +68247,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -68259,7 +68259,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -68271,7 +68271,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -68283,7 +68283,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -68295,7 +68295,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -68307,7 +68307,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -68319,7 +68319,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -68331,7 +68331,7 @@
       "Somewhat guaranteed",
       "Completamente guaranteed",
       "NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -68354,7 +68354,7 @@
       "Los sindicatos",
       "NA",
       "DK/NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed"
     ]
   },
@@ -68429,7 +68429,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "PY: Asociación Nacional Republicana (ANR)",
       "PY: Frente Guasú (FG)",
       "PY: Movimiento Popular Tekojojá (MPT)",
@@ -68472,7 +68472,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Vota nulo/Blanco",
       "Votó por el partido de oposición",
       "Votó por el partido en el gobierno"
@@ -68501,7 +68501,7 @@
       "Frecuentemente",
       "Muy frecuentemente",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P54ST.B": {
@@ -68522,7 +68522,7 @@
       "None",
       "NA",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Todas"
     ]
   },
@@ -68535,7 +68535,7 @@
       "Frecuentemente",
       "Muy frecuentemente",
       "NA",
-      "Nunca"
+      "Never"
     ]
   },
   "P54ST.D": {
@@ -68549,8 +68549,8 @@
       "Could carry it out",
       "Muy frecuentemente",
       "NA",
-      "Nunca",
-      "Nunca la haría"
+      "Never",
+      "Never la haría"
     ]
   },
   "P55ST.D": {
@@ -68561,7 +68561,7 @@
       "La ha realizado",
       "La podria realizar",
       "NA",
-      "Nunca la haria"
+      "Never la haria"
     ]
   },
   "P55ST.E": {
@@ -68572,7 +68572,7 @@
       "La ha realizado",
       "La podria realizar",
       "NA",
-      "Nunca la haria"
+      "Never la haria"
     ]
   },
   "P55ST.F": {
@@ -68588,7 +68588,7 @@
       "NA",
       "No hay que hacer nada, ni votar ni protestar",
       "Don't know what to do",
-      "Nunca la haria"
+      "Never la haria"
     ]
   },
   "P56N": {
@@ -68851,7 +68851,7 @@
       "Hay presencia",
       "No hay presencia",
       "DK/NA",
-      "Nunca",
+      "Never",
       "Ocasionalmente",
       "Todo o casi todo el tiempo"
     ]
@@ -71680,7 +71680,7 @@
   },
   "P3N": {
     "code": "P3N",
-    "label": "Necesidad de mejora de la sociedad en que vivimos",
+    "label": "Need for improvement of the society we live in",
     "isKey": true,
     "values": [
       "Food, shortage",
@@ -71694,13 +71694,13 @@
       "Racial discrimination",
       "Is fine as it is",
       "Está igual",
-      "Falta de oportunidades para la juventud",
+      "Lack of opportunities for youth",
       "Lack of concern for the elderly",
       "Ha empeorado mucho",
       "Ha empeorado poco",
       "Ha progresado algo",
       "Ha progresado mucho",
-      "Inestabilidad en el empleo",
+      "Job instability",
       "Inflation/aumento de precios",
       "Infraestructura",
       "La Pandemia/ Coronavirus/ Covid-19",
@@ -71712,12 +71712,12 @@
       "None",
       "NA",
       "DK",
-      "Otros",
+      "Others",
       "Poverty",
       "Education problems",
-      "Problemas de la salud",
+      "Health problems",
       "Housing problems",
-      "Problemas del medio ambiente",
+      "Environmental problems",
       "Can be improved with small changes",
       "Poor basic services (water, electricity, etc.)",
       "Political situation/problems",
@@ -71735,10 +71735,10 @@
     "isKey": false,
     "values": [
       "Somewhat",
-      "Aprueba",
+      "Approves",
       "Mucha",
       "None",
-      "No aprueba",
+      "Disapproves",
       "NA",
       "DK",
       "DK/NA",
@@ -71831,7 +71831,7 @@
   },
   "P18ST.I": {
     "code": "P18ST.I",
-    "label": "Acuerdo/Desacuerdo: La democracia permite que se solucionen los problemas que tenemos",
+    "label": "Acuerdo/Desacuerdo: Democracy permite que se solucionen los problemas que tenemos",
     "isKey": false,
     "values": [
       "Agree",
@@ -72071,10 +72071,10 @@
     "values": [
       "Ambos (espontáneo)",
       "Aumentado algo",
-      "Aumentado mucho",
+      "Increased a lot",
       "China",
       "Disminuido algo",
-      "Disminuido mucho",
+      "Decreased a lot",
       "EEUU",
       "None (espontáneo)",
       "NA",
@@ -72090,9 +72090,9 @@
       "Somewhat in favor",
       "Somewhat against",
       "Aumentado algo",
-      "Aumentado mucho",
+      "Increased a lot",
       "Disminuido algo",
-      "Disminuido mucho",
+      "Decreased a lot",
       "Strongly in favor",
       "Strongly against",
       "DK/NA"
@@ -72680,7 +72680,7 @@
       "NA",
       "DK",
       "DK/NA",
-      "Para nada guaranteed",
+      "Not guaranteed at all",
       "Poorly guaranteed",
       "Not very interested"
     ]
@@ -72695,7 +72695,7 @@
       "DK",
       "DK/NA",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "PY: Movimiento independiente Nueva República",
       "PY: Partido Colorado (PC)",
       "PY: Partido Cruzada Nacional",
@@ -72738,7 +72738,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "Vota nulo/Blanco",
       "Votó por el partido de oposición",
       "Votó por el partido en el gobierno"
@@ -72755,7 +72755,7 @@
       "Not applicable",
       "NA",
       "DK",
-      "Nunca",
+      "Never",
       "Votó por el partido de oposición",
       "Votó por el partido en el gobierno"
     ]
@@ -73645,7 +73645,7 @@
   },
   "P14ST.J": {
     "code": "P14ST.J",
-    "label": "Trust in la radio",
+    "label": "Trust in radio",
     "isKey": true,
     "values": [
       "Some Trust",
@@ -73684,7 +73684,7 @@
   },
   "P14ST.M": {
     "code": "P14ST.M",
-    "label": "Trust in los diarios",
+    "label": "Trust in newspapers",
     "isKey": true,
     "values": [
       "Some Trust",
@@ -73713,7 +73713,7 @@
     "label": "No puede haber democracia sin oposición",
     "isKey": false,
     "values": [
-      "La democracia puede funcionar sin oposición",
+      "Democracy puede funcionar sin oposición",
       "NA",
       "DK",
       "Sin oposición no puede haber democracia"
@@ -73727,7 +73727,7 @@
       "El Gobierno",
       "El parlamento/Congreso",
       "Las grandes empresas",
-      "Las redes sociales",
+      "Social media",
       "Los ciudadanos",
       "Los medios de comunicación",
       "Los militares",
@@ -73744,7 +73744,7 @@
       "El Gobierno",
       "El parlamento/Congreso",
       "Las grandes empresas",
-      "Las redes sociales",
+      "Social media",
       "Los ciudadanos",
       "Los medios de comunicación",
       "Los militares",
@@ -73761,7 +73761,7 @@
       "El Gobierno",
       "El parlamento/Congreso",
       "Las grandes empresas",
-      "Las redes sociales",
+      "Social media",
       "Los ciudadanos",
       "Los medios de comunicación",
       "Los militares",
@@ -73919,9 +73919,9 @@
     "isKey": false,
     "values": [
       "Aumentado algo",
-      "Aumentado mucho",
+      "Increased a lot",
       "Disminuido algo",
-      "Disminuido mucho",
+      "Decreased a lot",
       "DK/NA"
     ]
   },
@@ -74509,7 +74509,7 @@
       "No answer",
       "DK",
       "No vota/None",
-      "Otros (partidos nacionales y provinciales)",
+      "Others (national and provincial parties)",
       "PY: Asociación Nacional Republicana (ANR)",
       "PY: Frente Guasú (FG)",
       "PY: Partido Cruzada Nacional",
@@ -75296,7 +75296,7 @@
     "label": "El aborto",
     "isKey": false,
     "values": [
-      "1 Nunca se justifica",
+      "1 Never se justifica",
       "10 Siempre se justifica",
       "2",
       "3",
@@ -75315,7 +75315,7 @@
     "label": "La pena de muerte",
     "isKey": false,
     "values": [
-      "1 Nunca se justifica",
+      "1 Never se justifica",
       "10 Siempre se justifica",
       "2",
       "3",
@@ -75334,7 +75334,7 @@
     "label": "Juzgar por un delito a un joven menor de 15 años como un adulto",
     "isKey": false,
     "values": [
-      "1 Nunca se justifica",
+      "1 Never se justifica",
       "10 Siempre se justifica",
       "2",
       "3",
