@@ -3,7 +3,7 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
   PieChart, Pie,
 } from 'recharts';
-import { getResponseColor, getNumericScaleColor, PALETTE } from '../utils/colors';
+import { getResponseColor, getNumericScaleColor } from '../utils/colors';
 import { shortLabel, orderResponseKeys, isNumericScale, isNsNc, isResidual } from '../utils/responses';
 import type { Distribution } from '../hooks/useSurveyData';
 
