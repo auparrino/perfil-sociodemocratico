@@ -464,7 +464,7 @@
   },
   "P11ST": {
     "code": "P11ST",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": false,
     "values": [
       "(País) nunca va ser un país desarrollado",
@@ -864,7 +864,7 @@
       "No answer",
       "DK",
       "No soy (nacionalidad)",
-      "Otras respuestas",
+      "Other responses",
       "Little",
       "Little orgulloso",
       "Prefer a society respecting all rights y libertades, aunque haya algún desorden",
@@ -1096,7 +1096,7 @@
   },
   "P22N.F": {
     "code": "P22N.F",
-    "label": "La economía de mercado es el único sistema con el que (país) puede llegar a ser desarrollado",
+    "label": "Market economy is the only system for development",
     "isKey": false,
     "values": [
       "Agree",
@@ -2177,7 +2177,7 @@
   },
   "P46STB": {
     "code": "P46STB",
-    "label": "Calificación de la relación entre el país y Unión Europea",
+    "label": "Rating of relationship between the country and the EU",
     "isKey": false,
     "values": [
       "Very Goods",
@@ -2279,7 +2279,7 @@
   },
   "P48STIAC": {
     "code": "P48STIAC",
-    "label": "Trust in Unión Europea",
+    "label": "Trust in European Union",
     "isKey": false,
     "values": [
       "Some Trust",
@@ -3363,7 +3363,7 @@
       "Yes",
       "Turquía",
       "USA",
-      "Unión Europea, país europeo",
+      "European Union, país europeo",
       "Uruguay",
       "Venezuela",
       "Viejos"
@@ -3425,7 +3425,7 @@
   },
   "P70STB": {
     "code": "P70STB",
-    "label": "Importancia del comercio con Unión Europea para la economía del país",
+    "label": "Importancia del comercio con European Union para la economía del país",
     "isKey": false,
     "values": [
       "Quite a bit importante",
@@ -3732,7 +3732,7 @@
   },
   "P78NB": {
     "code": "P78NB",
-    "label": "Acción política: Participar en protestas no autorizadas",
+    "label": "Political action: Participate in unauthorized protests",
     "isKey": false,
     "values": [
       "La ha realizado",
@@ -18503,7 +18503,7 @@
   },
   "P10ST": {
     "code": "P10ST",
-    "label": "Most Important Problem en el país",
+    "label": "Most important problem in the country",
     "isKey": false,
     "values": [
       "(país) nunca va ser un país desarrollado",
@@ -18557,7 +18557,7 @@
       "NA",
       "DK",
       "DK, no responde",
-      "Otras respuestas",
+      "Other responses",
       "Otro",
       "Otros",
       "Para el bien de todo el pueblo",
@@ -18877,7 +18877,7 @@
   },
   "P22STD": {
     "code": "P22STD",
-    "label": "La economía de mercado es el único sistema con el que (país) puede llegar a ser desarrollado",
+    "label": "Market economy is the only system for development",
     "isKey": false,
     "values": [
       "Agree",
@@ -19781,7 +19781,7 @@
       "DK o No answer",
       "Normalmente dicen lo que piensan",
       "Otra respuesta",
-      "Otras respuestas",
+      "Other responses",
       "Panamá",
       "Paraguay",
       "Perú",
@@ -20348,7 +20348,7 @@
       "No se ha independizado",
       "No se puede ganarle al narcotráfico y crimen organizado",
       "Nunca",
-      "Otras respuestas",
+      "Other responses",
       "Otros países. Incorrecto",
       "Portugal",
       "Productos/servicios importados de marcas internacionales reconocidas",
@@ -21387,7 +21387,7 @@
   },
   "P86NW.3": {
     "code": "P86NW.3",
-    "label": "Atención prestada a temas: La Unión Europea",
+    "label": "Atención prestada a temas: La European Union",
     "isKey": false,
     "values": [
       "Mucha",
@@ -21922,7 +21922,7 @@
   },
   "P25STA": {
     "code": "P25STA",
-    "label": "La economía de mercado es el único sistema con el que (país) puede llegar a ser desarrollado",
+    "label": "Market economy is the only system for development",
     "isKey": false,
     "values": [
       "Agree",
@@ -22732,7 +22732,7 @@
   },
   "P55ST": {
     "code": "P55ST",
-    "label": "A favor o en contra de la integración económica de su país con los otros países de América Latina",
+    "label": "For or against economic integration with other Latin American countries",
     "isKey": false,
     "values": [
       "Somewhat",
@@ -22847,7 +22847,7 @@
   },
   "P58STB": {
     "code": "P58STB",
-    "label": "Calificación de la relación entre el país y Unión Europea",
+    "label": "Rating of relationship between the country and the EU",
     "isKey": false,
     "values": [
       "Very Goods",
@@ -23802,7 +23802,7 @@
   },
   "P72STA": {
     "code": "P72STA",
-    "label": "Acción política: Firmar una petición",
+    "label": "Political action: Sign a petition",
     "isKey": false,
     "values": [
       "La ha realizado",
@@ -23846,7 +23846,7 @@
   },
   "P72STE": {
     "code": "P72STE",
-    "label": "Acción política: Participar en protestas no autorizadas",
+    "label": "Political action: Participate in unauthorized protests",
     "isKey": false,
     "values": [
       "La ha realizado",
@@ -30983,7 +30983,7 @@
   },
   "P25ST": {
     "code": "P25ST",
-    "label": "No puede haber democracy without parties políticos",
+    "label": "There can be no democracy without political parties",
     "isKey": false,
     "values": [
       "Algunas veces",
@@ -31048,7 +31048,7 @@
   },
   "P31STM": {
     "code": "P31STM",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": false,
     "values": [
       "Very Satisfied",
@@ -31138,7 +31138,7 @@
   },
   "P33ST": {
     "code": "P33ST",
-    "label": "Grado de progreso en reducir la corruption en las instituciones del estado en los dos últimos años",
+    "label": "Progress in reducing corruption in state institutions (last 2 years)",
     "isKey": false,
     "values": [
       "Somewhat",
@@ -31452,7 +31452,7 @@
   },
   "P37ST.BA": {
     "code": "P37ST.BA",
-    "label": "Acción política: Firmar una petición",
+    "label": "Political action: Sign a petition",
     "isKey": false,
     "values": [
       "2",
@@ -32214,7 +32214,7 @@
   },
   "P55ST.B": {
     "code": "P55ST.B",
-    "label": "Calificación de la relación entre el país y Unión Europea",
+    "label": "Rating of relationship between the country and the EU",
     "isKey": false,
     "values": [
       "La ha realizado",
@@ -32751,7 +32751,7 @@
   },
   "P66EL.D": {
     "code": "P66EL.D",
-    "label": "Papel que puede jugar España como puente entre (país) y la Unión Europea",
+    "label": "Papel que puede jugar España como puente entre (país) y la European Union",
     "isKey": false,
     "values": [
       "Importante",
@@ -34023,7 +34023,7 @@
   },
   "P18NH": {
     "code": "P18NH",
-    "label": "Garantías: Freedom of Expression siempre y en todas partes",
+    "label": "Guarantees: Freedom of expression always and everywhere",
     "isKey": false,
     "values": [
       "Somewhat guaranteed",
@@ -35357,7 +35357,7 @@
   },
   "P54STB": {
     "code": "P54STB",
-    "label": "La economía de mercado es el único sistema con el que (país) puede llegar a ser desarrollado",
+    "label": "Market economy is the only system for development",
     "isKey": false,
     "values": [
       "Agree",
@@ -35641,7 +35641,7 @@
   },
   "P62ST.A": {
     "code": "P62ST.A",
-    "label": "Acción política: Firmar una petición",
+    "label": "Political action: Sign a petition",
     "isKey": false,
     "values": [
       "Bien",
@@ -35987,7 +35987,7 @@
   },
   "P72ST": {
     "code": "P72ST",
-    "label": "Grado de progreso en reducir la corruption en las instituciones del estado en los dos últimos años",
+    "label": "Progress in reducing corruption in state institutions (last 2 years)",
     "isKey": false,
     "values": [
       "10",
@@ -39090,7 +39090,7 @@
   },
   "P26ST.H": {
     "code": "P26ST.H",
-    "label": "Garantías: Freedom of Expression siempre y en todas partes",
+    "label": "Guarantees: Freedom of expression always and everywhere",
     "isKey": false,
     "values": [
       "Somewhat guaranteed",
@@ -39557,7 +39557,7 @@
   },
   "P37ST.B": {
     "code": "P37ST.B",
-    "label": "Calificación de la relación entre el país y Unión Europea",
+    "label": "Rating of relationship between the country and the EU",
     "isKey": false,
     "values": [
       "Concentrar el poder político en un líder",
@@ -39619,7 +39619,7 @@
       "No answer",
       "DK",
       "DK/NA",
-      "OEA (Organización de Estados Americanos)",
+      "OAS (Organization of American States)",
       "ONU",
       "Otra respuesta",
       "Otros",
@@ -39752,7 +39752,7 @@
   },
   "P45ST.A": {
     "code": "P45ST.A",
-    "label": "A favor o en contra de la integración económica de su país con los otros países de América Latina",
+    "label": "For or against economic integration with other Latin American countries",
     "isKey": false,
     "values": [
       "2",
@@ -40329,7 +40329,7 @@
       "DK",
       "DK, no responde",
       "Nunca se justifica",
-      "Otras respuestas",
+      "Other responses",
       "Siempre se justifica"
     ]
   },
@@ -40423,7 +40423,7 @@
       "Nunca",
       "Nunca se justifica",
       "Ocasionalmente",
-      "Otras respuestas",
+      "Other responses",
       "Para nada justificable",
       "Little",
       "Rara vez",
@@ -40764,7 +40764,7 @@
   },
   "P82WVSTA": {
     "code": "P82WVSTA",
-    "label": "Acción política: Firmar una petición",
+    "label": "Political action: Sign a petition",
     "isKey": false,
     "values": [
       "La he realizado",
@@ -41804,7 +41804,7 @@
   },
   "P95ST.C": {
     "code": "P95ST.C",
-    "label": "Cómo se informa de política: Compañeros de trabajo",
+    "label": "Cómo se informa de política: Coworkers",
     "isKey": false,
     "values": [
       "Menciona",
@@ -42383,7 +42383,7 @@
   },
   "P15ST.H": {
     "code": "P15ST.H",
-    "label": "Garantías: Freedom of Expression siempre y en todas partes",
+    "label": "Guarantees: Freedom of expression always and everywhere",
     "isKey": false,
     "values": [
       "Somewhat guaranteed",
@@ -43079,7 +43079,7 @@
   },
   "P48ST.A": {
     "code": "P48ST.A",
-    "label": "A favor o en contra de la integración económica de su país con los otros países de América Latina",
+    "label": "For or against economic integration with other Latin American countries",
     "isKey": false,
     "values": [
       "Somewhat",
@@ -43157,12 +43157,12 @@
       "9",
       "NA",
       "DK",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P51N.B": {
     "code": "P51N.B",
-    "label": "Cuán democrático es EEUU",
+    "label": "How democratic es EEUU",
     "isKey": false,
     "values": [
       "02",
@@ -43176,13 +43176,13 @@
       "NA",
       "Not democratic",
       "DK",
-      "Otras respuestas",
+      "Other responses",
       "Fully democratic"
     ]
   },
   "P51N.C": {
     "code": "P51N.C",
-    "label": "Cuán democrático es Venezuela",
+    "label": "How democratic es Venezuela",
     "isKey": false,
     "values": [
       "02",
@@ -43196,13 +43196,13 @@
       "NA",
       "Not democratic",
       "DK",
-      "Otras respuestas",
+      "Other responses",
       "Fully democratic"
     ]
   },
   "P51N.D": {
     "code": "P51N.D",
-    "label": "Cuán democrático es Honduras",
+    "label": "How democratic es Honduras",
     "isKey": false,
     "values": [
       "02",
@@ -43216,13 +43216,13 @@
       "Not democratic",
       "No answer",
       "DK",
-      "Otras respuestas",
+      "Other responses",
       "Fully democratic"
     ]
   },
   "P51N.E": {
     "code": "P51N.E",
-    "label": "Cuán democrático es Cuba",
+    "label": "How democratic es Cuba",
     "isKey": false,
     "values": [
       "02",
@@ -43236,13 +43236,13 @@
       "NA",
       "Not democratic",
       "DK",
-      "Otras respuestas",
+      "Other responses",
       "Fully democratic"
     ]
   },
   "P51N.F": {
     "code": "P51N.F",
-    "label": "Cuán democrático es España",
+    "label": "How democratic es España",
     "isKey": false,
     "values": [
       "02",
@@ -43256,7 +43256,7 @@
       "NA",
       "Not democratic",
       "DK",
-      "Otras respuestas",
+      "Other responses",
       "Fully democratic"
     ]
   },
@@ -43889,7 +43889,7 @@
   },
   "P81ST.C": {
     "code": "P81ST.C",
-    "label": "La economía de mercado es el único sistema con el que (país) puede llegar a ser desarrollado",
+    "label": "Market economy is the only system for development",
     "isKey": false,
     "values": [
       "Agree",
@@ -43986,7 +43986,7 @@
   },
   "P90ST.C": {
     "code": "P90ST.C",
-    "label": "Cómo se informa de política: Compañeros de trabajo",
+    "label": "Cómo se informa de política: Coworkers",
     "isKey": false,
     "values": [
       "Menciona",
@@ -44523,7 +44523,7 @@
   },
   "P11ST.B": {
     "code": "P11ST.B",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": false,
     "values": [
       "2",
@@ -45610,7 +45610,7 @@
   },
   "P43ST.A": {
     "code": "P43ST.A",
-    "label": "A favor o en contra de la integración económica de su país con los otros países de América Latina",
+    "label": "For or against economic integration with other Latin American countries",
     "isKey": false,
     "values": [
       "Somewhat in favor",
@@ -45643,7 +45643,7 @@
   },
   "P44ST.B": {
     "code": "P44ST.B",
-    "label": "Cuán democrático es EEUU",
+    "label": "How democratic es EEUU",
     "isKey": false,
     "values": [
       "2",
@@ -45671,13 +45671,13 @@
       "DK",
       "DK, no responde",
       "Nunca",
-      "Otras respuestas",
+      "Other responses",
       "Fully democratic"
     ]
   },
   "P44ST.C": {
     "code": "P44ST.C",
-    "label": "Cuán democrático es Venezuela",
+    "label": "How democratic es Venezuela",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -45700,12 +45700,12 @@
       "NA",
       "DK",
       "Nunca",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P44ST.D": {
     "code": "P44ST.D",
-    "label": "Cuán democrático es Honduras",
+    "label": "How democratic es Honduras",
     "isKey": false,
     "values": [
       "2",
@@ -45732,13 +45732,13 @@
       "DK/NA",
       "Nunca",
       "Would never do them",
-      "Otras respuestas",
+      "Other responses",
       "Fully democratic"
     ]
   },
   "P44ST.E": {
     "code": "P44ST.E",
-    "label": "Cuán democrático es Cuba",
+    "label": "How democratic es Cuba",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -45758,12 +45758,12 @@
       "NA",
       "No answer",
       "DK",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P44ST.F": {
     "code": "P44ST.F",
-    "label": "Cuán democrático es España",
+    "label": "How democratic es España",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -45782,12 +45782,12 @@
       "More bien mala",
       "NA",
       "DK",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P44N.G": {
     "code": "P44N.G",
-    "label": "Cuán democrático es Canadá",
+    "label": "How democratic es Canadá",
     "isKey": false,
     "values": [
       "2",
@@ -45801,7 +45801,7 @@
       "Not democratic",
       "No answer",
       "DK",
-      "Otras respuestas",
+      "Other responses",
       "Fully democratic"
     ]
   },
@@ -46819,7 +46819,7 @@
   },
   "P75ST.B": {
     "code": "P75ST.B",
-    "label": "La economía de mercado es el único sistema con el que (país) puede llegar a ser desarrollado",
+    "label": "Market economy is the only system for development",
     "isKey": false,
     "values": [
       "Agree",
@@ -49031,7 +49031,7 @@
   },
   "P41ST.H": {
     "code": "P41ST.H",
-    "label": "Garantías: Freedom of Expression siempre y en todas partes",
+    "label": "Guarantees: Freedom of expression always and everywhere",
     "isKey": false,
     "values": [
       "Somewhat guaranteed",
@@ -49215,7 +49215,7 @@
   },
   "P49ST.C": {
     "code": "P49ST.C",
-    "label": "Cuán democrático es Venezuela",
+    "label": "How democratic es Venezuela",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -49248,7 +49248,7 @@
   },
   "P49ST.E": {
     "code": "P49ST.E",
-    "label": "Cuán democrático es España",
+    "label": "How democratic es España",
     "isKey": false,
     "values": [
       "01 Not democratic",
@@ -49278,7 +49278,7 @@
   },
   "P49ST.F": {
     "code": "P49ST.F",
-    "label": "Cuán democrático es Canadá",
+    "label": "How democratic es Canadá",
     "isKey": false,
     "values": [
       "2",
@@ -52287,7 +52287,7 @@
   },
   "P9STGBS": {
     "code": "P9STGBS",
-    "label": "Most Important Problem en el país",
+    "label": "Most important problem in the country",
     "isKey": true,
     "values": [
       "For people like us, it makes no difference whether we have a democratic or non-democratic regime",
@@ -52399,7 +52399,7 @@
   },
   "P13TGB.B": {
     "code": "P13TGB.B",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": false,
     "values": [
       "Very Satisfied",
@@ -52605,7 +52605,7 @@
   },
   "P22TGBSM": {
     "code": "P22TGBSM",
-    "label": "Partido político por el que votaría si hubiera elecciones este domingo",
+    "label": "Political party you would vote for if elections were held this Sunday",
     "isKey": false,
     "values": [
       "AR: Coalición Cívica / Argentina por una República de Samees (CC)",
@@ -53333,7 +53333,7 @@
   },
   "P50TGB.A": {
     "code": "P50TGB.A",
-    "label": "Escala (país) es democrático",
+    "label": "Scale: country is democratic",
     "isKey": false,
     "values": [
       "1 Not democratic",
@@ -53367,12 +53367,12 @@
       "Not democratic",
       "No answer",
       "DK",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P50TGB.C": {
     "code": "P50TGB.C",
-    "label": "Cuán democrático es EEUU",
+    "label": "How democratic es EEUU",
     "isKey": false,
     "values": [
       "2",
@@ -53387,12 +53387,12 @@
       "NA",
       "Not democratic",
       "DK",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P50TGB.D": {
     "code": "P50TGB.D",
-    "label": "Cuán democrático es España",
+    "label": "How democratic es España",
     "isKey": false,
     "values": [
       "2",
@@ -53407,7 +53407,7 @@
       "NA",
       "Not democratic",
       "DK",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P50GBS.E": {
@@ -53427,7 +53427,7 @@
       "Not democratic",
       "No answer",
       "DK",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P50GBS.F": {
@@ -53447,7 +53447,7 @@
       "Not democratic",
       "No answer",
       "DK",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P51ST.AA": {
@@ -55165,7 +55165,7 @@
       "No answer",
       "DK",
       "DK/NA",
-      "Otras respuestas",
+      "Other responses",
       "Most people can be trusted",
       "One can never be too careful"
     ]
@@ -55185,7 +55185,7 @@
   },
   "P12TG.B": {
     "code": "P12TG.B",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": false,
     "values": [
       "Agree",
@@ -55374,13 +55374,13 @@
       "None",
       "NA",
       "DK",
-      "Otras respuestas",
+      "Other responses",
       "Little"
     ]
   },
   "P17STGBS": {
     "code": "P17STGBS",
-    "label": "Escala (país) es democrático",
+    "label": "Scale: country is democratic",
     "isKey": true,
     "values": [
       "1",
@@ -55406,7 +55406,7 @@
       "NA",
       "DK",
       "DK/NA",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P19N.H": {
@@ -55531,7 +55531,7 @@
   },
   "P23TGBSM": {
     "code": "P23TGBSM",
-    "label": "Partido político por el que votaría si hubiera elecciones este domingo",
+    "label": "Political party you would vote for if elections were held this Sunday",
     "isKey": false,
     "values": [
       "AR: Frente Renovador (FR)",
@@ -56039,7 +56039,7 @@
       "Not applicable",
       "No answer",
       "DK",
-      "OEA (Organización de Estados Americanos)",
+      "OAS (Organization of American States)",
       "ONU",
       "Otros",
       "PNUD (Programa de Naciones Unidas para el Desarrollo)",
@@ -56347,7 +56347,7 @@
   },
   "P50ST.H": {
     "code": "P50ST.H",
-    "label": "Garantías: Freedom of Expression siempre y en todas partes",
+    "label": "Guarantees: Freedom of expression always and everywhere",
     "isKey": false,
     "values": [
       "Somewhat guaranteed",
@@ -57513,7 +57513,7 @@
   },
   "P9STGBSB": {
     "code": "P9STGBSB",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": true,
     "values": [
       "Grupos poderosos en su propio beneficio",
@@ -57643,7 +57643,7 @@
   },
   "P16STGBS": {
     "code": "P16STGBS",
-    "label": "Aprobación de la gestion del gobierno que encabeza el presidente (nombre)",
+    "label": "Approval of the president's government administration",
     "isKey": true,
     "values": [
       "1",
@@ -57762,7 +57762,7 @@
   },
   "P26STG": {
     "code": "P26STG",
-    "label": "Cómo se informa de política: Las redes sociales",
+    "label": "Political information source: Social media",
     "isKey": false,
     "values": [
       "Menciona",
@@ -57811,7 +57811,7 @@
   },
   "P31STA": {
     "code": "P31STA",
-    "label": "Grado de acuerdo: La democracia puede tener problemas, pero es el mejor sistema de gobierno..",
+    "label": "Agreement: Democracy may have problems but is the best system",
     "isKey": false,
     "values": [
       "Agree",
@@ -58626,7 +58626,7 @@
   },
   "P45NA": {
     "code": "P45NA",
-    "label": "A favor o en contra de la integración económica de su país con los otros países de América Latina",
+    "label": "For or against economic integration with other Latin American countries",
     "isKey": false,
     "values": [
       "Somewhat in favor",
@@ -58918,7 +58918,7 @@
       "No menciona",
       "No answer",
       "DK",
-      "OEA (Organización de Estados Americanos){OEA}",
+      "OAS (Organization of American States){OEA}",
       "OEA Organizacion de Estados Americanos",
       "ONU (Naciones Unidas){ONU}",
       "ONU Naciones Unidas",
@@ -60290,7 +60290,7 @@
   },
   "P9STGBS.B": {
     "code": "P9STGBS.B",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": true,
     "values": [
       "Very Satisfied",
@@ -60303,7 +60303,7 @@
   },
   "P11STGBSC": {
     "code": "P11STGBSC",
-    "label": "Escala (país) es democrático",
+    "label": "Scale: country is democratic",
     "isKey": true,
     "values": [
       "1 Not democratic",
@@ -60318,7 +60318,7 @@
       "9",
       "NA",
       "DK",
-      "Otras respuestas"
+      "Other responses"
     ]
   },
   "P12STC": {
@@ -60448,7 +60448,7 @@
   },
   "P17STGBSC": {
     "code": "P17STGBSC",
-    "label": "Aprobación de la gestion del gobierno que encabeza el presidente (nombre)",
+    "label": "Approval of the president's government administration",
     "isKey": true,
     "values": [
       "Aprueba",
@@ -61148,7 +61148,7 @@
       "DK",
       "DK/NA",
       "Little probable",
-      "Unión Europea"
+      "European Union"
     ]
   },
   "P45ST.D": {
@@ -61213,7 +61213,7 @@
   },
   "P46ST.C": {
     "code": "P46ST.C",
-    "label": "Calificación de la relación entre el país y China",
+    "label": "Rating of relationship between the country and China",
     "isKey": false,
     "values": [
       "Mas bien buenas",
@@ -61226,7 +61226,7 @@
   },
   "P46ST.D": {
     "code": "P46ST.D",
-    "label": "Calificación de la relación entre el país y Unión Europea",
+    "label": "Rating of relationship between the country and the EU",
     "isKey": false,
     "values": [
       "Very Goods",
@@ -62922,7 +62922,7 @@
   },
   "P2STC": {
     "code": "P2STC",
-    "label": "Imagen del progreso del país",
+    "label": "Country progress perception",
     "isKey": true,
     "values": [
       "Is in decline",
@@ -62934,7 +62934,7 @@
   },
   "P3STGBSC": {
     "code": "P3STGBSC",
-    "label": "Most Important Problem en el país",
+    "label": "Most important problem in the country",
     "isKey": false,
     "values": [
       "Food, shortage",
@@ -63063,7 +63063,7 @@
   },
   "P9STGBSC": {
     "code": "P9STGBSC",
-    "label": "Situación económica futura del entrevistado y su familia",
+    "label": "Future economic situation of respondent and family",
     "isKey": true,
     "values": [
       "About the same",
@@ -63153,7 +63153,7 @@
   },
   "P13STGBS.B": {
     "code": "P13STGBS.B",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": true,
     "values": [
       "Somewhat",
@@ -63288,7 +63288,7 @@
   },
   "P16NCB": {
     "code": "P16NCB",
-    "label": "Trust in que las instituciones operan para mejorar nuestra calidad de vida: Compañías nacionales",
+    "label": "Trust that institutions improve quality of life: National companies",
     "isKey": false,
     "values": [
       "Somewhat",
@@ -63327,7 +63327,7 @@
   },
   "P16NC.E": {
     "code": "P16NC.E",
-    "label": "Trust in que las instituciones operan para mejorar nuestra calidad de vida: Compañías internacionales",
+    "label": "Trust that institutions improve quality of life: International companies",
     "isKey": false,
     "values": [
       "Somewhat",
@@ -63510,7 +63510,7 @@
   },
   "P20STGBSC": {
     "code": "P20STGBSC",
-    "label": "Aprobación de la gestion del gobierno que encabeza el presidente (nombre)",
+    "label": "Approval of the president's government administration",
     "isKey": false,
     "values": [
       "Aprueba",
@@ -64750,7 +64750,7 @@
   },
   "P40ST.D": {
     "code": "P40ST.D",
-    "label": "Opinion on: Unión Europea",
+    "label": "Opinion on the European Union",
     "isKey": false,
     "values": [
       "Good",
@@ -66555,7 +66555,7 @@
   },
   "P11STGBS.B": {
     "code": "P11STGBS.B",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": true,
     "values": [
       "Grupos poderosos en su propio beneficio",
@@ -67726,7 +67726,7 @@
   },
   "P26N.A": {
     "code": "P26N.A",
-    "label": "A favor o en contra de la integración de su país con los otros países de América Latina",
+    "label": "For or against integration with other Latin American countries",
     "isKey": false,
     "values": [
       "Somewhat in favor",
@@ -68277,7 +68277,7 @@
   },
   "P47ST.H": {
     "code": "P47ST.H",
-    "label": "Garantías: Freedom of Expression siempre y en todas partes",
+    "label": "Guarantees: Freedom of expression always and everywhere",
     "isKey": false,
     "values": [
       "Somewhat guaranteed",
@@ -68420,7 +68420,7 @@
   },
   "P49STGBS": {
     "code": "P49STGBS",
-    "label": "Hay algún political party hacia el cual se siente más cercano",
+    "label": "Is there a political party you feel closer to",
     "isKey": false,
     "values": [
       "No",
@@ -68566,7 +68566,7 @@
   },
   "P55ST.E": {
     "code": "P55ST.E",
-    "label": "Acción política: Participar en protestas no autorizadas",
+    "label": "Political action: Participate in unauthorized protests",
     "isKey": false,
     "values": [
       "La ha realizado",
@@ -68593,7 +68593,7 @@
   },
   "P56N": {
     "code": "P56N",
-    "label": "Mejor forma de actuar para que Ud. y el país avancen más",
+    "label": "Best way to act for you and the country to advance",
     "isKey": false,
     "values": [
       "Only protest, voting is useless",
@@ -72100,7 +72100,7 @@
   },
   "P29STIN.A": {
     "code": "P29STIN.A",
-    "label": "Acuerdo/Desacuerdo: A favor o en contra de la integración de su país con los otros países de América Latina",
+    "label": "Acuerdo/Desacuerdo: For or against integration with other Latin American countries",
     "isKey": false,
     "values": [
       "Somewhat in favor",
@@ -72335,7 +72335,7 @@
   },
   "P32INN": {
     "code": "P32INN",
-    "label": "Desde su punto de vista y el de su familia, la llegada de inmigrantes al país, lo beneficia o lo perjudica.",
+    "label": "Does immigration benefit or harm you and your family",
     "isKey": false,
     "values": [
       "Agree",
@@ -72687,7 +72687,7 @@
   },
   "P42STGBS": {
     "code": "P42STGBS",
-    "label": "Hay algún political party hacia el cual se siente más cercano",
+    "label": "Is there a political party you feel closer to",
     "isKey": false,
     "values": [
       "No",
@@ -73619,7 +73619,7 @@
   },
   "P12STGBS.B": {
     "code": "P12STGBS.B",
-    "label": "Satisfaction with Economy en (país)",
+    "label": "Satisfaction with economy performance",
     "isKey": true,
     "values": [
       "Very Satisfied",
@@ -73658,7 +73658,7 @@
   },
   "P14ST.K": {
     "code": "P14ST.K",
-    "label": "Trust in la televisión",
+    "label": "Trust in television",
     "isKey": true,
     "values": [
       "Some Trust",
@@ -73837,7 +73837,7 @@
   },
   "P1TE.D": {
     "code": "P1TE.D",
-    "label": "Calificación de la relaciones económicas entre el país y Unión Europea",
+    "label": "Calificación de la relaciones económicas entre el país y European Union",
     "isKey": false,
     "values": [
       "Very Goods",
@@ -73889,7 +73889,7 @@
   },
   "P2TE.D": {
     "code": "P2TE.D",
-    "label": "Calificación de la relaciones en temas de seguridad entre el país y la Unión Europea",
+    "label": "Calificación de la relaciones en temas de seguridad entre el país y la European Union",
     "isKey": false,
     "values": [
       "Very Goods",
@@ -74097,7 +74097,7 @@
   },
   "P4NCV.3": {
     "code": "P4NCV.3",
-    "label": "Televisión",
+    "label": "Television",
     "isKey": false,
     "values": [
       "Menciona",
