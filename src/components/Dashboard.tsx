@@ -356,10 +356,11 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
             })}
           </div>
 
-          <select value={year} onChange={e => { setSelectedYear(e.target.value); setSelectedResponse(null); }}
-            style={{ padding: '4px 8px', borderRadius: 100, border: `1px solid ${P.border}`, fontSize: 12, background: 'transparent', color: P.navy }}>
-            {years.map(y => <option key={y} value={y}>{y}</option>)}
-          </select>
+          <Dropdown
+            value={year}
+            options={years.map(y => ({ value: y, label: y }))}
+            onChange={v => { setSelectedYear(v); setSelectedResponse(null); }}
+          />
 
           <Dropdown
             value={topicId}

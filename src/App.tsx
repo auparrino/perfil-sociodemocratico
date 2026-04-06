@@ -1,26 +1,17 @@
-import { useState, lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { useSurveyData } from './hooks/useSurveyData';
 import { useKeyTopics } from './hooks/useKeyTopics';
-import { readUrlState, useUrlState } from './hooks/useUrlState';
 
 const Dashboard = lazy(() => import('./components/Dashboard').then(m => ({ default: m.Dashboard })));
-const VariableExplorer = lazy(() => import('./components/VariableExplorer').then(m => ({ default: m.VariableExplorer })));
 
 const P = {
-  navy: '#003049', cream: '#FDF0D5', gold: '#d4a800',
+  navy: '#003049', cream: '#FDF0D5',
   border: 'rgba(0,48,73,0.12)', textMuted: 'rgba(0,48,73,0.50)',
 };
 
-type AppView = 'dashboard' | 'explorer';
-
-const initialUrl = readUrlState();
-
 function App() {
-  const { keyData, variables, regions, fullData, loading, error, loadFullCountry } = useSurveyData();
+  const { keyData, variables, regions, loading, error } = useSurveyData();
   const keyTopics = useKeyTopics();
-  const [view, setView] = useState<AppView>((initialUrl.view as AppView) || 'dashboard');
-
-  useUrlState({ view });
 
   if (loading) {
     return (
@@ -88,39 +79,16 @@ function App() {
             Latinobarómetro — Argentina | Paraguay | Uruguay
           </div>
         </div>
-        <nav style={{ marginLeft: 'auto', display: 'flex', gap: 3 }}>
-          {([['dashboard', 'Key Topics'], ['explorer', 'Explorer']] as [AppView, string][]).map(([v, label]) => (
-            <button key={v} onClick={() => setView(v)}
-              style={{
-                padding: '5px 16px', borderRadius: 100, cursor: 'pointer',
-                fontSize: 13, fontWeight: 500,
-                border: view === v ? 'none' : `1px solid ${P.border}`,
-                background: view === v ? P.navy : 'transparent',
-                color: view === v ? P.cream : P.navy,
-              }}>
-              {label}
-            </button>
-          ))}
-        </nav>
       </header>
 
       <main style={{ flex: 1, padding: 12, overflow: 'hidden', minHeight: 0 }}>
         <Suspense fallback={lazyFallback}>
-          {view === 'dashboard' ? (
-            <Dashboard
-              keyData={keyData}
-              variables={variables}
-              regions={regions}
-              keyTopics={keyTopics}
-            />
-          ) : (
-            <VariableExplorer
-              keyData={keyData}
-              variables={variables}
-              fullData={fullData}
-              loadFullCountry={loadFullCountry}
-            />
-          )}
+          <Dashboard
+            keyData={keyData}
+            variables={variables}
+            regions={regions}
+            keyTopics={keyTopics}
+          />
         </Suspense>
       </main>
     </div>
