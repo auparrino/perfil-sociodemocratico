@@ -137,18 +137,28 @@ export const DistributionChart = memo(function DistributionChart({
 interface CompareBarProps {
   data: { label: string; value: number; color: string }[];
   height?: number;
+  /** If true, values are an ordinal/numeric score and the Y axis is rendered accordingly. */
+  isScore?: boolean;
+  /** [min, max] of the score when `isScore` is set. Defaults to [0, 10]. */
+  scoreRange?: [number, number];
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const fmtCompare = (v: any) => `${Number(v).toFixed(1)}%`;
-
-export const CompareBar = memo(function CompareBar({ data, height = 200 }: CompareBarProps) {
+export const CompareBar = memo(function CompareBar({ data, height = 200, isScore, scoreRange }: CompareBarProps) {
+  const scoreMax = scoreRange ? scoreRange[1] : 10;
+  const scoreMin = scoreRange ? scoreRange[0] : 0;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const fmt = (v: any) =>
+    isScore ? `${Number(v).toFixed(2)} / ${scoreMax}` : `${Number(v).toFixed(1)}%`;
   return (
     <ResponsiveContainer width="100%" height={height}>
       <BarChart data={data} margin={{ left: 5, right: 20 }}>
         <XAxis dataKey="label" fontSize={11} />
-        <YAxis domain={[0, 100]} tickFormatter={v => `${v}%`} fontSize={11} />
-        <Tooltip formatter={fmtCompare} />
+        <YAxis
+          domain={isScore ? [scoreMin, scoreMax] : [0, 100]}
+          tickFormatter={v => (isScore ? `${v}` : `${v}%`)}
+          fontSize={11}
+        />
+        <Tooltip formatter={fmt} />
         <Bar dataKey="value" radius={[4, 4, 0, 0]} animationDuration={400} animationEasing="ease-out">
           {data.map((d, i) => (
             <Cell key={i} fill={d.color} />

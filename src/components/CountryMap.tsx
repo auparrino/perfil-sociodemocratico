@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { CompactStats } from '../hooks/useSurveyData';
-import { aggregateToGeoRegions, aggregateMeanToGeoRegions } from '../utils/geo';
+import { aggregateToGeoRegions, aggregateMeanToGeoRegions, aggregateScoreToGeoRegions } from '../utils/geo';
 import { getSequentialColor, COUNTRY_COLORS } from '../utils/colors';
 
 interface CountryMapProps {
@@ -10,6 +10,11 @@ interface CountryMapProps {
   variable: CompactStats | null;
   selectedResponse: string | null;
   numericMean?: boolean; // use mean for numeric scales instead of single response %
+  /** Ordinal integer score map (0..N-1). When provided, the map displays the
+   *  weighted score per region instead of the % who picked a single response. */
+  scoreMap?: Record<string, number> | null;
+  /** [min, max] of the score map, used for display labels. */
+  scoreRange?: [number, number];
   regions: string[];
   onRegionClick?: (region: string) => void;
   selectedRegion?: string | null;
@@ -29,6 +34,8 @@ export function CountryMap({
   variable,
   selectedResponse,
   numericMean,
+  scoreMap,
+  scoreRange,
   regions: _regions,
   onRegionClick,
   selectedRegion,
@@ -99,13 +106,17 @@ export function CountryMap({
       layerRef.current = null;
     }
 
-    if (!variable || !selectedResponse) return;
+    if (!variable) return;
+    const useScore = !!scoreMap;
+    const useMean = !!numericMean;
+    if (!useScore && !useMean && !selectedResponse) return;
 
     // Aggregate survey regions to GeoJSON regions
-    const useMean = !!numericMean;
-    const aggregated = useMean
+    const aggregated = useScore
+      ? aggregateScoreToGeoRegions(country, variable.regions, scoreMap!)
+      : useMean
       ? aggregateMeanToGeoRegions(country, variable.regions)
-      : aggregateToGeoRegions(country, variable.regions, selectedResponse);
+      : aggregateToGeoRegions(country, variable.regions, selectedResponse!);
     if (aggregated.length === 0) return;
 
     const valueMap: Record<string, { value: number; n: number }> = {};
@@ -134,7 +145,10 @@ export function CountryMap({
         const region = feature.properties?.region;
         const data = valueMap[region];
         if (data) {
-          const label = useMean
+          const scoreMaxLbl = scoreRange ? scoreRange[1] : 10;
+          const label = useScore
+            ? `Score: ${data.value.toFixed(2)} / ${scoreMaxLbl}`
+            : useMean
             ? `Mean: ${data.value.toFixed(1)}`
             : `${selectedResponse}: ${(data.value * 100).toFixed(1)}%`;
           featureLayer.bindTooltip(
@@ -149,19 +163,24 @@ export function CountryMap({
     }).addTo(map);
 
     layerRef.current = layer;
-  }, [geoData, country, variable, selectedResponse, numericMean, selectedRegion, onRegionClick]);
+  }, [geoData, country, variable, selectedResponse, numericMean, scoreMap, selectedRegion, onRegionClick]);
 
   // Legend
-  const legendAggregated = variable && selectedResponse
-    ? (numericMean
+  const legendAggregated = variable
+    ? (scoreMap
+        ? aggregateScoreToGeoRegions(country, variable.regions, scoreMap)
+        : numericMean
         ? aggregateMeanToGeoRegions(country, variable.regions)
-        : aggregateToGeoRegions(country, variable.regions, selectedResponse))
+        : selectedResponse
+        ? aggregateToGeoRegions(country, variable.regions, selectedResponse)
+        : [])
     : [];
   const hasData = legendAggregated.length > 0;
   const legendValues = legendAggregated.map(a => a.value);
   const min = hasData ? Math.min(...legendValues) : 0;
   const max = hasData ? Math.max(...legendValues) : 1;
-  const isMeanMode = !!numericMean;
+  const isScoreMode = !!scoreMap;
+  const isMeanMode = !!numericMean || isScoreMode;
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
@@ -175,6 +194,11 @@ export function CountryMap({
           borderRadius: 4, padding: '5px 8px', fontSize: 10, border: '1px solid rgba(0,48,73,0.12)',
           zIndex: 1000,
         }}>
+          {isScoreMode && (
+            <div style={{ fontWeight: 700, marginBottom: 3, fontSize: 10 }}>
+              Score {scoreRange ? `${scoreRange[0]}–${scoreRange[1]}` : '0–10'}
+            </div>
+          )}
           <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
             <span>{isMeanMode ? min.toFixed(1) : `${(min * 100).toFixed(0)}%`}</span>
             <div style={{

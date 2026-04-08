@@ -6,7 +6,7 @@ import { TimeSeriesChart } from './TimeSeriesChart';
 import { CompareMap } from './CompareMap';
 import { COUNTRY_COLORS } from '../utils/colors';
 import { useSocioeconomic } from '../hooks/useSocioeconomic';
-import { orderResponseKeys, shortLabel, isNsNc, isNumericScale } from '../utils/responses';
+import { orderResponseKeys, shortLabel, isNsNc, isNumericScale, buildOrdinalScoreMap, computeScore, getScoreRange } from '../utils/responses';
 import { CountryProfile } from './CountryProfile';
 import { ExportButton } from './ExportButton';
 import { Dropdown } from './Dropdown';
@@ -179,16 +179,46 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
     return entries.sort((a, b) => b[1] - a[1])[0]?.[0] || null;
   }, [countryVarData, selectedResponse, selectedCountries]);
 
+  // Integer score map for ordinal scales (0..N-1). Null for unordered scales
+  // or numeric scales — numeric scales already have their own mean path.
+  const scoreMap = useMemo(() => {
+    if (unifiedOrder.length === 0) return null;
+    if (isNumericScale(unifiedOrder)) return null;
+    return buildOrdinalScoreMap(unifiedOrder);
+  }, [unifiedOrder]);
+  const scoreRange = useMemo<[number, number] | undefined>(
+    () => (scoreMap ? getScoreRange(scoreMap) : undefined),
+    [scoreMap],
+  );
+  const scoreMax = scoreRange ? scoreRange[1] : 10;
+
   const mapValues = useMemo(() => {
+    const countries = COUNTRIES.filter(c => selectedCountries.includes(c.code));
+    if (scoreMap) {
+      return countries
+        .map(c => {
+          const v = countryVarData[c.code];
+          const dist = v?.national?.d;
+          const score = dist ? computeScore(dist, scoreMap) : null;
+          return {
+            code: c.code,
+            name: c.name,
+            value: score ?? 0,
+            n: v?.national.n || 0,
+            hasScore: score !== null,
+          };
+        })
+        .filter(d => d.hasScore)
+        .map(({ code, name, value, n }) => ({ code, name, value, n }));
+    }
     if (!topResponse) return [];
-    return COUNTRIES
-      .filter(c => selectedCountries.includes(c.code))
+    return countries
       .map(c => {
         const v = countryVarData[c.code];
         const val = v?.national?.d ? findResponseValue(v.national.d, topResponse) : 0;
         return { code: c.code, name: c.name, value: val, n: v?.national.n || 0 };
       }).filter(d => d.value > 0);
-  }, [countryVarData, topResponse, selectedCountries]);
+  }, [countryVarData, topResponse, selectedCountries, scoreMap]);
 
   const varLabel = useMemo(() => {
     const anyData = selectedCountries.map(c => countryVarData[c]).find(v => v);
@@ -443,14 +473,16 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
               )}
             </div>
 
-            {isMultiCountry && topResponse && mapValues.length > 0 && (
+            {isMultiCountry && mapValues.length > 0 && (scoreMap || topResponse) && (
               <div className="fade-in" style={{ background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`, overflow: 'hidden' }}>
                 <div style={{ padding: '6px 10px', borderBottom: `1px solid ${P.border}`, fontWeight: 700, fontSize: 11, letterSpacing: '1.5px', textTransform: 'uppercase' as const, color: P.navy }}>
-                  Comparative Map — {year} — "{shortLabel(topResponse)}"
+                  Comparative Map — {year} — {scoreMap ? `Score 0–${scoreMax}` : `"${shortLabel(topResponse!)}"`}
                 </div>
                 <CompareMap
                   countryValues={mapValues}
                   selectedResponse={topResponse}
+                  isScore={!!scoreMap}
+                  scoreRange={scoreRange}
                   height={280}
                 />
               </div>
@@ -483,7 +515,11 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                     }}>
                       <Flag code={c.code} size={14} />
                       <span>{c.name} — {year}</span>
-                      {topResponse && <span style={{ fontWeight: 400, color: P.textMuted, fontSize: 11 }}> | {shortLabel(topResponse)}</span>}
+                      {scoreMap ? (
+                        <span style={{ fontWeight: 400, color: P.textMuted, fontSize: 11 }}> | Score 0–{scoreMax}</span>
+                      ) : topResponse ? (
+                        <span style={{ fontWeight: 400, color: P.textMuted, fontSize: 11 }}> | {shortLabel(topResponse)}</span>
+                      ) : null}
                     </div>
                     <div style={{ flex: 1, minHeight: 280 }}>
                       <Suspense fallback={mapFallback}>
@@ -492,6 +528,8 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                           variable={countryVarData[code] || null}
                           selectedResponse={topResponse}
                           numericMean={isNumeric}
+                          scoreMap={scoreMap}
+                          scoreRange={scoreRange}
                           regions={regions[code] || []}
                           onRegionClick={(r) => setRegionForCountry(code, r)}
                           selectedRegion={selRegion}
@@ -500,11 +538,14 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                     </div>
                     {selRegion && regData && (
                       <div style={{ padding: '4px 10px', borderTop: `1px solid ${P.border}`, fontSize: 11, fontFamily: 'monospace', fontWeight: 700, color: P.navy }}>
-                        <strong>{selRegion}</strong> | {isNumeric ? (() => {
+                        <strong>{selRegion}</strong> | {scoreMap ? (() => {
+                          const s = computeScore(regData.d, scoreMap);
+                          return s !== null ? `Score: ${s.toFixed(2)} / ${scoreMax}` : 'Score: —';
+                        })() : isNumeric ? (() => {
                           let mean = 0;
                           for (const [k, v] of Object.entries(regData.d)) { const n = parseFloat(k); if (!isNaN(n)) mean += n * v; }
                           return `Mean: ${mean.toFixed(1)}`;
-                        })() : `${shortLabel(topResponse!)}: ${((regData.d[topResponse!] || 0) * 100).toFixed(1)}%`} | n={regData.n}
+                        })() : topResponse ? `${shortLabel(topResponse)}: ${((regData.d[topResponse] || 0) * 100).toFixed(1)}%` : ''} | n={regData.n}
                       </div>
                     )}
                   </div>
@@ -563,15 +604,25 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                 .map(code => {
                   const regData = regionDataByCountry[code]!;
                   const c = COUNTRIES.find(x => x.code === code)!;
-                  const val = topResponse ? findResponseValue(regData.d, topResponse) : 0;
+                  let value: number | null;
+                  if (scoreMap) {
+                    value = computeScore(regData.d, scoreMap);
+                  } else if (topResponse) {
+                    value = Math.round(findResponseValue(regData.d, topResponse) * 1000) / 10;
+                  } else {
+                    value = null;
+                  }
                   return {
                     label: `${c.name} - ${selectedRegions[code]}`,
-                    value: Math.round(val * 1000) / 10,
+                    value: value ?? 0,
+                    hasValue: value !== null && value > 0,
                     color: COUNTRY_COLORS[code],
                   };
-                }).filter(d => d.value > 0);
+                })
+                .filter(d => d.hasValue)
+                .map(({ label, value, color }) => ({ label, value, color }));
 
-              if (regionCompareData.length < 2 || !topResponse) return null;
+              if (regionCompareData.length < 2 || (!scoreMap && !topResponse)) return null;
 
               return (
                 <div className="fade-in" style={{ background: P.cardBg, borderRadius: 6, border: `1px solid ${P.borderLight}`, padding: '10px 12px' }}>
@@ -579,9 +630,9 @@ export function Dashboard({ keyData, variables, regions, keyTopics }: DashboardP
                     Region Comparison — {year}
                   </div>
                   <div style={{ fontSize: 11, color: P.textMuted, marginBottom: 6 }}>
-                    Response: "{shortLabel(topResponse)}"
+                    {scoreMap ? `Ordinal score 0–${scoreMax} (higher = more positive)` : `Response: "${shortLabel(topResponse!)}"`}
                   </div>
-                  <CompareBar data={regionCompareData} height={200} />
+                  <CompareBar data={regionCompareData} height={200} isScore={!!scoreMap} scoreRange={scoreRange} />
                 </div>
               );
             })()}

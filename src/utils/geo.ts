@@ -211,6 +211,52 @@ export function aggregateToGeoRegions(
 }
 
 /**
+ * Aggregate a 0-10 ordinal/numeric score by GeoJSON region.
+ *
+ * For each survey region, computes a score as the weighted mean of the scoreMap
+ * values over the in-scale proportions only (NS/NC and residuals are excluded
+ * from the denominator so they don't pull the score toward zero). Then rolls
+ * sub-regions up to their parent GeoJSON region using a population-weighted mean.
+ */
+export function aggregateScoreToGeoRegions(
+  country: string,
+  regionsData: Record<string, { d: Record<string, number>; n: number }>,
+  scoreMap: Record<string, number>,
+): AggregatedRegion[] {
+  const groups: Record<string, { totalN: number; weightedSum: number }> = {};
+
+  for (const [surveyRegion, stats] of Object.entries(regionsData)) {
+    const geoRegion = matchSurveyRegionToGeo(country, surveyRegion);
+    if (!geoRegion) continue;
+
+    let scoreSum = 0;
+    let propSum = 0;
+    for (const [k, score] of Object.entries(scoreMap)) {
+      const p = stats.d[k] ?? 0;
+      scoreSum += score * p;
+      propSum += p;
+    }
+    if (propSum === 0) continue;
+    const regionScore = scoreSum / propSum;
+    const n = stats.n;
+
+    if (!groups[geoRegion]) {
+      groups[geoRegion] = { totalN: 0, weightedSum: 0 };
+    }
+    groups[geoRegion].totalN += n;
+    groups[geoRegion].weightedSum += regionScore * n;
+  }
+
+  return Object.entries(groups)
+    .filter(([, g]) => g.totalN > 0)
+    .map(([geoRegion, g]) => ({
+      geoRegion,
+      value: g.weightedSum / g.totalN,
+      n: g.totalN,
+    }));
+}
+
+/**
  * Aggregate the weighted mean of a numeric scale (e.g. 0-10) by GeoJSON region.
  * Computes mean from distribution keys that start with a number.
  */

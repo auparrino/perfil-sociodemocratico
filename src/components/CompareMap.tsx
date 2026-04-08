@@ -13,10 +13,14 @@ interface CountryValue {
 interface CompareMapProps {
   countryValues: CountryValue[];
   selectedResponse: string | null;
+  /** If true, `value` is an ordinal/numeric score instead of a 0-1 proportion. */
+  isScore?: boolean;
+  /** [min, max] of the score when `isScore` is set. Defaults to [0, 10]. */
+  scoreRange?: [number, number];
   height?: number;
 }
 
-export function CompareMap({ countryValues, selectedResponse, height = 340 }: CompareMapProps) {
+export function CompareMap({ countryValues, selectedResponse, isScore, scoreRange, height = 340 }: CompareMapProps) {
   const mapRef = useRef<L.Map | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const layersRef = useRef<L.GeoJSON | null>(null);
@@ -69,7 +73,7 @@ export function CompareMap({ countryValues, selectedResponse, height = 340 }: Co
       layersRef.current = null;
     }
 
-    if (!selectedResponse || countryValues.length === 0) return;
+    if ((!selectedResponse && !isScore) || countryValues.length === 0) return;
 
     const valueMap: Record<string, CountryValue> = {};
     for (const cv of countryValues) valueMap[cv.code] = cv;
@@ -96,9 +100,13 @@ export function CompareMap({ countryValues, selectedResponse, height = 340 }: Co
         const code = feature.properties?.code;
         const cv = valueMap[code];
         if (cv) {
+          const scoreMaxLbl = scoreRange ? scoreRange[1] : 10;
+          const valueLabel = isScore
+            ? `Score: ${cv.value.toFixed(2)} / ${scoreMaxLbl}`
+            : `${selectedResponse}: ${(cv.value * 100).toFixed(1)}%`;
           layer.bindTooltip(
             `<strong>${cv.name}</strong><br/>` +
-            `${selectedResponse}: ${(cv.value * 100).toFixed(1)}%<br/>` +
+            `${valueLabel}<br/>` +
             `<small>n=${cv.n}</small>`,
             { direction: 'center', className: 'country-tooltip' }
           );
@@ -113,9 +121,9 @@ export function CompareMap({ countryValues, selectedResponse, height = 340 }: Co
     if (bounds.isValid()) {
       map.fitBounds(bounds, { padding: [20, 20] });
     }
-  }, [geoData, countryValues, selectedResponse]);
+  }, [geoData, countryValues, selectedResponse, isScore]);
 
-  if (countryValues.length === 0 || !selectedResponse) {
+  if (countryValues.length === 0 || (!selectedResponse && !isScore)) {
     return null;
   }
 
@@ -136,14 +144,18 @@ export function CompareMap({ countryValues, selectedResponse, height = 340 }: Co
         borderRadius: 4, padding: '5px 8px', fontSize: 10, border: '1px solid rgba(0,48,73,0.12)',
         zIndex: 1000,
       }}>
-        <div style={{ fontWeight: 700, marginBottom: 3, fontSize: 10 }}>"{selectedResponse}"</div>
+        <div style={{ fontWeight: 700, marginBottom: 3, fontSize: 10 }}>
+          {isScore
+            ? `Score ${scoreRange ? `${scoreRange[0]}–${scoreRange[1]}` : '0–10'}`
+            : `"${selectedResponse}"`}
+        </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-          <span>{(min * 100).toFixed(0)}%</span>
+          <span>{isScore ? min.toFixed(1) : `${(min * 100).toFixed(0)}%`}</span>
           <div style={{
             width: 80, height: 12, borderRadius: 3,
             background: `linear-gradient(to right, ${getSequentialColor(min, min, max)}, ${getSequentialColor((min + max) / 2, min, max)}, ${getSequentialColor(max, min, max)})`,
           }} />
-          <span>{(max * 100).toFixed(0)}%</span>
+          <span>{isScore ? max.toFixed(1) : `${(max * 100).toFixed(0)}%`}</span>
         </div>
       </div>
     </div>

@@ -124,6 +124,7 @@ const NS_NC_PATTERNS = [
   'No sabe', 'No contesta', 'No responde', 'NS/NR', 'No sabe/No contesta',
   'No sabe / No contesta', 'No answer', 'No aplicable', 'Refused',
   "Don't know", "Don't know/No answer",
+  'DK', 'NA', 'DK/NA',
 ];
 
 const RESIDUAL_PATTERNS = [
@@ -133,7 +134,12 @@ const RESIDUAL_PATTERNS = [
 
 export function isNsNc(key: string): boolean {
   const norm = key.replace(/\s*\{[^}]*\}\s*$/, '').trim();
-  return NS_NC_PATTERNS.some(p => norm === p || norm.includes(p));
+  return NS_NC_PATTERNS.some(p => {
+    // Short abbreviations (DK, NA, ...) must match exactly to avoid false
+    // positives in unrelated words.
+    if (p.length <= 3) return norm === p;
+    return norm === p || norm.includes(p);
+  });
 }
 
 export function isResidual(key: string): boolean {
@@ -301,6 +307,71 @@ function tryMatchScale(keys: string[], scaleKeywords: string[]): string[] | null
   // Add any unmatched substantive keys at the end
   const unmatched = keys.filter(k => !usedKeys.has(k));
   return [...orderedMatches, ...unmatched];
+}
+
+/**
+ * Build a 0-10 score map for an ordinal scale.
+ *
+ * - For ordinal scales (e.g. "Muy satisfecho"..."Nada satisfecho"), linearly maps
+ *   the most-positive answer to 10 and the most-negative answer to 0.
+ * - For numeric scales (1-10, 0-10, 1 Nothing...10 A lot), uses the leading number.
+ * - Returns null if no ordinal/numeric order can be detected (keys would be
+ *   unordered, so a "how satisfied overall" score would be meaningless).
+ *
+ * NS/NC and residual keys are excluded: they don't represent a position on the
+ * scale so they must not drag the score toward the middle.
+ */
+export function buildOrdinalScoreMap(keys: string[]): Record<string, number> | null {
+  const ordered = detectOrdinalOrder(keys);
+  if (!ordered) return null;
+  const substantive = ordered.filter(k => !isNsNc(k) && !isResidual(k));
+  if (substantive.length < 2) return null;
+
+  // Numeric scales: use the leading number directly (preserves native range)
+  if (isNumericScale(keys)) {
+    const map: Record<string, number> = {};
+    for (const k of substantive) {
+      const n = parseLeadingNum(k);
+      if (!isNaN(n)) map[k] = n;
+    }
+    return Object.keys(map).length >= 2 ? map : null;
+  }
+
+  // Ordinal scale: integer steps 0..N-1. First key (most positive) → N-1, last → 0.
+  // This keeps the scale "one unit per step" so the mean reads as an ordinal position.
+  const map: Record<string, number> = {};
+  const n = substantive.length;
+  substantive.forEach((k, i) => {
+    map[k] = n - 1 - i;
+  });
+  return map;
+}
+
+/** Return [min, max] of a score map's values, used for display formatting. */
+export function getScoreRange(scoreMap: Record<string, number>): [number, number] {
+  const values = Object.values(scoreMap);
+  if (values.length === 0) return [0, 0];
+  return [Math.min(...values), Math.max(...values)];
+}
+
+/**
+ * Compute a weighted 0-10 score from a distribution given a score map.
+ * Proportions for non-scored keys (NS/NC, residual) are excluded from the denominator.
+ * Returns null if no scored response has any mass.
+ */
+export function computeScore(
+  distribution: Record<string, number>,
+  scoreMap: Record<string, number>,
+): number | null {
+  let weightedSum = 0;
+  let totalProp = 0;
+  for (const [key, score] of Object.entries(scoreMap)) {
+    const p = distribution[key] ?? 0;
+    weightedSum += score * p;
+    totalProp += p;
+  }
+  if (totalProp === 0) return null;
+  return weightedSum / totalProp;
 }
 
 /**
